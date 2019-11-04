@@ -11,7 +11,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+     // single data source for names
      let dataModel = DataModel()
+    
      let tehillimDataModel  = TehillimDataModel()
     var window: UIWindow?
   
