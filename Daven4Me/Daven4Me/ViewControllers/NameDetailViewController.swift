@@ -8,27 +8,6 @@
 
 import UIKit
 
-
- let aviDisplayString =
-"אברהם-פנחס-בן-מרים"
-
-
-
-let aviHebrewLettersArray =
-["א", "ב", "ר", "ה", "ם", "-", "פ", "נ", "ח", "ס", "-", "ב", "ן", "-", "מ", "ר", "י", "ם"]
-
-let aviKapitelKeysArray = ["AlephLetterKapitel", "BeisLetterKapitel", "RayshLetterKapitel", "HeyLetterKapitel", "MemSofitLetterKapitel", "SpaceLetterKapitel", "PeyLetterKapitel", "NunLetterKapitel", "ChesLetterKapitel", "SamechLetterKapitel", "SpaceLetterKapitel", "BeisLetterKapitel", "NunSofitLetterKapitel", "SpaceLetterKapitel", "MemLetterKapitel", "RayshLetterKapitel", "YudLetterKapitel", "MemSofitLetterKapitel"]
-
-let aviKapitelStringsArray =
-["אַשְׁרֵי תְמִימֵי דָרֶךְ הַהֹלְכִים בְּתוֹרַת יְהֹוָה: אַשְׁרֵי נֹצְרֵי עֵדֹתָיו בְּכָל לֵב יִדְרְשׁוּהוּ: אַף לֹא פָעֲלוּ עַוְלָה בִּדְרָכָיו הָלָכוּ: אַתָּה צִוִּיתָה פִקֻּדֶיךָ לִשְׁמֹר מְאֹד: אַחֲלַי יִכֹּנוּ דְּרָכָי לִשְׁמֹר חֻקֶּיךָ: אָז לֹא אֵבוֹשׁ בְּהַבִּיטִי אֶל כָּל מִצְו‍ֹתֶיךָ: אוֹדְךָ בְּיֹשֶׁר לֵבָב בְּלָמְדִי מִשְׁפְּטֵי צִדְקֶךָ: אֶת חֻקֶּיךָ אֶשְׁמֹר אַל תַּעַזְבֵנִי עַד מְאֹד:", "בַּמֶּה יְזַכֶּה נַּעַר אֶת אָרְחוֹ לִשְׁמֹר כִּדְבָרֶךָ: בְּכָל לִבִּי דְרַשְׁתִּיךָ אַל תַּשְׁגֵּנִי מִמִּצְו‍ֹתֶיךָ: בְּלִבִּי צָפַנְתִּי אִמְרָתֶךָ לְמַעַן לֹא אֶחֱטָא לָךְ: בָּרוּךְ אַתָּה יְהֹוָה לַמְּדֵנִי חֻקֶּיךָ: בִּשְׂפָתַי סִפַּרְתִּי כֹּל מִשְׁפְּטֵי פִיךָ: בְּדֶרֶךְ עֵדְו‍ֹתֶיךָ שַׂשְׂתִּי כְּעַל כָּל הוֹן: בְּפִקּוּדֶיךָ אָשִׂיחָה וְאַבִּיטָה אֹרְחֹתֶיךָ: בְּחֻקֹּתֶיךָ אֶשְׁתַּעֲשָׁע לֹא אֶשְׁכַּח דְּבָרֶךָ:", "רְאֵה עָנְיִי וְחַלְּצֵנִי כִּי תוֹרָתְךָ לֹא שָׁכָחְתִּי: רִיבָה רִיבִי וּגְאָלֵנִי לְאִמְרָתְךָ חַיֵּנִי: רָחוֹק מֵרְשָׁעִים יְשׁוּעָה כִּי חֻקֶּיךָ לֹא דָרָשׁוּ: רַחֲמֶיךָ רַבִּים | יְהֹוָה כְּמִשְׁפָּטֶיךָ חַיֵּנִי: רַבִּים רֹדְפַי וְצָרָי מֵעֵדְו‍ֹתֶיךָ לֹא נָטִיתִי: רָאִיתִי בֹגְדִים וָאֶתְקוֹטָטָה אֲשֶׁר אִמְרָתְךָ לֹא שָׁמָרוּ: רְאֵה כִּי פִקּוּדֶיךָ אָהָבְתִּי יְהֹוָה כְּחַסְדְּךָ חַיֵּנִי: רֹאשׁ דְּבָרְךָ אֱמֶת וּלְעוֹלָם כָּל מִשְׁפַּט צִדְקֶךָ:", "הוֹרֵנִי יְהֹוָה דֶּרֶךְ חֻקֶּיךָ וְאֶצְּרֶנָּה עֵקֶב: הֲבִינֵנִי וְאֶצְּרָה תוֹרָתֶךָ וְאֶשְׁמְרֶנָּה בְכָל לֵב: הַדְרִיכֵנִי בִּנְתִיב מִצְו‍ֹתֶיךָ כִּי בוֹ חָפָצְתִּי: הַט לִבִּי אֶל עֵדְו‍ֹתֶיךָ וְאַל אֶל בָּצַע: הַעֲבֵר עֵינַי מֵרְאוֹת שָׁוְא בִּדְרָכֶךָ חַיֵּנִי: הָקֵם לְעַבְדְּךָ אִמְרָתֶךָ אֲשֶׁר לְיִרְאָתֶךָ: הַעֲבֵר חֶרְפָּתִי אֲשֶׁר יָגֹרְתִּי כִּי מִשְׁפָּטֶיךָ טוֹבִים: הִנֵּה תָּאַבְתִּי לְפִקֻּדֶיךָ בְּצִדְקָתְךָ חַיֵּנִי:", "מָה אָהַבְתִּי תוֹרָתֶךָ כָּל הַיּוֹם הִיא שִׂיחָתִי: מֵאֹיְבַי תְּחַכְּמֵנִי מִצְו‍ֹתֶךָ כִּי לְעוֹלָם הִיא לִי: מִכָּל מְלַמְּדַי הִשְׂכַּלְתִּי כִּי עֵדְו‍ֹתֶיךָ שִׂיחָה לִי: מִזְּקֵנִים אֶתְבּוֹנָן כִּי פִקּוּדֶיךָ נָצָרְתִּי: מִכָּל אֹרַח רָע כָּלִאתִי רַגְלָי לְמַעַן אֶשְׁמֹר דְּבָרֶךָ: מִמִּשְׁפָּטֶיךָ לֹא סָרְתִּי כִּי אַתָּה הוֹרֵתָנִי: מַה נִּמְלְצוּ לְחִכִּי אִמְרָתֶךָ מִדְּבַשׁ לְפִי: מִפִּקּוּדֶיךָ אֶתְבּוֹנָן עַל כֵּן שָׂנֵאתִי | כָּל אֹרַח שָׁקֶר:", "Space", " פְּלָאוֹת עֵדְו‍ֹתֶיךָ עַל כֵּן נְצָרָתַם נַפְשִׁי: פֵּתַח דְּבָרֶיךָ יָאִיר מֵבִין פְּתָיִים: פִּי פָעַרְתִּי וָאֶשְׁאָפָה כִּי לְמִצְו‍ֹתֶיךָ יָאָבְתִּי: פְּנֵה אֵלַי וְחָנֵּנִי כְּמִשְׁפָּט לְאֹהֲבֵי שְׁמֶךָ: פְּעָמַי הָכֵן בְּאִמְרָתֶךָ וְאַל תַּשְׁלֶט בִּי כָל אָוֶן: פְּדֵנִי מֵעֹשֶׁק אָדָם וְאֶשְׁמְרָה פִּקּוּדֶיךָ: פָּנֶיךָ הָאֵר בְּעַבְדֶּךָ וְלַמְּדֵנִי אֶת חֻקֶּיךָ: פַּלְגֵי מַיִם יָרְדוּ עֵינָי עַל לֹא שָׁמְרוּ תוֹרָתֶךָ:", "נֵר לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי: נִשְׁבַּעְתִּי וָאֲקַיֵּמָה לִשְׁמֹר מִשְׁפְּטֵי צִדְקֶךָ: נַעֲנֵיתִי עַד מְאֹד יְהֹוָה חַיֵּנִי כִדְבָרֶךָ: נִדְבוֹת פִּי רְצֵה נָא יְהֹוָה וּמִשְׁפָּטֶיךָ לַמְּדֵנִי: נַפְשִׁי בְכַפִּי תָמִיד וְתוֹרָתְךָ לֹא שָׁכָחְתִּי: נָתְנוּ רְשָׁעִים פַּח לִי וּמִפִּקּוּדֶיךָ לֹא תָעִיתִי: נָחַלְתִּי עֵדְו‍ֹתֶיךָ לְעוֹלָם כִּי שְׂשׂוֹן לִבִּי הֵמָּה: נָטִיתִי לִבִּי לַעֲשׂוֹת חֻקֶּיךָ לְעוֹלָם עֵקֶב:", "חֶלְקִי יְהֹוָה אָמַרְתִּי לִשְׁמֹר דְּבָרֶיךָ: חִלִּיתִי פָנֶיךָ בְכָל לֵב חָנֵּנִי כְּאִמְרָתֶךָ: חִשַּׁבְתִּי דְרָכָי וָאָשִׁיבָה רַגְלַי אֶל עֵדֹתֶיךָ: חַשְׁתִּי וְלֹא הִתְמַהְמָהְתִּי לִשְׁמֹר מִצְו‍ֹתֶיךָ: חֶבְלֵי רְשָׁעִים עִוְּדֻנִי תּוֹרָתְךָ לֹא שָׁכָחְתִּי: חֲצוֹת לַיְלָה אָקוּם לְהוֹדוֹת לָךְ עַל מִשְׁפְּטֵי צִדְקֶךָ: חָבֵר אָנִי לְכָל אֲשֶׁר יְרֵאוּךָ וּלְשֹׁמְרֵי פִּקּוּדֶיךָ: חַסְדְּךָ יְהֹוָה מָלְאָה הָאָרֶץ חֻקֶּיךָ לַמְּדֵנִי:", "סֵעֲפִים שָׂנֵאתִי וְתוֹרָתְךָ אָהָבְתִּי: סִתְרִי וּמָגִנִּי אָתָּה לִדְבָרְךָ יִחָלְתִּי: סוּרוּ מִמֶּנִּי מְרֵעִים וְאֶצְּרָה מִצְו‍ֹת אֱלֹהָי: סָמְכֵנִי כְאִמְרָתְךָ וְאֶחְיֶה וְאַל תְּבִישֵׁנִי מִשִּׂבְרִי: סְעָדֵנִי וְאִוָּשֵׁעָה וְאֶשְׁעָה בְחֻקֶּיךָ תָמִיד: סָלִיתָ כָּל שֹׁגִים מֵחֻקֶּיךָ כִּי שֶׁקֶר תַּרְמִיתָם: סִגִים הִשְׁבַּתָּ כָל רִשְׁעֵי אָרֶץ לָכֵן אָהַבְתִּי עֵדֹתֶיךָ: סָמַר מִפַּחְדְּךָ בְשָׂרִי וּמִמִּשְׁפָּטֶיךָ יָרֵאתִי:", "Space", "בַּמֶּה יְזַכֶּה נַּעַר אֶת אָרְחוֹ לִשְׁמֹר כִּדְבָרֶךָ: בְּכָל לִבִּי דְרַשְׁתִּיךָ אַל תַּשְׁגֵּנִי מִמִּצְו‍ֹתֶיךָ: בְּלִבִּי צָפַנְתִּי אִמְרָתֶךָ לְמַעַן לֹא אֶחֱטָא לָךְ: בָּרוּךְ אַתָּה יְהֹוָה לַמְּדֵנִי חֻקֶּיךָ: בִּשְׂפָתַי סִפַּרְתִּי כֹּל מִשְׁפְּטֵי פִיךָ: בְּדֶרֶךְ עֵדְו‍ֹתֶיךָ שַׂשְׂתִּי כְּעַל כָּל הוֹן: בְּפִקּוּדֶיךָ אָשִׂיחָה וְאַבִּיטָה אֹרְחֹתֶיךָ: בְּחֻקֹּתֶיךָ אֶשְׁתַּעֲשָׁע לֹא אֶשְׁכַּח דְּבָרֶךָ:", "נֵר לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי: נִשְׁבַּעְתִּי וָאֲקַיֵּמָה לִשְׁמֹר מִשְׁפְּטֵי צִדְקֶךָ: נַעֲנֵיתִי עַד מְאֹד יְהֹוָה חַיֵּנִי כִדְבָרֶךָ: נִדְבוֹת פִּי רְצֵה נָא יְהֹוָה וּמִשְׁפָּטֶיךָ לַמְּדֵנִי: נַפְשִׁי בְכַפִּי תָמִיד וְתוֹרָתְךָ לֹא שָׁכָחְתִּי: נָתְנוּ רְשָׁעִים פַּח לִי וּמִפִּקּוּדֶיךָ לֹא תָעִיתִי: נָחַלְתִּי עֵדְו‍ֹתֶיךָ לְעוֹלָם כִּי שְׂשׂוֹן לִבִּי הֵמָּה: נָטִיתִי לִבִּי לַעֲשׂוֹת חֻקֶּיךָ לְעוֹלָם עֵקֶב:", "Space", "מָה אָהַבְתִּי תוֹרָתֶךָ כָּל הַיּוֹם הִיא שִׂיחָתִי: מֵאֹיְבַי תְּחַכְּמֵנִי מִצְו‍ֹתֶךָ כִּי לְעוֹלָם הִיא לִי: מִכָּל מְלַמְּדַי הִשְׂכַּלְתִּי כִּי עֵדְו‍ֹתֶיךָ שִׂיחָה לִי: מִזְּקֵנִים אֶתְבּוֹנָן כִּי פִקּוּדֶיךָ נָצָרְתִּי: מִכָּל אֹרַח רָע כָּלִאתִי רַגְלָי לְמַעַן אֶשְׁמֹר דְּבָרֶךָ: מִמִּשְׁפָּטֶיךָ לֹא סָרְתִּי כִּי אַתָּה הוֹרֵתָנִי: מַה נִּמְלְצוּ לְחִכִּי אִמְרָתֶךָ מִדְּבַשׁ לְפִי: מִפִּקּוּדֶיךָ אֶתְבּוֹנָן עַל כֵּן שָׂנֵאתִי | כָּל אֹרַח שָׁקֶר:", "רְאֵה עָנְיִי וְחַלְּצֵנִי כִּי תוֹרָתְךָ לֹא שָׁכָחְתִּי: רִיבָה רִיבִי וּגְאָלֵנִי לְאִמְרָתְךָ חַיֵּנִי: רָחוֹק מֵרְשָׁעִים יְשׁוּעָה כִּי חֻקֶּיךָ לֹא דָרָשׁוּ: רַחֲמֶיךָ רַבִּים | יְהֹוָה כְּמִשְׁפָּטֶיךָ חַיֵּנִי: רַבִּים רֹדְפַי וְצָרָי מֵעֵדְו‍ֹתֶיךָ לֹא נָטִיתִי: רָאִיתִי בֹגְדִים וָאֶתְקוֹטָטָה אֲשֶׁר אִמְרָתְךָ לֹא שָׁמָרוּ: רְאֵה כִּי פִקּוּדֶיךָ אָהָבְתִּי יְהֹוָה כְּחַסְדְּךָ חַיֵּנִי: רֹאשׁ דְּבָרְךָ אֱמֶת וּלְעוֹלָם כָּל מִשְׁפַּט צִדְקֶךָ:", "יָדֶיךָ עָשׂוּנִי וַיְכוֹנְנוּנִי הֲבִינֵנִי וְאֶלְמְדָה מִצְו‍ֹתֶיךָ: יְרֵאֶיךָ יִרְאוּנִי וְיִשְׂמָחוּ כִּי לִדְבָרְךָ יִחָלְתִּי: יָדַעְתִּי יְהֹוָה כִּי צֶדֶק מִשְׁפָּטֶיךָ וֶאֱמוּנָה עִנִּיתָנִי: יְהִי נָא חַסְדְּךָ לְנַחֲמֵנִי כְּאִמְרָתְךָ לְעַבְדֶּךָ: יְבֹאוּנִי רַחֲמֶיךָ וְאֶחְיֶה כִּי תוֹרָתְךָ שַׁעֲשֻׁעָי: יֵבֹשׁוּ זֵדִים כִּי שֶׁקֶר עִוְּתוּנִי אֲנִי אָשִׂיחַ בְּפִקּוּדֶיךָ: יָשׁוּבוּ לִי יְרֵאֶיךָ וְיֹדְעֵי (כתיב וְיֹדְעֵו) עֵדֹתֶיךָ: יְהִי לִבִּי תָמִים בְּחֻקֶּיךָ לְמַעַן לֹא אֵבוֹשׁ:", "מָה אָהַבְתִּי תוֹרָתֶךָ כָּל הַיּוֹם הִיא שִׂיחָתִי: מֵאֹיְבַי תְּחַכְּמֵנִי מִצְו‍ֹתֶךָ כִּי לְעוֹלָם הִיא לִי: מִכָּל מְלַמְּדַי הִשְׂכַּלְתִּי כִּי עֵדְו‍ֹתֶיךָ שִׂיחָה לִי: מִזְּקֵנִים אֶתְבּוֹנָן כִּי פִקּוּדֶיךָ נָצָרְתִּי: מִכָּל אֹרַח רָע כָּלִאתִי רַגְלָי לְמַעַן אֶשְׁמֹר דְּבָרֶךָ: מִמִּשְׁפָּטֶיךָ לֹא סָרְתִּי כִּי אַתָּה הוֹרֵתָנִי: מַה נִּמְלְצוּ לְחִכִּי אִמְרָתֶךָ מִדְּבַשׁ לְפִי: מִפִּקּוּדֶיךָ אֶתְבּוֹנָן עַל כֵּן שָׂנֵאתִי | כָּל אֹרַח שָׁקֶר:"]
-
-
-
-let sarahChanaDisplayString =  "שרה חנה בילא בת מרים יוכבד"
-let sarahChanaArrayOfLetters =
-["ש","ר","ה","-", "ח","נ","ה","-","ב","י","ל","א","-"," ב","ת","-", "מ","ר","י","ם","-", "י","ו","כ","ב","ד"]
-
-
 class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     
     
@@ -39,7 +18,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
    
     let cellId = "cellId"
     let pageCellID = "pageCellID"
-    var dataModel: DataModel!
+    
     
 
     var currentPageNumber: Int = 0
@@ -48,26 +27,17 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
    
     
     var selectedPerson: Person!
-    var currentMispaleli: Mispaleli!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        currentMispaleli =
-                   
-                   Mispaleli(displayStringForName: aviDisplayString, hebrewLettersArray: sarahChanaArrayOfLetters, kapitelStringsArray: aviKapitelStringsArray)
-        
-        
-        _ = currentMispaleli.kapitelStringsArray.reversed()
-        
-        //print(currentMispaleli.description)
-        
+      
          configureNavController()
         configureTopCollectionView()
         configureBottomCollectionView()
-       
-     }
+    }
     
     func configureNavController() {
         navigationController?.hidesBarsOnSwipe = false
@@ -75,7 +45,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         let _ = UIFont(name: "SBLHebrew", size: 34)
         //navigationController?.navigationBar.titleTextAttributes = customFont
         //navigationItem.title = currentMispaleli.displayStringForName
-        navigationItem.title = aviDisplayString
+        navigationItem.title = selectedPerson.nameToDisplay
         navigationController?.navigationBar.isTranslucent = false
     }
     
@@ -145,7 +115,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
    lazy var totalEmptySpaceforLetters =  (menuBarCollectionView.frame.width - (2 * leftRightPadding) - (3 * interSpacing))
     
-   lazy   var letterCellWidth = totalEmptySpace / CGFloat(currentMispaleli.hebrewLettersArray.count)
+   lazy   var letterCellWidth = totalEmptySpace / CGFloat(selectedPerson.lettersArray.count)
     
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -161,7 +131,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         else {
         
         //let bottomCellWidth = view.frame.size.width - 40
-            let bottomCellHeight = view.frame.size.height - 200
+            _ = view.frame.size.height - 200
         //let itemSize = CGSize(width:bottomCellWidth, height: bottomCellHeight)
             
             
@@ -204,11 +174,12 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 101 {
-        //return currentMispaleli.hebrewLettersArray.count
-            return aviHebrewLettersArray.count
+        
+        
+        return selectedPerson.lettersArray.count
         } else {
-           // print("the state of lower dataSource is \(currentMispaleli.kapitelStringsArray.description)")
-            return aviKapitelStringsArray.count
+         
+            return selectedPerson.kapitelStringsArray.count
         }
         
     }
@@ -219,7 +190,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     
         //let lettr  =  currentMispaleli.hebrewLettersArray[indexPath.item]
         
-        let lettr = aviHebrewLettersArray[indexPath.item]
+        let lettr = selectedPerson.lettersArray[indexPath.item]
         
         let customFont = UIFont(name: "SBLHebrew", size: 44)
         menuCell.lettrLabel.font = customFont
@@ -230,15 +201,16 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: pageCellID, for: indexPath) as! PageCell
     
-       
-        
-        
         var kapitelArray = [String]()
-        kapitelArray = aviKapitelStringsArray.reversed() //currentMispaleli.kapitelStringsArray.reversed()
+        kapitelArray = selectedPerson.kapitelStringsArray.reversed()
         
-        var kapitel = kapitelArray[indexPath.row]
+        let kapitel = kapitelArray[indexPath.row]
         
-        pageCell.page = kapitel
+        let customFont = UIFont(name: "SBLHebrew", size: 33)
+        pageCell.tehillim1TextView.font = customFont
+        pageCell.tehillim1TextView.text = kapitel
+        
+        //pageCell.page = kapitel
       
         return pageCell
     }
@@ -275,13 +247,13 @@ extension NameDetailViewController: UIScrollViewDelegate {
     
             if scrollView.tag == 102 {
             
-            var bottomPageNum = Int(scrollView.contentOffset.x / view.frame.width)
+                let bottomPageNum = Int(scrollView.contentOffset.x / view.frame.width)
                 
-               print("the current page is \(bottomPageNum)")
+             
             
             //var normalIndex = topIndexReversed[bottomPageNum]
             
-            let indexPath = IndexPath(item: bottomPageNum, section: 0)
+                _ = IndexPath(item: bottomPageNum, section: 0)
            
             //menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             
@@ -289,12 +261,12 @@ extension NameDetailViewController: UIScrollViewDelegate {
     }
      func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        //print("the scrollview data is \(targetContentOffset.pointee.x)")
+        
         let currentPoint = CGPoint(x: targetContentOffset.pointee.x, y: 50)
         let currentIndexPathFromPoint = tehillimTextCollectionView.indexPathForItem(at: currentPoint)
         //let currentIndexPath = tehillimTextCollectionView.indexPath(for: //<#T##UICollectionViewCell#>)
         menuBarCollectionView.selectItem(at: currentIndexPathFromPoint, animated: true, scrollPosition: .top)
-        print("the currentINdexPath is \(currentIndexPathFromPoint)")
+        
     }
     
     }

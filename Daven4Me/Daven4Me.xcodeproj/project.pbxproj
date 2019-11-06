@@ -33,6 +33,7 @@
 		CEE1514B22BF85CC00E4C9F4 /* TehillimDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1514A22BF85CC00E4C9F4 /* TehillimDataModel.swift */; };
 		CEE1514D22BF870C00E4C9F4 /* TehillimTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1514C22BF870C00E4C9F4 /* TehillimTableViewController.swift */; };
 		CEE1514F22BF8B2100E4C9F4 /* ChapterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1514E22BF8B2100E4C9F4 /* ChapterTableCell.swift */; };
+		CEE6297D2372F9FE003DDEE5 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6297C2372F9FE003DDEE5 /* PersonService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		CEE1514A22BF85CC00E4C9F4 /* TehillimDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimDataModel.swift; sourceTree = "<group>"; };
 		CEE1514C22BF870C00E4C9F4 /* TehillimTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTableViewController.swift; sourceTree = "<group>"; };
 		CEE1514E22BF8B2100E4C9F4 /* ChapterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableCell.swift; sourceTree = "<group>"; };
+		CEE6297C2372F9FE003DDEE5 /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				CE49CB8722BD3CA60064B992 /* Chapter119Plain.txt */,
 				CE49CB8322BD392D0064B992 /* RawTehillimText.txt */,
 				CE5C733722B459A600F6B5E4 /* DataModel.swift */,
+				CEE6297C2372F9FE003DDEE5 /* PersonService.swift */,
 				CE5C733522B455FA00F6B5E4 /* Person.swift */,
 				CE5C733B22B52CE900F6B5E4 /* HebrewData.swift */,
 				CEE1514822BF853C00E4C9F4 /* Chapter.swift */,
@@ -262,6 +265,7 @@
 				CE5C732422B454C600F6B5E4 /* MasterViewController.swift in Sources */,
 				CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */,
 				CEE1514D22BF870C00E4C9F4 /* TehillimTableViewController.swift in Sources */,
+				CEE6297D2372F9FE003DDEE5 /* PersonService.swift in Sources */,
 				CE5C732222B454C600F6B5E4 /* AppDelegate.swift in Sources */,
 				CED85842236CB52E0086E869 /* PageCell.swift in Sources */,
 				CEE1514B22BF85CC00E4C9F4 /* TehillimDataModel.swift in Sources */,

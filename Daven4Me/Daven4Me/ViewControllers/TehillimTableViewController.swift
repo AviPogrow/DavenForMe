@@ -26,8 +26,8 @@ class TehillimTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("the num of chapters is \(tehillimDataModel.chapters.count)")
-        return tehillimDataModel.chapters.count
+      
+        return 5//tehillimDataModel.chapters.count
     }
 
     
@@ -37,9 +37,9 @@ class TehillimTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! ChapterTableCell
         
-         let currentChapter = tehillimDataModel.chapters[indexPath.row]
+         //let currentChapter = tehillimDataModel.chapters[indexPath.row]
         
-         cell.chapterLabel.text = currentChapter.number
+         //cell.chapterLabel.text = currentChapter.number
 
         return cell
     }

@@ -45,11 +45,15 @@ class AddEditViewController: UIViewController {
     
     var keyboardContainView = ContainView()
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
        configureTextField()
+        
+        
+        
         
     }
     
@@ -209,12 +213,23 @@ extension AddEditViewController: HebrewKeyboardViewDelegate {
         // update the object and tell the delegate
           if  personToEdit != nil && !(textField.text?.isEmpty)! {
         
-             let editedPerson = personToEdit
-             editedPerson!.nameToDisplay = textField.text!
-             editedPerson!.convertNameToPerson(name: textField.text!)
-        
-        
-            delegate?.addEditViewController(self, didFinishEditing: editedPerson!)
+            // use the person service class to convert the
+            // name into computed properties to pass to
+            // update the property values of personToEdit
+            let personService = PersonService()
+            let lettersArray = (personService.createLettersArrayFromName(name: textField.text!))
+            let dictKeysArray = personService.createKeyArrayFromLettersArray(arrayOflettrs: lettersArray)
+            
+            let kapitelStringsArray = personService.convertKeyArryToKapitArray(kapitlKeys: dictKeysArray)
+            
+           
+            // update the properties of personToEdit
+            personToEdit?.nameToDisplay = textField.text!
+            personToEdit?.lettersArray = lettersArray
+            personToEdit?.keysForDict = dictKeysArray
+            personToEdit?.kapitelStringsArray = kapitelStringsArray
+            
+            delegate?.addEditViewController(self, didFinishEditing: personToEdit!)
             
             textField.resignFirstResponder()
             dismiss(animated: true, completion: nil)
@@ -224,11 +239,10 @@ extension AddEditViewController: HebrewKeyboardViewDelegate {
         //if edited object is nil we are creating a new object
         if  personToEdit == nil && !(textField.text?.isEmpty)! {
         
-            var person = Person()
-            person = person.convertNameToPerson(name: textField.text!)
+            var personService = PersonService()
+            let person = personService.createNewPersonFromName(name: textField.text!)
             
             delegate?.addEditViewController(self, didFinishAdding: person)
-            
             
             textField.resignFirstResponder()
             

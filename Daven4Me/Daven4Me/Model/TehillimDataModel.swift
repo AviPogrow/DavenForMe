@@ -8,36 +8,80 @@
 
 import Foundation
 
-class TehillimDataModel {
+class TehillimDataModel: Codable {
     
-    var chapters: [Chapter] = [Chapter]()
+    var tehillimDict = [String: String]()
     
     init() {
+       setUpTehillimDict()
+    }
         
-    //load text file as one long string
-    let tehillimTextURL = Bundle.main.url(forResource: "RawTehillimText", withExtension: ".txt")
-    
-    let textString = try! String(contentsOf: tehillimTextURL!)
-    
-    
-    let splitByChapters = textString.components(separatedBy: "Chapter")
+  
+    func setUpTehillimDict() {
+        let chapters = createArrayOfTehillimChapters()
+                     
+                     
+         tehillimDict = createDictionaryNamesToChapters(chapters: chapters)
+       
         
-        for _ in splitByChapters {
-            //let chap = Chapter(firstSentence)
+       
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(tehillimDict)
+        
+
+        _ = String(data: jsonData, encoding: .utf8)!
+      
+    }
+    
+ 
+    func createArrayOfTehillimChapters() -> [String] {
+    
+        //load text file as one long string
+       let tehillimTextURL = Bundle.main.url(forResource: "Chapter119Plain", withExtension: ".txt")
+       
+       let textString = try! String(contentsOf: tehillimTextURL!)
+       
+      
+       let splitByChapters = textString.components(separatedBy: ".")
+        
+        return splitByChapters
+    }
+    // passing in an ordered list of paragraphs set up a dictionary
+        func createDictionaryNamesToChapters(chapters: [String]) -> [String: String] {
+      
+          var namesToParagraphs = [String: String]()
+         
+          //loop through and create dictionry with keys
+          for (index, hebLetrr) in  HebrewData.LetterHebrew.allCases.enumerated() {
+        
+           // convert to its string
+              let rawVlue = hebLetrr.rawValue
+              
+              // convert to paragraph num
+              let paragraphNumber = hebLetrr.convertToParagrahNumber(paragraphLetter: rawVlue)
+              let dictKey = hebLetrr.createDictKey(paragraphNum: paragraphNumber)
+            
+            // create unique dict key for letter
+           let dictionaryKey = dictKey
+        
+           // add the key to the dictionary and set
+            // its value to the current
+           namesToParagraphs[dictionaryKey] = chapters[index]
         }
-    
-    //chapters = splitByChapters
         
-    let chapter1 = splitByChapters[1]
+        return namesToParagraphs
+    }
     
-    let chapter1Array = chapter1.components(separatedBy: "\n")
-    let firstSentence = chapter1Array[0...2]
-    print("the first sentence is \(firstSentence)")
-    
-    
-    // separate text into arrays of chapters
-    // get chapter119
-    // split chapter119 into a dictionary of key value pairs
-    // split each paragraph into an array of lines
+func                                                                convArryKeysToArryKapits(kapitlKeys: [String]) -> [String] {
+                            
+        var  kapitelArray = [String]()
+        
+        for i in kapitlKeys {
+            let paragraph = tehillimDict[i]!
+            kapitelArray.append(paragraph)
+        }
+        
+        return kapitelArray
     }
 }
+                                                               

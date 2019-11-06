@@ -28,15 +28,14 @@ class PageCell: UICollectionViewCell {
            
            tehillim1TextView.isEditable = false
            tehillim1TextView.isSelectable = false
-        let customFont = UIFont(name: "SBLHebrew", size: 30)
-        tehillim1TextView.font = customFont
+       
        tehillim1TextView.makeTextWritingDirectionRightToLeft(self)
         tehillim1TextView.textAlignment = .right
         tehillim1TextView.semanticContentAttribute = .forceRightToLeft
         
         
         
-        let inset = UIEdgeInsets(top:16 , left: 16, bottom: 8, right: 16)
+        let inset = UIEdgeInsets(top: -4 , left: 16, bottom: 8, right: 16)
         
         addSubview(tehillim1TextView)
       
@@ -65,7 +64,7 @@ override func layoutSubviews() {
                if paragraph[i] == ":" {
                    
                    // range from start to ":"
-                   var  subString = paragraph[lastSentenceIndex...i]
+                let  subString = paragraph[lastSentenceIndex...i]
                    
                    // add a new line character to substring
                    newString = newString + subString + "\n \n"

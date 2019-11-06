@@ -12,6 +12,6 @@ struct Chapter {
     var number : String
     var firstSentence: String
     var text: String
-    
+    var paragraphs: [String: String]
     
 }
