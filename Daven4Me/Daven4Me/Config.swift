@@ -17,6 +17,7 @@ let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
 
 let  blueColor = UIColor(displayP3Red: 4, green: 149, blue: 255, alpha: 1)
+let secondColor = UIColor.lightGray
   //Red: 4, Green: 169, Blue: 235.
 
 
