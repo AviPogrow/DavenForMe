@@ -31,6 +31,10 @@ let lettrLabel = UILabel()
         layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
         layer.shadowRadius = 0.2
         layer.shadowOpacity = 0.82
+        
+        
+        
+       
     }
     
     override var isSelected: Bool {
@@ -70,9 +74,10 @@ let lettrLabel = UILabel()
         lettrLabel.textColor = textColor
         //lettrLabel.backgroundColor = UIColor.lightText
         lettrLabel.textAlignment = .center
-        lettrLabel.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE ? .systemFont(ofSize: 64) : .systemFont(ofSize: 64)
+        //lettrLabel.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE ? .systemFont(ofSize: 34) : .systemFont(ofSize: 34)
         
         addSubview(lettrLabel)
+        //lettrLabel.frame = bounds
         lettrLabel.fillSuperview()
     }
     

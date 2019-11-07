@@ -10,24 +10,19 @@ import UIKit
 
 class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     
-    
     @IBOutlet weak var menuBarCollectionView: UICollectionView!
     
     @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
     
-   
     let cellId = "cellId"
     let pageCellID = "pageCellID"
     
-    
-
-    var currentPageNumber: Int = 0
+    var currentNumber: Int = 0
     var topIndexReversed: [Int] = []
     var myIndexArray: [Int] = []
    
     
     var selectedPerson: Person!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +32,9 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
          configureNavController()
         configureTopCollectionView()
         configureBottomCollectionView()
+        
+        currentNumber = selectedPerson.kapitelStringsArray.count - 1
+        myIndexArray.append(currentNumber)
     }
     
     func configureNavController() {
@@ -74,8 +72,6 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         let bottomLayout = tehillimTextCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         bottomLayout.scrollDirection = .horizontal
          tehillimTextCollectionView.semanticContentAttribute = .forceRightToLeft
-        
-        //tehillimTextCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
         
         
@@ -87,7 +83,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
    
     override func viewWillAppear(_ animated: Bool) {
-     
+      
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,19 +91,15 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         //tehillimTextCollectionView.reloadData()
         //menuBarCollectionView.reloadData()
         
-       // let index = currentMispaleli.kapitelStringsArray.count - 1
-        //_ = IndexPath(item: index, section: 0)
-        
-     
-        //tehillimTextCollectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-
+        let index = 0
+       let indexPath1 = IndexPath(item: index, section: 0)
+       
+       menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
+        let lastIndex = selectedPerson.kapitelStringsArray.count - 1
+        let indexPath = IndexPath(item: lastIndex, section: 0)
+        //tehillimTextCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     
-       
-    
-  
-    
- 
    lazy   var leftRightPadding = view.frame.width * 0//0.10
     lazy   var interSpacing = view.frame.width * 0//0.1
     
@@ -168,9 +160,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
 }
 
-
 extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 101 {
@@ -188,11 +178,17 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
      if collectionView.tag == 101 {
         let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
     
-        //let lettr  =  currentMispaleli.hebrewLettersArray[indexPath.item]
+         //create a new integer
+         currentNumber = currentNumber - 1
+        //add the integer to array of integers
+    
+        //b. assign the number to the cell's reversedIndexProperty
+        
+        myIndexArray.append(currentNumber)
         
         let lettr = selectedPerson.lettersArray[indexPath.item]
         
-        let customFont = UIFont(name: "SBLHebrew", size: 44)
+        let customFont = UIFont(name: "SBLHebrew", size: 30)
         menuCell.lettrLabel.font = customFont
         menuCell.lettrLabel.text = lettr
         return menuCell
@@ -206,7 +202,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let kapitel = kapitelArray[indexPath.row]
         
-        let customFont = UIFont(name: "SBLHebrew", size: 33)
+        let customFont = UIFont(name: "SBLHebrew", size: 28)
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
@@ -244,28 +240,40 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 extension NameDetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    
-            if scrollView.tag == 102 {
-            
-                let bottomPageNum = Int(scrollView.contentOffset.x / view.frame.width)
-                
-             
-            
-            //var normalIndex = topIndexReversed[bottomPageNum]
-            
-                _ = IndexPath(item: bottomPageNum, section: 0)
-           
-            //menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-            
-        }
+      
     }
      func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         
-        let currentPoint = CGPoint(x: targetContentOffset.pointee.x, y: 50)
-        let currentIndexPathFromPoint = tehillimTextCollectionView.indexPathForItem(at: currentPoint)
+        
+        if scrollView.tag == 102 {
+                     
+                     //get the page number of bottom collectionView
+                     let bottomPageNum = Int(scrollView.contentOffset.x / view.frame.width)
+                         
+                     print("the bottom page number is \(bottomPageNum)")
+                     
+                     //pass in the bottomPageNum to the topIndexReversedArray
+                     var normalIndex = myIndexArray[bottomPageNum]
+                         
+                     let indexPath = IndexPath(item: normalIndex, section: 0)
+                        
+                     menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+                         
+        }
+        
+        
+        //let currentPoint = CGPoint(x: targetContentOffset.pointee.x, y: 50)
+        //let currentIndexPathFromPoint = tehillimTextCollectionView.indexPathForItem(at: currentPoint)
+        
+        //print("the current point is \(currentPoint)and currentIndexPath\(currentIndexPathFromPoint)")
+        
         //let currentIndexPath = tehillimTextCollectionView.indexPath(for: //<#T##UICollectionViewCell#>)
-        menuBarCollectionView.selectItem(at: currentIndexPathFromPoint, animated: true, scrollPosition: .top)
+        
+       
+        
+        
+        //menuBarCollectionView.selectItem(at: currentIndexPathFromPoint, animated: true, scrollPosition: .top)
         
     }
     
