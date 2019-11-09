@@ -15,6 +15,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
     
     let cellId = "cellId"
+    let cellID2 = "cellId2"
     let pageCellID = "pageCellID"
     
     var currentNumber: Int = 0
@@ -54,6 +55,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         layout.scrollDirection = .vertical
         menuBarCollectionView.semanticContentAttribute = .forceRightToLeft
         menuBarCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId )
+          menuBarCollectionView.register(KeyCell.self, forCellWithReuseIdentifier: cellID2 )
         
         menuBarCollectionView.dataSource = self
         menuBarCollectionView.delegate = self
@@ -112,22 +114,15 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView.tag == 101 {
-          // if  currentMispaleli.hebrewLettersArray.count < 17 {
-            
-             //1/8 the width and 1/3 the height
+        var  size = CGSize(width: 44, height:  menuBarCollectionView.bounds.height/3.7)
         
-            return .init(width: collectionView.frame.size.width / 8, height: menuBarCollectionView.bounds.height)
+        if collectionView.tag == 101 {
+         
+            return size
             
        }
         else {
-        
-        //let bottomCellWidth = view.frame.size.width - 40
-            _ = view.frame.size.height - 200
-        //let itemSize = CGSize(width:bottomCellWidth, height: bottomCellHeight)
-            
-            
-        
+
             return .init(width: tehillimTextCollectionView.bounds.width, height: tehillimTextCollectionView.bounds.height)
     }
      }
@@ -136,7 +131,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         if collectionView.tag == 101 {
-            return 6.0
+            return 5.0
         } else {
         return 0.0
         }
@@ -146,9 +141,9 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     // spacing between column of each section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView.tag == 101 {
-            return          10.0//interSpacing
+            return          5.0//interSpacing
         } else {
-            return interSpacing
+            return 0
         }
     }
     
@@ -156,7 +151,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     // inset the cell from the left margin
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return .init(top: 0, left: leftRightPadding, bottom: 0, right: leftRightPadding)
+        return .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -176,7 +171,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
      if collectionView.tag == 101 {
-        let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID2, for: indexPath) as! KeyCell
     
          //create a new integer
          currentNumber = currentNumber - 1
@@ -188,10 +183,17 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let lettr = selectedPerson.lettersArray[indexPath.item]
         
+        //let customFont = UIFont(name: "SBLHebrew", size: 30)
+        //menuCell.lettrLabel.font = customFont
+        //menuCell.digitsLabel.font = customFont
+        
+       
         let customFont = UIFont(name: "SBLHebrew", size: 30)
-        menuCell.lettrLabel.font = customFont
-        menuCell.lettrLabel.text = lettr
-        return menuCell
+        cell.digitsLabel.font = customFont
+        cell.digitsLabel.text = lettr
+        
+        
+        return cell
         
         } else {
             

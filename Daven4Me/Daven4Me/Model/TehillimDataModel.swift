@@ -11,10 +11,53 @@ import Foundation
 class TehillimDataModel: Codable {
     
     var tehillimDict = [String: String]()
+    //var tehillimChapters = [TehillimChapter]()
+    var chapters =  [String]()
     
     init() {
        setUpTehillimDict()
+       // setUpBookOfTehillim()
     }
+    
+    
+     func setUpBookOfTehillim() {
+        
+        var arrayOfChapStrings = createArrayOfChapterString()
+        createArrayOfChapterObjects(chapterStrings: arrayOfChapStrings)
+        
+    }
+    
+    func createArrayOfChapterString() -> [String] {
+       //load text file as one long string
+         let tehillimTextURL = Bundle.main.url(forResource: "RawTehillimText", withExtension: ".txt")
+         
+         let textString = try! String(contentsOf: tehillimTextURL!)
+         
+       
+         let splitByChapters = textString.components(separatedBy: "Chapter")
+          
+        print("the state of string is \(splitByChapters[0...3])")
+          
+          return splitByChapters
+    }
+    
+func createArrayOfChapterObjects(chapterStrings:[String]) -> [String] {
+        
+    var tehillimChapStrings =    [String]()
+        
+        for chapterString in chapterStrings {
+            //print("the state of chapter is \(chapterString)")
+            let chapter = chapterString
+            tehillimChapStrings.append(chapter)
+            
+            
+            chapters = tehillimChapStrings
+        }
+        return   tehillimChapStrings
+        
+    }
+    
+    
         
     func setUpTehillimDict() {
         let chapters = createArrayOfTehillimChapters()

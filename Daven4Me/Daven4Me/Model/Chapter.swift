@@ -15,3 +15,21 @@ struct Chapter {
     var paragraphs: [String: String]
     
 }
+
+struct TehillimChapter: Codable {
+        var text: String
+    }
+
+struct BookOfTehillim: Codable {
+    var tehillimChapters: [TehillimChapter]
+    
+}
+    
+    
+    
+    
+
+
+    
+    
+  

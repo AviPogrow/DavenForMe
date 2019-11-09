@@ -10,11 +10,12 @@ import UIKit
 
 class TehillimTableViewController: UITableViewController {
 
-    var tehillimDataModel : TehillimDataModel!
+    var tehillimDataModel  = TehillimDataModel()
+    //var chapters = [TehillimChapter]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     //chapters = tehillimDataModel.tehillimChapters
     }
 
     // MARK: - Table view data source
@@ -26,8 +27,8 @@ class TehillimTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-      
-        return 5//tehillimDataModel.chapters.count
+      return 2
+        //return tehillimDataModel.chapters.count
     }
 
     
@@ -37,9 +38,10 @@ class TehillimTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! ChapterTableCell
         
-         //let currentChapter = tehillimDataModel.chapters[indexPath.row]
-        
-         //cell.chapterLabel.text = currentChapter.number
+         let currentChapter = tehillimDataModel.chapters[indexPath.row]
+        print("the state of current chapter is \(currentChapter)")
+        cell.chapterLabel.text = currentChapter
+        cell.firstVerseLabel.text = currentChapter
 
         return cell
     }
