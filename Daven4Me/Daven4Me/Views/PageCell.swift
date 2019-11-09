@@ -51,8 +51,8 @@ class PageCell: UICollectionViewCell {
         
 override func layoutSubviews() {
        super.layoutSubviews()
-       layer.borderWidth = 1.50
-       layer.borderColor = UIColor.lightGray.cgColor
+       layer.borderWidth = 1.0
+       layer.borderColor = UIColor.red.cgColor
    }
     
     func addNewLineToEachSentence(paragraph: String) -> String {

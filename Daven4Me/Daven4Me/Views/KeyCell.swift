@@ -30,6 +30,11 @@ class KeyCell: UICollectionViewCell {
         
         digitsLabel.text = "8"
         
+        // check the value of .screenType
+        // if  it returns the case .iphone_5_52
+        // i.e. very small phones then
+        // set systemFont to 24
+        // else set font to 36
         //digitsLabel.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE ? .systemFont(ofSize: 24) : .systemFont(ofSize: 36)
         
          //let customFont = UIFont(name: "SBLHebrew", size: 34)

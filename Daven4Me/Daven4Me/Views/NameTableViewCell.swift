@@ -16,8 +16,9 @@ class NameTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        
-        let customFont = UIFont(name: "SBLHebrew", size: 38)
+        //if iphone 8 shrink font to 32
+        // else 38
+        let customFont = UIFont(name: "SBLHebrew", size: 30)
                
                
         nameLabel.font = customFont
@@ -29,7 +30,7 @@ class NameTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.borderWidth = 1.0
+        layer.borderWidth = 0.75
         layer.borderColor = UIColor.red.cgColor
         layer.cornerRadius = 25.0
         layer.masksToBounds = true

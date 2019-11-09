@@ -44,6 +44,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         let _ = UIFont(name: "SBLHebrew", size: 34)
         //navigationController?.navigationBar.titleTextAttributes = customFont
         //navigationItem.title = currentMispaleli.displayStringForName
+        navigationItem.titleView?.backgroundColor = UIColor.red 
         navigationItem.title = selectedPerson.nameToDisplay
         navigationController?.navigationBar.isTranslucent = false
     }

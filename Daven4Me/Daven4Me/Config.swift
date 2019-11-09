@@ -6,11 +6,7 @@
 
 import UIKit
 
-   
 
-  
-    
-  
 /*
 ‫
 ‫תהילים‬//
@@ -25,17 +21,22 @@ let secondColor = UIColor.lightGray
   //Red: 4, Green: 169, Blue: 235.
 
 
-
-
-
 extension UIDevice {
     
+    // is this an iphoneX?
+    // return true if main.height is 2436
     var iPhoneX: Bool {
         return UIScreen.main.nativeBounds.height == 2436
     }
+    
+    // is this a phone?
+    // UIDevice.iphone returns true if idiom is .phone
     var iPhone: Bool {
         return UIDevice.current.userInterfaceIdiom == .phone
     }
+    
+    // enum with cases and string values per case
+    // this enum is a switch statement that returns the screenType
     enum ScreenType: String {
         case iPhones_4_4S = "iPhone 4 or iPhone 4S"
         case iPhones_5_5s_5c_SE = "iPhone 5, iPhone 5s, iPhone 5c or iPhone SE"
@@ -46,6 +47,12 @@ extension UIDevice {
         case iPhone_XSMax = "iPhone XS Max"
         case unknown
     }
+    
+    
+    // given a points value for UIScreen.height
+    // we switch on that to return the screenType
+    // screenType is an enum case
+    //
     var screenType: ScreenType {
         switch UIScreen.main.nativeBounds.height {
         case 960:

@@ -33,10 +33,10 @@
                                     <rect key="frame" x="44" y="0.0" width="370" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שרה חנה בילא בת מרים יוכבד" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
-                                            <rect key="frame" x="16" y="16" width="338" height="80"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שרה-חנה-בילא-בת-מרים-יוכבד" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
+                                            <rect key="frame" x="50" y="16" width="304" height="31.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="36"/>
+                                            <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -45,7 +45,7 @@
                                     <constraints>
                                         <constraint firstItem="DFQ-aq-S46" firstAttribute="leading" secondItem="3ip-Y6-3EI" secondAttribute="leading" constant="16" id="0pF-zs-Gg6"/>
                                         <constraint firstItem="DFQ-aq-S46" firstAttribute="top" secondItem="3ip-Y6-3EI" secondAttribute="top" constant="16" id="J0d-eI-aiQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="DFQ-aq-S46" secondAttribute="trailing" constant="16" id="QMo-MO-5Ry"/>
+                                        <constraint firstAttribute="trailing" secondItem="DFQ-aq-S46" secondAttribute="trailing" constant="50" id="QMo-MO-5Ry"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -191,7 +191,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אברהם פנחס בן מרים" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-2i-eBa">
-                                <rect key="frame" x="16" y="127" width="382" height="60"/>
+                                <rect key="frame" x="16" y="139" width="382" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Zf5-Rm-23N"/>
@@ -200,13 +200,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsP-Co-nDa">
-                                <rect key="frame" x="347" y="60" width="51" height="51"/>
+                                <rect key="frame" x="331" y="73" width="75" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="5fq-5p-Q8b"/>
-                                    <constraint firstAttribute="width" constant="51" id="lfy-Hh-BWY"/>
-                                </constraints>
-                                <state key="normal" image="lightOnDark"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelPressed:" destination="YT9-7D-jAp" eventType="touchUpInside" id="HWR-pz-EQc"/>
                                 </connections>
@@ -214,15 +214,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lFw-2i-eBa" firstAttribute="top" secondItem="AsP-Co-nDa" secondAttribute="bottom" constant="16" id="1Yf-pR-nFd"/>
+                            <constraint firstItem="lFw-2i-eBa" firstAttribute="top" secondItem="AsP-Co-nDa" secondAttribute="bottom" constant="28" id="4ba-P1-5nT"/>
+                            <constraint firstItem="AsP-Co-nDa" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" constant="331" id="6Dg-Oa-Q9a"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="height" secondItem="Yfb-Mc-gAv" secondAttribute="height" multiplier="12:20" id="MI5-tw-NMG"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="bottom" secondItem="xuV-A5-NRQ" secondAttribute="bottom" constant="-20" id="Mzm-cN-4yF"/>
                             <constraint firstItem="lFw-2i-eBa" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" constant="16" id="Rff-sy-0kU"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" id="Seu-86-ihO"/>
-                            <constraint firstItem="xuV-A5-NRQ" firstAttribute="trailing" secondItem="AsP-Co-nDa" secondAttribute="trailing" constant="16" id="a8H-ky-v4r"/>
+                            <constraint firstAttribute="trailing" secondItem="AsP-Co-nDa" secondAttribute="trailing" constant="8" id="XAY-yv-LD7"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="trailing" secondItem="xuV-A5-NRQ" secondAttribute="trailing" id="bTK-Fb-tsX"/>
                             <constraint firstItem="xuV-A5-NRQ" firstAttribute="trailing" secondItem="lFw-2i-eBa" secondAttribute="trailing" constant="16" id="c2e-2H-q0X"/>
-                            <constraint firstItem="AsP-Co-nDa" firstAttribute="top" secondItem="xuV-A5-NRQ" secondAttribute="top" constant="16" id="jLY-UQ-jCR"/>
+                            <constraint firstItem="AsP-Co-nDa" firstAttribute="top" secondItem="xuV-A5-NRQ" secondAttribute="top" constant="29" id="uWh-uv-GxJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xuV-A5-NRQ"/>
                     </view>
@@ -236,13 +237,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKY-3a-Bgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="-812"/>
+            <point key="canvasLocation" x="1976.8115942028987" y="-812.27678571428567"/>
         </scene>
-        <!--119-->
+        <!--Tehillim119-->
         <scene sceneID="kK7-zq-NHv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y1E-FE-pt5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="119" id="vLn-Oq-Odc"/>
+                    <tabBarItem key="tabBarItem" title="Tehillim119" image="book" catalog="system" id="vLn-Oq-Odc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2h3-3G-oOX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -340,7 +341,7 @@
         <scene sceneID="2fW-sh-gFE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RaY-Ju-NEH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="AllTehillim" id="Opt-08-IOK"/>
+                    <tabBarItem key="tabBarItem" title="AllTehillim" image="doc.plaintext" catalog="system" selectedImage="doc.text" id="Opt-08-IOK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JjH-Sj-Na0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -357,7 +358,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lightOnDark" width="51.5" height="51.5"/>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="doc.plaintext" catalog="system" width="56" height="64"/>
+        <image name="doc.text" catalog="system" width="56" height="64"/>
     </resources>
     <color key="tintColor" red="0.015686274509803921" green="0.66274509803921566" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
