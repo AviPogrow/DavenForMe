@@ -10,8 +10,6 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
   
-    
-    
     var  tehillim1TextView =  UITextView()
     
     var page: String? {

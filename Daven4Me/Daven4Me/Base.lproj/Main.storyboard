@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="57f-hx-XLE" id="Giu-WP-8xL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="DavenForMe" largeTitleDisplayMode="always" id="Xr2-9I-Cf3">
+                    <navigationItem key="navigationItem" title="DavenForMe" id="Xr2-9I-Cf3">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="wO0-2f-e2w"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iGg-c4-eLe">
                             <connections>
@@ -67,6 +67,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="O43-n6-qdC" kind="show" id="d2G-h8-uRA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys4-HC-jzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-W3-UJ7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="101"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="101"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="mww-GZ-Bwq"/>
@@ -105,7 +108,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qTw-BV-ogX">
-                                <rect key="frame" x="0.0" y="145" width="414" height="751"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Tbu-iD-mBg">
                                     <size key="itemSize" width="399" height="751"/>
@@ -168,7 +171,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0F3-QQ-UAW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RP5-ao-42b"/>
+                    <navigationItem key="navigationItem" id="RP5-ao-42b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="iGB-hn-GnF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="menuBarCollectionView" destination="rwv-W3-UJ7" id="Ah0-fw-C0d"/>
                         <outlet property="tehillimTextCollectionView" destination="qTw-BV-ogX" id="kg1-ot-yoc"/>
@@ -176,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffP-ts-6ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975.36231884058" y="-149.33035714285714"/>
+            <point key="canvasLocation" x="1990" y="-175"/>
         </scene>
         <!--Add Edit View Controller-->
         <scene sceneID="zG9-S5-JhM">
