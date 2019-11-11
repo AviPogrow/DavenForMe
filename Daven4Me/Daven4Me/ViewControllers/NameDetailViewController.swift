@@ -241,57 +241,28 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension NameDetailViewController: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
       
-    }
-     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        
-        
         if scrollView.tag == 102 {
                      
-                     //get the page number of bottom collectionView
-                     let bottomPageNum = Int(scrollView.contentOffset.x / view.frame.width)
-                         
-                     print("the bottom page number is \(bottomPageNum)")
-                     
-                     //pass in the bottomPageNum to the topIndexReversedArray
-            let normalIndex = myIndexArray[bottomPageNum]
-                         
-                     let indexPath = IndexPath(item: normalIndex, section: 0)
+        //get the page number of bottom collectionView
+        let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
                         
-                     menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-                         
+        //var indexOfLastElement = selectedPerson.kapitelStringsArray.count - 1
+      
+        let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
+       // let topIndex = selectedPerson.kapitelStringsArray.index(indexOfLastElement, offsetBy: pageNum, limitedBy: 0)
+              
+            let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
+            
+            print("the index of last element is \(lastIndex)pageNumber is\(pageNum)\(topIndex!)")
+          
+            let indexPath = IndexPath(item: topIndex!, section: 0)
+                        
+            menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
         }
-        
-        
-        //let currentPoint = CGPoint(x: targetContentOffset.pointee.x, y: 50)
-        //let currentIndexPathFromPoint = tehillimTextCollectionView.indexPathForItem(at: currentPoint)
-        
-        //print("the current point is \(currentPoint)and currentIndexPath\(currentIndexPathFromPoint)")
-        
-        //let currentIndexPath = tehillimTextCollectionView.indexPath(for: //<#T##UICollectionViewCell#>)
-        
-       
-        
-        
-        //menuBarCollectionView.selectItem(at: currentIndexPathFromPoint, animated: true, scrollPosition: .top)
-        
     }
-    
-    }
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
+}
 
 extension NameDetailViewController: UIViewControllerTransitioningDelegate {
     /*
