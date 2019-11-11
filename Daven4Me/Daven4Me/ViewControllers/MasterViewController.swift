@@ -17,11 +17,70 @@ class MasterViewController: UITableViewController {
     let personService = PersonService()
     var people = [Person]()
     
+    
+     let segmentedControl: UISegmentedControl = {
+        let sc = UISegmentedControl(items: ["All","Loved Ones","Cholim","Yahrzeits"])
+        sc.selectedSegmentIndex = 0
+        sc.addTarget(self, action: #selector(handleSegmentChange), for: .valueChanged)
+        return sc
+    }()
+    
+    @objc fileprivate func handleSegmentChange() {
+        print(segmentedControl.selectedSegmentIndex)
+        /*
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            rowsToDisplay = games
+        case 1:
+            rowsToDisplay = tvShows
+        default:
+            rowsToDisplay = devices
+        }
+        
+        tableView.reloadData()
+     */
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+          navigationController?.title = "Mispalelis"
+        //customize text display on nav bar
+          let textColor = UIColor.red
+        
+        //let font = UIFont(descriptor: <#T##UIFontDescriptor#>, size: <#T##CGFloat#>)
+        let font = UIFont(name: "Rockwell", size: 24.0)
+        let attributes: [NSAttributedString.Key: Any] = [
+                    .foregroundColor: textColor,
+                    .font: font]
+        navigationItem.title = "Mispalelis"
+        navigationController?.navigationBar.titleTextAttributes = attributes
         
         navigationController?.view.semanticContentAttribute = .forceRightToLeft
         navigationController?.navigationBar.semanticContentAttribute = .forceRightToLeft
+        
+        
+       
+        //tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
+        
+        //let tableView = UITableView(frame: .zero, style: .plain)
+        
+        // let paddedStackView = UIStackView(arrangedSubviews: [segmentedControl])
+        //paddedStackView.layoutMargins = .init(top: 12, left: 12, bottom: 6, right: 12)
+        //paddedStackView.isLayoutMarginsRelativeArrangement = true
+        
+        ///let stackView = UIStackView(arrangedSubviews: [
+         //   paddedStackView, tableView
+         //   ])
+        //stackView.axis = .vertical
+        let insets = UIEdgeInsets(top: 58, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = insets
+        tableView.backgroundColor = UIColor.groupTableViewBackground
+        let segmentControlRect = CGRect(x: 16, y: -48, width: view.bounds.width - 24, height: segmentedControl.frame.height)
+        segmentedControl.frame = segmentControlRect
+        view.addSubview(segmentedControl)
+        //stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
+        
+        
     }
     
     // MARK:- Table View DataSource and Delegates

@@ -27,15 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          masterViewController.dataModel = dataModel
         
         
-        let tehillimNavController = tabBarController.viewControllers![1] as! UINavigationController
+        //let tehillimNavController = tabBarController.viewControllers![1] as! UINavigationController
         
         
         
-        let tehillimTableViewController = tehillimNavController.viewControllers[0] as! TehillimTableViewController
+        //let tehillimTableViewController = tehillimNavController.viewControllers[0] as! TehillimTableViewController
         
        
-        tehillimTableViewController.tehillimDataModel = tehillimDataModel
-        print("the state of tehillim chaptersi is \(tehillimDataModel.chapters)")
+        //tehillimTableViewController.tehillimDataModel = tehillimDataModel
+        //print("the state of tehillim chaptersi is \(tehillimDataModel.chapters)")
         
         
         return true
