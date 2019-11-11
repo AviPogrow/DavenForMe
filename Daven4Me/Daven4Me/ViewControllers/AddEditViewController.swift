@@ -239,7 +239,7 @@ extension AddEditViewController: HebrewKeyboardViewDelegate {
         //if edited object is nil we are creating a new object
         if  personToEdit == nil && !(textField.text?.isEmpty)! {
         
-            var personService = PersonService()
+            let personService = PersonService()
             let person = personService.createNewPersonFromName(name: textField.text!)
             
             delegate?.addEditViewController(self, didFinishAdding: person)

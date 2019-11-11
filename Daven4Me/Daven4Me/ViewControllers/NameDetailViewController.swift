@@ -98,8 +98,8 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
        let indexPath1 = IndexPath(item: index, section: 0)
        
        menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
-        let lastIndex = selectedPerson.kapitelStringsArray.count - 1
-        let indexPath = IndexPath(item: lastIndex, section: 0)
+        //let lastIndex = selectedPerson.kapitelStringsArray.count - 1
+        //let indexPath = IndexPath(item: lastIndex, section: 0)
         //tehillimTextCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     
@@ -115,7 +115,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var  size = CGSize(width: 44, height:  menuBarCollectionView.bounds.height/3.7)
+        let  size = CGSize(width: 44, height:  menuBarCollectionView.bounds.height/3.7)
         
         if collectionView.tag == 101 {
          
@@ -257,7 +257,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
                      print("the bottom page number is \(bottomPageNum)")
                      
                      //pass in the bottomPageNum to the topIndexReversedArray
-                     var normalIndex = myIndexArray[bottomPageNum]
+            let normalIndex = myIndexArray[bottomPageNum]
                          
                      let indexPath = IndexPath(item: normalIndex, section: 0)
                         

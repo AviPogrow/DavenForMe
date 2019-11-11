@@ -23,7 +23,7 @@ class PersonService {
         // 2 strings representing hebrew names
         
         let avrahamPinchus = "אברהם-פנחס-בן-מרים"
-        let sarahChana =  "שרה-חנה-בילא-בת-מרים-יוכבד"
+        //let sarahChana =  "שרה-חנה-בילא-בת-מרים-יוכבד"
         
         // convert raw strings to person objects
         let  person1 = createNewPersonFromName(name: avrahamPinchus)

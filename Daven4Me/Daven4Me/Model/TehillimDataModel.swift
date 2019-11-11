@@ -19,11 +19,10 @@ class TehillimDataModel: Codable {
        // setUpBookOfTehillim()
     }
     
-    
      func setUpBookOfTehillim() {
         
-        var arrayOfChapStrings = createArrayOfChapterString()
-        createArrayOfChapterObjects(chapterStrings: arrayOfChapStrings)
+        let arrayOfChapStrings = createArrayOfChapterString()
+        chapters = createArrayOfChapterObjects(chapterStrings: arrayOfChapStrings)
         
     }
     
@@ -50,8 +49,6 @@ func createArrayOfChapterObjects(chapterStrings:[String]) -> [String] {
             let chapter = chapterString
             tehillimChapStrings.append(chapter)
             
-            
-            chapters = tehillimChapStrings
         }
         return   tehillimChapStrings
         

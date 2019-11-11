@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController {
         let font = UIFont(name: "Rockwell", size: 24.0)
         let attributes: [NSAttributedString.Key: Any] = [
                     .foregroundColor: textColor,
-                    .font: font]
+                    .font: font as Any]
         navigationItem.title = "Mispalelis"
         navigationController?.navigationBar.titleTextAttributes = attributes
         
