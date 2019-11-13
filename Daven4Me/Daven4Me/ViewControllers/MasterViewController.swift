@@ -98,7 +98,12 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NameTableViewCell
         
         let person = dataModel.peopleArray[indexPath.row]
+        
+        let timeInterval = person.timeStamp.timeAgoDisplay()
+        print("the time interval is \(timeInterval)")
+
         cell.nameLabel.text = person.nameToDisplay
+        cell.timeIntervalLabel.text = "added by Avi Pogrow \(timeInterval) ago"
         
         return cell
     }
@@ -149,16 +154,18 @@ class MasterViewController: UITableViewController {
 extension MasterViewController: AddEditViewControllerDelegate {
     
     func addEditViewController(_ controller: AddEditViewController, didFinishAdding person: Person) {
- 
-        dataModel.peopleArray.insert(person, at: 0)
-        //dataModel.peopleArray.append(person)
+        
+        dataModel.peopleArray.append(person)
+        sortPeopleArray()
         tableView.reloadData()
     }
     
+    func sortPeopleArray() {
+        dataModel.peopleArray.sort(by: { list1, list2 in
+            return list1.timeStamp.compare(list2.timeStamp) == .orderedDescending })
+    }
+    
     func addEditViewController(_ controller: AddEditViewController, didFinishEditing person: Person) {
-        
-        // let index = dataModel.peopleArray.index(of: person)!
-        //dataModel.peopleArray[index] = person
         
         tableView.reloadData()
     }

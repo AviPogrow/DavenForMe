@@ -31,8 +31,6 @@ class PageCell: UICollectionViewCell {
         tehillim1TextView.textAlignment = .right
         tehillim1TextView.semanticContentAttribute = .forceRightToLeft
         
-        
-        
         let inset = UIEdgeInsets(top: -4 , left: 16, bottom: 8, right: 16)
         
         addSubview(tehillim1TextView)

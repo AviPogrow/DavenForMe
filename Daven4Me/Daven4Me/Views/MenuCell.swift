@@ -17,9 +17,9 @@ class MenuCell: UICollectionViewCell {
       fileprivate let defaultBGColor = UIColor.white
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .darkGray : defaultBGColor
-            digitsLabel.textColor = isHighlighted ? .white : .black
-            lettersLabel.textColor = isHighlighted ? .white : .black
+        //    backgroundColor = isHighlighted ? .darkGray : defaultBGColor
+      //      digitsLabel.textColor = isHighlighted ? .white : .black
+      //      lettersLabel.textColor = isHighlighted ? .white : .black
         }
     }
     
@@ -57,28 +57,28 @@ class MenuCell: UICollectionViewCell {
         digitsLabel.backgroundColor = isSelected ? UIColor.black : UIColor.white
         
             digitsLabel.textColor = isSelected ? UIColor.white: UIColor.black
-        //lettrLabel.layer.borderWidth = 1.0
+        digitsLabel.layer.borderWidth = 1.0
         
             digitsLabel.layer.borderColor = isSelected ? UIColor.black.cgColor: UIColor.white.cgColor
             
-             //layer.borderWidth = isSelected ?
-              //  3.0 : 1.0
+             layer.borderWidth = isSelected ?
+                3.0 : 1.0
             
             layer.cornerRadius = isSelected ?
                 3.0 : 3.0
             layer.masksToBounds =  isSelected ?
                 false : false
             
-          //  lettrLabel.layer.borderWidth = 2.1
-        //layer.borderColor = UIColor.lightGray.cgColor
-        //layer.cornerRadius = 0.0
+            digitsLabel.layer.borderWidth = 2.1
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.cornerRadius = 0.0
             
             
-            //layer.cornerRadius = 3.0
-            //layer.masksToBounds = false
-           // layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            //layer.shadowRadius = 0.5
-              //    layer.shadowOpacity = 0.85
+            layer.cornerRadius = 3.0
+            layer.masksToBounds = false
+            layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+            layer.shadowRadius = 0.5
+        layer.shadowOpacity = 0.85
         }
     }
     

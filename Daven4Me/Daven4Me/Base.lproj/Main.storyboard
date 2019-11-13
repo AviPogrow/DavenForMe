@@ -65,6 +65,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="DFQ-aq-S46" id="bZi-Hq-CBn"/>
+                                    <outlet property="timeIntervalLabel" destination="L4M-hK-vRq" id="fiu-18-nrJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

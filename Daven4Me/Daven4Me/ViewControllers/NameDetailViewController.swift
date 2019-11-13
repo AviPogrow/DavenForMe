@@ -203,6 +203,10 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return false 
+    }
     // courtesy of
     // http://stackoverflow.com/a/28896715/359578
     

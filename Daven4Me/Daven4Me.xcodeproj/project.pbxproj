@@ -23,6 +23,7 @@
 		CE5C734422B5532600F6B5E4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C734322B5532600F6B5E4 /* Config.swift */; };
 		CE5C734622B57C4300F6B5E4 /* SBL_Hbrw.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */; };
 		CE5C734822B5960500F6B5E4 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */; };
+		CE7C6545237C3B0C0076BDF1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */; };
 		CEBDB0FF22B692DB007E743A /* HebrewKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBDB0FE22B692DB007E743A /* HebrewKeyboardView.xib */; };
 		CEBDB10122B694A5007E743A /* HebrewKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDB10022B694A5007E743A /* HebrewKeyboardView.swift */; };
 		CEBDB12C22B9AE51007E743A /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDB11A22B95E9D007E743A /* KeyboardViewController.swift */; };
@@ -68,6 +69,7 @@
 		CE5C734322B5532600F6B5E4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SBL_Hbrw.ttf; sourceTree = "<group>"; };
 		CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
+		CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		CEBDB0FE22B692DB007E743A /* HebrewKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HebrewKeyboardView.xib; sourceTree = "<group>"; };
 		CEBDB10022B694A5007E743A /* HebrewKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HebrewKeyboardView.swift; sourceTree = "<group>"; };
 		CEBDB11A22B95E9D007E743A /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				CE5C733B22B52CE900F6B5E4 /* HebrewData.swift */,
 				CEE1514822BF853C00E4C9F4 /* Chapter.swift */,
 				CEE1514A22BF85CC00E4C9F4 /* TehillimDataModel.swift */,
+				CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE1514F22BF8B2100E4C9F4 /* ChapterTableCell.swift in Sources */,
+				CE7C6545237C3B0C0076BDF1 /* DateExtension.swift in Sources */,
 				CE5C733C22B52CE900F6B5E4 /* HebrewData.swift in Sources */,
 				CE5C734222B5528C00F6B5E4 /* KeyCell.swift in Sources */,
 				CE5C734422B5532600F6B5E4 /* Config.swift in Sources */,
