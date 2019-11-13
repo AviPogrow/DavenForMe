@@ -192,6 +192,9 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let kapitel = kapitelArray[indexPath.row]
         
+        // character emphasis vs word emphasis
+        //get the first character and change its color
+        
         let customFont = UIFont(name: "SBLHebrew", size: 28)
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel

@@ -23,7 +23,7 @@ class PageCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
            super.init(frame: frame)
-           
+           print("the page cell's direction is \(effectiveUserInterfaceLayoutDirection)")
            tehillim1TextView.isEditable = false
            tehillim1TextView.isSelectable = false
        

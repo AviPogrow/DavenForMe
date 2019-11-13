@@ -8,11 +8,6 @@
 
 import Foundation
 
-
-
-//let pastDate = Date(timeIntervalSinceNow: -60 * 60 * 24)
-
-
 //let dateString = pastDate.timeAgoDisplay()
 extension Date {
   func timeAgoDisplay() -> String {
@@ -28,7 +23,7 @@ extension Date {
     } else if secondsAgo < hour {
       return "\(secondsAgo / minute) minutes ago"
     } else if secondsAgo < day {
-      return "\(secondsAgo / hour) hours ago"
+      return "\(secondsAgo / hour) hour(s) ago"
     } else if secondsAgo < week {
       return "\(secondsAgo / day) days ago"
     }

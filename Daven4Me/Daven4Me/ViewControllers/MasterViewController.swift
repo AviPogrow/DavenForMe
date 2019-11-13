@@ -100,10 +100,26 @@ class MasterViewController: UITableViewController {
         let person = dataModel.peopleArray[indexPath.row]
         
         let timeInterval = person.timeStamp.timeAgoDisplay()
-        print("the time interval is \(timeInterval)")
+   
+        
+        let font = UIFont.systemFont(ofSize: 18)
+        let textColor = UIColor.red
+        let attributes: [NSAttributedString.Key: Any] = [
+                          .foregroundColor: textColor,
+                          .font: font]
+        
+        let swifty = "אברהם"
+        let swiftyEng = "Avraham"
+        let swiftString = "added by - \(swifty) -  \(timeInterval)"
+        
+        let finalAttrbString = NSMutableAttributedString(string: swiftString)
+        
+        let range = NSMakeRange(10, 11)
 
+        finalAttrbString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        
         cell.nameLabel.text = person.nameToDisplay
-        cell.timeIntervalLabel.text = "added by Avi Pogrow \(timeInterval) ago"
+        cell.timeIntervalLabel.attributedText = finalAttrbString
         
         return cell
     }
