@@ -44,10 +44,7 @@ class PageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
- 
-  
-        
-override func layoutSubviews() {
+    override func layoutSubviews() {
        super.layoutSubviews()
        layer.borderWidth = 1.0
        layer.borderColor = UIColor.red.cgColor

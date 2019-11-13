@@ -169,37 +169,24 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
      if collectionView.tag == 101 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID2, for: indexPath) as! KeyCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
     
-         //create a new integer
-         currentNumber = currentNumber - 1
-        //add the integer to array of integers
-    
-        //b. assign the number to the cell's reversedIndexProperty
-        
-        myIndexArray.append(currentNumber)
-        
         let lettr = selectedPerson.lettersArray[indexPath.item]
-        
-        //let customFont = UIFont(name: "SBLHebrew", size: 30)
-        //menuCell.lettrLabel.font = customFont
-        //menuCell.digitsLabel.font = customFont
-        
-       
+
         let customFont = UIFont(name: "SBLHebrew", size: 30)
         cell.digitsLabel.font = customFont
         cell.digitsLabel.text = lettr
-        
         
         return cell
         
         } else {
             
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: pageCellID, for: indexPath) as! PageCell
-    
+        
         var kapitelArray = [String]()
         kapitelArray = selectedPerson.kapitelStringsArray.reversed()
         
@@ -209,8 +196,9 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
-        //pageCell.page = kapitel
-      
+        let semantic = tehillimTextCollectionView.effectiveUserInterfaceLayoutDirection.rawValue
+        
+        print("the semantic is \(semantic)")
         return pageCell
     }
     
@@ -248,18 +236,14 @@ extension NameDetailViewController: UIScrollViewDelegate {
         //get the page number of bottom collectionView
         let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
                         
-        //var indexOfLastElement = selectedPerson.kapitelStringsArray.count - 1
       
         let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
-       // let topIndex = selectedPerson.kapitelStringsArray.index(indexOfLastElement, offsetBy: pageNum, limitedBy: 0)
-              
-            let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
+       
+        let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
             
-            print("the index of last element is \(lastIndex)pageNumber is\(pageNum)\(topIndex!)")
-          
-            let indexPath = IndexPath(item: topIndex!, section: 0)
+        let indexPath = IndexPath(item: topIndex!, section: 0)
                         
-            menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+        menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
         }
     }
 }

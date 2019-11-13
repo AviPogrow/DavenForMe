@@ -9,41 +9,57 @@ import UIKit
 
 class MenuCell: UICollectionViewCell {
     
-let lettrLabel = UILabel()
+  let digitsLabel = UILabel()
+    let lettersLabel = UILabel()
     
-    var letter: String? {
-        
+    // give  a grey background color
+    //fileprivate let defaultBGColor = UIColor(white: 0.9, alpha: 1)
+      fileprivate let defaultBGColor = UIColor.white
+    override var isHighlighted: Bool {
         didSet {
-          guard let letter = letter else { return }
-          lettrLabel.text = letter
+            backgroundColor = isHighlighted ? .darkGray : defaultBGColor
+            digitsLabel.textColor = isHighlighted ? .white : .black
+            lettersLabel.textColor = isHighlighted ? .white : .black
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.borderWidth = 0.2
-        layer.borderColor = UIColor.lightGray.cgColor
-        //layer.cornerRadius = 0.0
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = defaultBGColor
+        
+        digitsLabel.text = "8"
+        
+        // check the value of .screenType
+        // if  it returns the case .iphone_5_52
+        // i.e. very small phones then
+        // set systemFont to 24
+        // else set font to 36
+        //digitsLabel.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE ? .systemFont(ofSize: 24) : .systemFont(ofSize: 36)
+        
+         //let customFont = UIFont(name: "SBLHebrew", size: 34)
         
         
-        layer.cornerRadius = 4.0
-        layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
-        layer.shadowRadius = 0.2
-        layer.shadowOpacity = 0.82
+        //digitsLabel.font = UIFontMetrics.default.scaledFont(for: customFont)
+        //digitsLabel.adjustsFontForContentSizeCategory = true
         
+        //digitsLabel.font = UIFontMetrics.default.scaledFont(for: customFont)
         
+        digitsLabel.textAlignment = .center
         
-       
+        digitsLabel.frame = bounds
+        addSubview(digitsLabel)
+        
     }
     
-    override var isSelected: Bool {
+     override var isSelected: Bool {
         didSet {
          
-        lettrLabel.backgroundColor = isSelected ? UIColor.black : UIColor.white
-        lettrLabel.textColor = isSelected ? UIColor.white: UIColor.black
+        digitsLabel.backgroundColor = isSelected ? UIColor.black : UIColor.white
+        
+            digitsLabel.textColor = isSelected ? UIColor.white: UIColor.black
         //lettrLabel.layer.borderWidth = 1.0
-        lettrLabel.layer.borderColor = isSelected ? UIColor.black.cgColor: UIColor.white.cgColor
+        
+            digitsLabel.layer.borderColor = isSelected ? UIColor.black.cgColor: UIColor.white.cgColor
             
              //layer.borderWidth = isSelected ?
               //  3.0 : 1.0
@@ -66,24 +82,19 @@ let lettrLabel = UILabel()
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.white
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        let textColor = UIColor.black
-        lettrLabel.textColor = textColor
-        //lettrLabel.backgroundColor = UIColor.lightText
-        lettrLabel.textAlignment = .center
-        //lettrLabel.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE ? .systemFont(ofSize: 34) : .systemFont(ofSize: 34)
-        
-        addSubview(lettrLabel)
-        //lettrLabel.frame = bounds
-        lettrLabel.fillSuperview()
+        layer.cornerRadius = 3.0
+        layer.masksToBounds = false
+        layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        layer.shadowRadius = 1.0
+        layer.shadowOpacity = 0.85
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-  }
+}
 
 

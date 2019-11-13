@@ -17,6 +17,7 @@ class MasterViewController: UITableViewController {
     let personService = PersonService()
     var people = [Person]()
     
+
     
      let segmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["All","Loved Ones","Cholim","Yahrzeits"])
@@ -127,6 +128,10 @@ class MasterViewController: UITableViewController {
         let selectedPerson = dataModel.peopleArray[indexPath.row]
         controller.selectedPerson = selectedPerson
         
+        DispatchQueue.main.async {
+                   tableView.deselectRow(at: indexPath, animated: true)
+               }
+        
         //if selectedPerson.lettersArray.count > 0  {
         navigationController?.pushViewController(controller, animated: true)
          // }
@@ -145,7 +150,8 @@ extension MasterViewController: AddEditViewControllerDelegate {
     
     func addEditViewController(_ controller: AddEditViewController, didFinishAdding person: Person) {
  
-        dataModel.peopleArray.append(person)
+        dataModel.peopleArray.insert(person, at: 0)
+        //dataModel.peopleArray.append(person)
         tableView.reloadData()
     }
     
