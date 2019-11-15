@@ -103,24 +103,46 @@ class MasterViewController: UITableViewController {
    
         
         let font = UIFont.systemFont(ofSize: 18)
+        let customFontName = "SBLHebrew"
+        let customFont = UIFont(name: customFontName, size: 16)
         let textColor = UIColor.red
+        
         let attributes: [NSAttributedString.Key: Any] = [
                           .foregroundColor: textColor,
-                          .font: font]
+                          .font: customFont]
         
-        let swifty = "אברהם"
-        let swiftyEng = "Avraham"
-        let swiftString = "added by - \(swifty) -  \(timeInterval)"
+
+        // add unicode directional character
+        let lightWeightLTR = "\u{200E}"
+
         
-        let finalAttrbString = NSMutableAttributedString(string: swiftString)
+        let aviStringHeb = "אברהם"
+        let aviStringEng = "Avraham"
+        
+        let addedBy = "added by - "
+        let userName = aviStringHeb
+        let timeInterv = timeInterval
+        let spaceDashSpace = " - "
+
+        let aviStringHebrew = "\(lightWeightLTR)"  + addedBy + userName + " "  + timeInterv
+        
+        
+
+        let strongRTLIsolate = "\u{2066}"
+
+        let aviString2 = "\(strongRTLIsolate)" + " " + addedBy + "\(aviStringHeb)" + spaceDashSpace + "\(strongRTLIsolate)" + " " + timeInterv
+
+
+        
+        //let attrbString = NSMutableAttributedString(string: aviStringHeb, attributes: attributes)
         
         let range = NSMakeRange(10, 11)
 
-        finalAttrbString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        //attrbString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
         
         cell.nameLabel.text = person.nameToDisplay
-        cell.timeIntervalLabel.attributedText = finalAttrbString
-        
+        //cell.timeIntervalLabel.attributedText = attrbString
+        cell.timeIntervalLabel.text = aviString2
         return cell
     }
     

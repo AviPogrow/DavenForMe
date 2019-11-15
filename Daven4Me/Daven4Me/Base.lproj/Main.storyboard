@@ -110,7 +110,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qTw-BV-ogX">
-                                <rect key="frame" x="0.0" y="145" width="414" height="751"/>
+                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Tbu-iD-mBg">
                                     <size key="itemSize" width="399" height="751"/>
@@ -124,9 +124,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rwv-W3-UJ7" firstAttribute="leading" secondItem="qTw-BV-ogX" secondAttribute="leading" id="3x4-MI-Ac7"/>
-                            <constraint firstItem="qTw-BV-ogX" firstAttribute="top" secondItem="rwv-W3-UJ7" secondAttribute="bottom" id="4Iv-Vs-tKT"/>
+                            <constraint firstItem="qTw-BV-ogX" firstAttribute="top" secondItem="rwv-W3-UJ7" secondAttribute="bottom" constant="8" id="4Iv-Vs-tKT"/>
                             <constraint firstItem="qTw-BV-ogX" firstAttribute="trailing" secondItem="0F3-QQ-UAW" secondAttribute="trailing" id="9Bb-0C-moQ"/>
-                            <constraint firstAttribute="bottom" secondItem="qTw-BV-ogX" secondAttribute="bottom" id="GV1-8w-meL"/>
+                            <constraint firstItem="0F3-QQ-UAW" firstAttribute="bottom" secondItem="qTw-BV-ogX" secondAttribute="bottom" id="GV1-8w-meL"/>
                             <constraint firstItem="rwv-W3-UJ7" firstAttribute="top" secondItem="0F3-QQ-UAW" secondAttribute="top" id="IQk-ES-CoJ"/>
                             <constraint firstItem="rwv-W3-UJ7" firstAttribute="trailing" secondItem="qTw-BV-ogX" secondAttribute="trailing" id="YJn-q0-1MY"/>
                             <constraint firstItem="qTw-BV-ogX" firstAttribute="leading" secondItem="0F3-QQ-UAW" secondAttribute="leading" id="ypV-qr-TbA"/>
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffP-ts-6ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="-445"/>
+            <point key="canvasLocation" x="1230.4347826086957" y="-445.3125"/>
         </scene>
         <!--Add Edit View Controller-->
         <scene sceneID="zG9-S5-JhM">
