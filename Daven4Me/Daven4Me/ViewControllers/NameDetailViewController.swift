@@ -192,6 +192,30 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let kapitel = kapitelArray[indexPath.row]
         
+       
+    
+        let paragraphString = kapitelArray[indexPath.row]
+          var arrayOfWords = [String]()
+          
+        var arrayOfSentences = [String]()
+        print("the paragraphString is\(paragraphString)")
+        
+        
+        
+        paragraphString.enumerateSubstrings(in: paragraphString.startIndex...,
+                                            options: .bySentences)
+            { sentence, _, _ , Boolean in
+              if let sentence = sentence {
+                
+                arrayOfSentences.append(sentence)
+                
+                print("\(arrayOfSentences) there are \(arrayOfSentences.count) sentences in this kapitel")
+              }
+            }
+          
+       
+        
+        
         // character emphasis vs word emphasis
         //get the first character and change its color
         

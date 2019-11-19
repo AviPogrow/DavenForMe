@@ -48,11 +48,14 @@ class MasterViewController: UITableViewController {
         //customize text display on nav bar
           let textColor = UIColor.red
         
-        //let font = UIFont(descriptor: <#T##UIFontDescriptor#>, size: <#T##CGFloat#>)
+       
         let font = UIFont(name: "Rockwell", size: 24.0)
         let attributes: [NSAttributedString.Key: Any] = [
                     .foregroundColor: textColor,
                     .font: font as Any]
+        
+        
+        
         navigationItem.title = "Mispalelis"
         navigationController?.navigationBar.titleTextAttributes = attributes
         
@@ -81,6 +84,10 @@ class MasterViewController: UITableViewController {
         view.addSubview(segmentedControl)
         //stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
         
+        // scale tableView to its intrinsic content
+        //tableView.rowHeight = UITableView.automaticDimension
+        //tableView.estimatedRowHeight = 175
+        
         
     }
     
@@ -90,7 +97,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return view.bounds.height / 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,47 +108,28 @@ class MasterViewController: UITableViewController {
         
         let timeInterval = person.timeStamp.timeAgoDisplay()
    
-        
         let font = UIFont.systemFont(ofSize: 18)
         let customFontName = "SBLHebrew"
         let customFont = UIFont(name: customFontName, size: 16)
         let textColor = UIColor.red
         
-        let attributes: [NSAttributedString.Key: Any] = [
-                          .foregroundColor: textColor,
-                          .font: customFont]
-        
-
         // add unicode directional character
         let lightWeightLTR = "\u{200E}"
 
-        
         let aviStringHeb = "אברהם"
-        let aviStringEng = "Avraham"
-        
+    
         let addedBy = "added by - "
         let userName = aviStringHeb
         let timeInterv = timeInterval
         let spaceDashSpace = " - "
 
-        let aviStringHebrew = "\(lightWeightLTR)"  + addedBy + userName + " "  + timeInterv
-        
-        
-
         let strongRTLIsolate = "\u{2066}"
 
         let aviString2 = "\(strongRTLIsolate)" + " " + addedBy + "\(aviStringHeb)" + spaceDashSpace + "\(strongRTLIsolate)" + " " + timeInterv
 
-
-        
-        //let attrbString = NSMutableAttributedString(string: aviStringHeb, attributes: attributes)
-        
         let range = NSMakeRange(10, 11)
-
-        //attrbString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
-        
         cell.nameLabel.text = person.nameToDisplay
-        //cell.timeIntervalLabel.attributedText = attrbString
+        
         cell.timeIntervalLabel.text = aviString2
         return cell
     }
