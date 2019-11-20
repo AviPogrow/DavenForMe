@@ -10,6 +10,9 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     var dataModel =  DataModel()
     
     let cellIdentifier = "NameTableViewCell"
@@ -55,7 +58,7 @@ class MasterViewController: UITableViewController {
                     .font: font as Any]
         
         
-        
+        navigationItem.leftBarButtonItem = editButtonItem
         navigationItem.title = "Mispalelis"
         navigationController?.navigationBar.titleTextAttributes = attributes
         
@@ -97,7 +100,8 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.bounds.height / 6
+        print("the height of the row is \(view.bounds)\(view.bounds.height/4)")
+        return view.bounds.height / 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,6 +146,18 @@ class MasterViewController: UITableViewController {
         present(controller, animated: true, completion: nil)
         
     }
+    
+    
+    //keep track if view controller is in edit mode the user can't open the nameEditor scene
+      override func setEditing(_ editing: Bool, animated: Bool) {
+          super.setEditing(editing, animated: animated)
+          
+          if editing {
+           addButton.isEnabled = false
+           } else {
+           addButton.isEnabled = true
+           }
+      }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         

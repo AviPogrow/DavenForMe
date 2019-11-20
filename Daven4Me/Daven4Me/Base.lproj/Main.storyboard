@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9P-V4-wE1">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -21,31 +21,31 @@
             <objects>
                 <tableViewController storyboardIdentifier="MasterViewController" id="57f-hx-XLE" customClass="MasterViewController" customModule="Daven4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j1q-HA-FKf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="NameTableViewCell" rowHeight="200" id="YLE-gK-pff" customClass="NameTableViewCell" customModule="Daven4Me" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceRightToLeft" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YLE-gK-pff" id="3ip-Y6-3EI">
-                                    <rect key="frame" x="63" y="0.0" width="351" height="200"/>
+                                    <rect key="frame" x="59" y="0.0" width="316" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שרה-חנה-בילא-בת-מרים-יוכבד" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
-                                            <rect key="frame" x="50" y="16" width="285" height="62.5"/>
+                                            <rect key="frame" x="50" y="16" width="250" height="62.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarah Chana Baila Bas Miriam Yocheved" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-Jf-uCn">
-                                            <rect key="frame" x="71" y="86.5" width="259" height="17"/>
+                                            <rect key="frame" x="36" y="86.5" width="259" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by Avi Pogrow - 19 seconds ago" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4M-hK-vRq">
-                                            <rect key="frame" x="79.5" y="111.5" width="252.5" height="17"/>
+                                            <rect key="frame" x="44.5" y="111.5" width="252.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -75,13 +75,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="DavenForMe" id="Xr2-9I-Cf3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="wO0-2f-e2w"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iGg-c4-eLe">
                             <connections>
                                 <action selector="addNameTapped:" destination="57f-hx-XLE" id="nVd-eD-6QM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="iGg-c4-eLe" id="kqN-n9-uyZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys4-HC-jzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,11 +94,11 @@
             <objects>
                 <viewController storyboardIdentifier="NameDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O43-n6-qdC" customClass="NameDetailViewController" customModule="Daven4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3RB-1S-cDg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-W3-UJ7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="101"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="mww-GZ-Bwq"/>
@@ -110,7 +112,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qTw-BV-ogX">
-                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Tbu-iD-mBg">
                                     <size key="itemSize" width="399" height="751"/>
@@ -150,15 +152,15 @@
             <objects>
                 <viewController storyboardIdentifier="AddEditViewController" id="YT9-7D-jAp" customClass="AddEditViewController" customModule="Daven4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yfb-Mc-gAv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-Vg-ohI" userLabel="ContainerView">
-                                <rect key="frame" x="0.0" y="304.5" width="414" height="537.5"/>
+                                <rect key="frame" x="0.0" y="247" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אברהם פנחס בן מרים" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-2i-eBa">
-                                <rect key="frame" x="16" y="139" width="382" height="60"/>
+                                <rect key="frame" x="16" y="108.5" width="343" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Zf5-Rm-23N"/>
@@ -167,10 +169,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsP-Co-nDa">
-                                <rect key="frame" x="331" y="73" width="75" height="38"/>
+                                <rect key="frame" x="307.5" y="29" width="51.5" height="51.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" image="darkOnLight">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -182,12 +184,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lFw-2i-eBa" firstAttribute="top" secondItem="AsP-Co-nDa" secondAttribute="bottom" constant="28" id="4ba-P1-5nT"/>
-                            <constraint firstItem="AsP-Co-nDa" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" constant="331" id="6Dg-Oa-Q9a"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="height" secondItem="Yfb-Mc-gAv" secondAttribute="height" multiplier="12:20" id="MI5-tw-NMG"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="bottom" secondItem="xuV-A5-NRQ" secondAttribute="bottom" constant="-20" id="Mzm-cN-4yF"/>
                             <constraint firstItem="lFw-2i-eBa" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" constant="16" id="Rff-sy-0kU"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="leading" secondItem="xuV-A5-NRQ" secondAttribute="leading" id="Seu-86-ihO"/>
-                            <constraint firstAttribute="trailing" secondItem="AsP-Co-nDa" secondAttribute="trailing" constant="8" id="XAY-yv-LD7"/>
+                            <constraint firstAttribute="trailing" secondItem="AsP-Co-nDa" secondAttribute="trailing" constant="16" id="XAY-yv-LD7"/>
                             <constraint firstItem="2fq-Vg-ohI" firstAttribute="trailing" secondItem="xuV-A5-NRQ" secondAttribute="trailing" id="bTK-Fb-tsX"/>
                             <constraint firstItem="xuV-A5-NRQ" firstAttribute="trailing" secondItem="lFw-2i-eBa" secondAttribute="trailing" constant="16" id="c2e-2H-q0X"/>
                             <constraint firstItem="AsP-Co-nDa" firstAttribute="top" secondItem="xuV-A5-NRQ" secondAttribute="top" constant="29" id="uWh-uv-GxJ"/>
@@ -213,7 +214,7 @@
                     <tabBarItem key="tabBarItem" title="Tehillim119" image="house.fill" catalog="system" id="vLn-Oq-Odc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2h3-3G-oOX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -252,7 +253,7 @@
             <objects>
                 <tableViewController id="aOl-bg-q2x" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="K1Q-Cm-yCX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -273,7 +274,7 @@
                 <navigationController id="DNk-gr-cbT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Message" image="message" catalog="system" id="9vP-wu-ORd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R2L-bB-Of3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -289,7 +290,7 @@
             <objects>
                 <tableViewController id="GLO-p8-v0m" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z0H-2y-x0p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -309,7 +310,7 @@
                 <navigationController id="B7p-H5-sXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Account" image="person.circle.fill" catalog="system" id="Iee-nH-rKD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCA-ZN-EQV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -325,7 +326,7 @@
             <objects>
                 <tableViewController id="9mI-Qk-odI" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cuj-mS-AYA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -345,7 +346,7 @@
                 <navigationController id="xHU-YO-hpl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mispalelim" image="person.3" catalog="system" id="KYg-6l-Pkw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Umu-WB-gH5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -363,7 +364,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Opt-08-IOK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JjH-Sj-Na0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -374,6 +375,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="darkOnLight" width="51.5" height="51.5"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="message" catalog="system" width="64" height="56"/>
