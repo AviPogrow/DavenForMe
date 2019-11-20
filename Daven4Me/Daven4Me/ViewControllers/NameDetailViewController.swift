@@ -198,7 +198,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
           var arrayOfWords = [String]()
           
         var arrayOfSentences = [String]()
-        print("the paragraphString is\(paragraphString)")
+        //print("the paragraphString is\(paragraphString)")
         
         
         
@@ -209,7 +209,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
                 
                 arrayOfSentences.append(sentence)
                 
-                print("\(arrayOfSentences) there are \(arrayOfSentences.count) sentences in this kapitel")
+               // print("\(arrayOfSentences) there are \(arrayOfSentences.count) sentences in this kapitel")
               }
             }
           
@@ -225,7 +225,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let semantic = tehillimTextCollectionView.effectiveUserInterfaceLayoutDirection.rawValue
         
-        print("the semantic is \(semantic)")
+        //print("the semantic is \(semantic)")
         return pageCell
     }
     
@@ -275,6 +275,12 @@ extension NameDetailViewController: UIScrollViewDelegate {
         let indexPath = IndexPath(item: topIndex!, section: 0)
                         
         menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+            
+            
+        //if indexPath is at the end then set it to start
+        selectedPerson.lastLetterRead = indexPath.item
+                   
+      
         }
     }
 }

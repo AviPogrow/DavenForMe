@@ -16,6 +16,7 @@ class  Person: NSObject, Codable {
     var kapitelStringsArray = [String]()
     var timeStamp = Date()
      var itemID = -1
+    var lastLetterRead = 0
     
     
     init(nameToDisplay: String, keysForDict:[String], lettersArray: [String], kapitelStringsArray: [String], timeStame: Date) {

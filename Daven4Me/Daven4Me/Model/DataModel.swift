@@ -35,6 +35,33 @@ class DataModel {
         UserDefaults.standard.register(defaults: dictionary)
     }
     
+     var indexOfSelectedMispaleli: Int {
+       
+       get {
+       
+           return UserDefaults.standard.integer(forKey: "PersonIndex")
+       }
+       
+       set {
+           UserDefaults.standard.set(newValue, forKey: "PersonIndex")
+           UserDefaults.standard.synchronize()
+           }
+        }
+    
+    var indexOfCurrentKapitel: Int {
+    
+    get {
+    
+        return UserDefaults.standard.integer(forKey: "KapitelIndex")
+    }
+    
+    set {
+        UserDefaults.standard.set(newValue, forKey: "KapitelIndex")
+        UserDefaults.standard.synchronize()
+        }
+     }
+    
+    
     func handleFirstTime() {
       let userDefaults = UserDefaults.standard
       let firstTime = userDefaults.bool(forKey: "FirstTime")

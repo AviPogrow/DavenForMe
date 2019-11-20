@@ -46,6 +46,8 @@ class PersonService {
                arrayOfLetters = createLettersArrayFromName(name: name)
                keysArray = createKeyArrayFromLettersArray(arrayOflettrs: arrayOfLetters)
                kapitArray = convertKeyArryToKapitArray(kapitlKeys: keysArray)
+        
+          
                
                // init the person instance and set its properties
         let person = Person(nameToDisplay: name,keysForDict: keysArray, lettersArray: arrayOfLetters, kapitelStringsArray: kapitArray,timeStame: Date())

@@ -30,7 +30,7 @@ class MasterViewController: UITableViewController {
     }()
     
     @objc fileprivate func handleSegmentChange() {
-        print(segmentedControl.selectedSegmentIndex)
+       // print(segmentedControl.selectedSegmentIndex)
         /*
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -92,7 +92,31 @@ class MasterViewController: UITableViewController {
         //tableView.estimatedRowHeight = 175
         
         
+        //3. get the value for the key "indexOfSelectedChecklist"
+            let index = dataModel.indexOfSelectedMispaleli
+            
+        
+            //if index is NOT -1 then we need to segue
+            if index != -1 {
+            
+            let indexPath = IndexPath(row: index, section: 0)
+           
+            let person = dataModel.peopleArray[indexPath.row]
+              
+            let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
+                
+            controller.dataModel = dataModel
+            controller.selectedPerson = person
+                
+            navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        
     }
+    
+    
+    
+    
     
     // MARK:- Table View DataSource and Delegates
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,7 +124,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("the height of the row is \(view.bounds)\(view.bounds.height/4)")
+   
         return view.bounds.height / 4
     }
     
@@ -172,6 +196,8 @@ class MasterViewController: UITableViewController {
       if !isEditing {
         let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
          
+        dataModel.indexOfSelectedMispaleli = indexPath.row
+        
         let selectedPerson = dataModel.peopleArray[indexPath.row]
         controller.selectedPerson = selectedPerson
         
