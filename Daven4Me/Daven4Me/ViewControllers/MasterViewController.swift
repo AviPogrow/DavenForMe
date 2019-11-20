@@ -96,7 +96,8 @@ class MasterViewController: UITableViewController {
             let index = dataModel.indexOfSelectedMispaleli
             
         
-            //if index is NOT -1 then we need to segue
+            /*
+           //if index is NOT -1 then we need to segue
             if index != -1 {
             
             let indexPath = IndexPath(row: index, section: 0)
@@ -105,11 +106,12 @@ class MasterViewController: UITableViewController {
               
             let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
                 
-            controller.dataModel = dataModel
+            
             controller.selectedPerson = person
                 
             navigationController?.pushViewController(controller, animated: true)
         }
+ ````*/
         
         
     }
