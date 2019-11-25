@@ -150,12 +150,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarCollectionView" destination="rwv-W3-UJ7" id="Ah0-fw-C0d"/>
+                        <outlet property="pageControl" destination="j1v-gn-fec" id="Dfn-Ft-2yM"/>
                         <outlet property="tehillimTextCollectionView" destination="qTw-BV-ogX" id="kg1-ot-yoc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffP-ts-6ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="-445.72713643178412"/>
+            <point key="canvasLocation" x="1172" y="-648"/>
         </scene>
         <!--Add Edit View Controller-->
         <scene sceneID="zG9-S5-JhM">

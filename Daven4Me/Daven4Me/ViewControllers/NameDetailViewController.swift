@@ -14,6 +14,9 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
     
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     let cellId = "cellId"
     let cellID2 = "cellId2"
     let pageCellID = "pageCellID"
@@ -297,6 +300,8 @@ extension NameDetailViewController: UIScrollViewDelegate {
         // index path
 
         menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
+            
+            pageControl.currentPage = lastOpenIndex
                    
       
         }
