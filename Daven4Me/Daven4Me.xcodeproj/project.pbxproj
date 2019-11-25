@@ -426,6 +426,7 @@
 				CODE_SIGN_ENTITLEMENTS = Daven4Me/Daven4Me.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P77A2352BM;
 				INFOPLIST_FILE = Daven4Me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -447,6 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = Daven4Me/Daven4Me.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P77A2352BM;
 				INFOPLIST_FILE = Daven4Me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -21,6 +21,58 @@ let secondColor = UIColor.lightGray
   //Red: 4, Green: 169, Blue: 235.
 
 
+func insertDirectionIsolates(userName: Person) -> String {
+      
+      let aviStringHeb = userName.nameToDisplay
+      
+      let timeInterval = userName.timeStamp.timeAgoDisplay()
+      
+      let addedByAviSubString =
+      String.localizedStringWithFormat(
+         NSLocalizedString("added by %@ - %@",
+                           comment: "added by user label"), aviStringHeb, timeInterval)
+      let scalars = String.localizedStringWithFormat(addedByAviSubString)
+            .unicodeScalars.map { "U+\(String(format: "%04X", $0.value))" }
+      
+      //Under the hood of the localized string with format we see two Unicode Characters around the hebrew
+
+      //2068 - First String Isolate
+      //2069 - Pop Directional Isolate
+      
+      print(scalars)
+      
+      return addedByAviSubString
+      
+  }
+  
+  
+  func manuelInsertDirectionaIsolates(person: Person) -> String {
+      
+      let timeInterval = person.timeStamp.timeAgoDisplay()
+      
+      // add unicode directional character
+            let lightWeightLTR = "\u{200E}"
+
+      var  aviStringHeb = person.nameToDisplay
+        
+            let addedBy = "added by - "
+            let userName = aviStringHeb
+            let timeInterv = timeInterval
+            let spaceDashSpace = " - "
+
+            let strongRTLIsolate = "\u{2066}"
+
+      
+  let aviString2 = "\(strongRTLIsolate)" + " " + addedBy + "\(aviStringHeb)" + spaceDashSpace + "\(strongRTLIsolate)" + " " + timeInterv
+  
+   return aviString2
+  }
+
+   
+
+
+
+
 extension UIDevice {
     
     // is this an iphoneX?

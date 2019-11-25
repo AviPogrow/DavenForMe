@@ -48,18 +48,7 @@ class DataModel {
            }
         }
     
-    var indexOfCurrentKapitel: Int {
-    
-    get {
-    
-        return UserDefaults.standard.integer(forKey: "KapitelIndex")
-    }
-    
-    set {
-        UserDefaults.standard.set(newValue, forKey: "KapitelIndex")
-        UserDefaults.standard.synchronize()
-        }
-     }
+
     
     
     func handleFirstTime() {

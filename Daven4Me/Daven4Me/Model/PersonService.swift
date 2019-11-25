@@ -18,6 +18,9 @@ class PersonService {
         tehillim119Dictionary = tehillimDataModel.tehillimDict
     }
     
+    
+   
+    
     func createArrayOfPeople() -> Person {
         
         // 2 strings representing hebrew names

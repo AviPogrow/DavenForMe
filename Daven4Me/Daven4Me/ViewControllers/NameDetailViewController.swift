@@ -89,6 +89,8 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
       
     }
     
+   
+    
     override func viewDidAppear(_ animated: Bool) {
         
         //tehillimTextCollectionView.reloadData()
@@ -274,11 +276,25 @@ extension NameDetailViewController: UIScrollViewDelegate {
             
         let indexPath = IndexPath(item: topIndex!, section: 0)
                         
-        menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+        //menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             
             
         //if indexPath is at the end then set it to start
-        selectedPerson.lastLetterRead = indexPath.item
+        
+            
+        // set the index of current kapit and persist it
+        selectedPerson.indexOfCurrentKapitel = topIndex!
+        
+            
+        let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
+        let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
+         
+        print("the person object state is \(selectedPerson.indexOfCurrentKapitel)")
+            
+        //if lastLetterRead is not zero then select the item at
+        // index path
+
+        menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
                    
       
         }
