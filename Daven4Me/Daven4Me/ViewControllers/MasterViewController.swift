@@ -116,10 +116,6 @@ class MasterViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
     // MARK:- Table View DataSource and Delegates
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.peopleArray.count
@@ -147,14 +143,13 @@ class MasterViewController: UITableViewController {
         
         // generate special unicode string for bi directional
         // line of text
-        let userTimeIntString = insertDirectionIsolates(userName: person) 
+        let userTimeIntString = insertDirectionIsolates(userName: person)
         
         cell.timeIntervalLabel.text = userTimeIntString
         return cell
     }
     
    
-    
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let controller = storyboard!.instantiateViewController(withIdentifier: "AddEditViewController") as! AddEditViewController
         controller.delegate = self
