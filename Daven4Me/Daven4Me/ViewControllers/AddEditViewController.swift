@@ -28,6 +28,12 @@ class AddEditViewController: UIViewController {
          "ץ","ק","ר","ש","ת"
     ]
     
+     let avi = "שגששגדקכקהבגגגבש"
+    let אב׳ = "avi"
+    
+    let אבי  =  "שגששגדקכקהבגגגבש"
+    
+    
     let sect2Strings = ["↪︎","space","save"]
     
     @IBOutlet weak var textField: UITextField!

@@ -29,6 +29,8 @@ class MasterViewController: UITableViewController {
         return sc
     }()
     
+   
+    
     @objc fileprivate func handleSegmentChange() {
        // print(segmentedControl.selectedSegmentIndex)
         /*

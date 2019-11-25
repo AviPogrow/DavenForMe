@@ -225,6 +225,8 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
+        pageCell.tehillim1TextView.backgroundColor = UIColor.white
+        
         let semantic = tehillimTextCollectionView.effectiveUserInterfaceLayoutDirection.rawValue
         
         //print("the semantic is \(semantic)")
