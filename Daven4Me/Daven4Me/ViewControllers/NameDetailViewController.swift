@@ -25,11 +25,14 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     var topIndexReversed: [Int] = []
     var myIndexArray: [Int] = []
    
+    var tempOffset: CGFloat = 1.0
+
     
     var selectedPerson: Person!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
         
         view.backgroundColor = UIColor.white
       
@@ -37,8 +40,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         configureTopCollectionView()
         configureBottomCollectionView()
         
-        currentNumber = selectedPerson.kapitelStringsArray.count - 1
-        myIndexArray.append(currentNumber)
+     
     }
     
     func configureNavController() {
@@ -85,6 +87,14 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         tehillimTextCollectionView.delegate = self
         tehillimTextCollectionView.tag = 102
         tehillimTextCollectionView.isPagingEnabled = true
+        
+        
+      
+        
+        
+        // get the stored offset and use it to set the
+        // content offset of collectionView
+       
      
     }
    
@@ -92,31 +102,66 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
       
     }
     
-   
-    
+
     override func viewDidAppear(_ animated: Bool) {
         
-        //tehillimTextCollectionView.reloadData()
-        //menuBarCollectionView.reloadData()
-        
-        let index = 0
+       let index = 0
        let indexPath1 = IndexPath(item: index, section: 0)
+       let indexPath2 = IndexPath(item: 3, section: 0)
        
+        let selectedIndexPaths = menuBarCollectionView.indexPathsForSelectedItems
+        
+        
+        
+     //   if tempOffset < 0.0 {
        menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
-        //let lastIndex = selectedPerson.kapitelStringsArray.count - 1
-        //let indexPath = IndexPath(item: lastIndex, section: 0)
-        //tehillimTextCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+        
+         print("the content offset is \(tehillimTextCollectionView.contentOffset)")
+        
+        let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.bounds.maxX - (view.bounds.width + 80), y: 0)
+        
+        
+        
+        print("the width of view is \(view.bounds.width)")
+        
+        tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
+        
+     //   } else {
+        
+       // menuBarCollectionView.selectItem(at: indexPath2, animated: true, scrollPosition: .centeredHorizontally)
+            
+       //let storedOffset = getContentOffset()
+    
+        //tehillimTextCollectionView.setContentOffset(storedOffset, animated: true)
+     //   }
+        
     }
     
-   lazy   var leftRightPadding = view.frame.width * 0//0.10
-    lazy   var interSpacing = view.frame.width * 0//0.1
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
     
-   lazy   var totalEmptySpace = (view.frame.width - (2 * leftRightPadding) - (3 * interSpacing))
+    deinit {
+        
+    }
     
-   lazy var totalEmptySpaceforLetters =  (menuBarCollectionView.frame.width - (2 * leftRightPadding) - (3 * interSpacing))
     
-   lazy   var letterCellWidth = totalEmptySpace / CGFloat(selectedPerson.lettersArray.count)
+    func setAndSaveContentOffsetX(offsetX: CGFloat) {
+        UserDefaults.standard.set(offsetX, forKey: "ContentOffset")
+        
+    }
     
+    func getContentOffset() -> CGPoint {
+        let offSetX = UserDefaults.standard.float(forKey: "ContentOffset")
+        let combinedPoint = CGPoint(x: CGFloat(offSetX), y: tehillimTextCollectionView.bounds.minY)
+        
+        return combinedPoint
+    }
+    
+    func scrollToOffset(offset: CGFloat) {
+        
+    }
+  
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -197,33 +242,11 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let kapitel = kapitelArray[indexPath.row]
         
-       
     
+      
         let paragraphString = kapitelArray[indexPath.row]
-          var arrayOfWords = [String]()
-          
-        var arrayOfSentences = [String]()
-        //print("the paragraphString is\(paragraphString)")
-        
-        
-        
-        paragraphString.enumerateSubstrings(in: paragraphString.startIndex...,
-                                            options: .bySentences)
-            { sentence, _, _ , Boolean in
-              if let sentence = sentence {
-                
-                arrayOfSentences.append(sentence)
-                
-               // print("\(arrayOfSentences) there are \(arrayOfSentences.count) sentences in this kapitel")
-              }
-            }
-          
-       
-        
-        
-        // character emphasis vs word emphasis
-        //get the first character and change its color
-        
+         
+  
         let customFont = UIFont(name: "SBLHebrew", size: 28)
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
@@ -232,7 +255,6 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let semantic = tehillimTextCollectionView.effectiveUserInterfaceLayoutDirection.rawValue
         
-        //print("the semantic is \(semantic)")
         return pageCell
     }
     
@@ -294,17 +316,25 @@ extension NameDetailViewController: UIScrollViewDelegate {
         let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
         let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
          
-        print("the person object state is \(selectedPerson.indexOfCurrentKapitel)")
-            
-        //if lastLetterRead is not zero then select the item at
-        // index path
+       
+      
 
         menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
             
-            pageControl.currentPage = lastOpenIndex
-                   
-      
+        pageControl.currentPage = lastOpenIndex
+            
+        // use the scrollView content offset and assign it
+        // tehillimTextCollectionView offset
+       
+                
+       
+            
         }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        setAndSaveContentOffsetX(offsetX: scrollView.contentOffset.x)
     }
 }
 
