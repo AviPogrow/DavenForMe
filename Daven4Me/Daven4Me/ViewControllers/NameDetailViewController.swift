@@ -111,18 +111,11 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
        
         let selectedIndexPaths = menuBarCollectionView.indexPathsForSelectedItems
         
-        
-        
-     //   if tempOffset < 0.0 {
        menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
         
-         print("the content offset is \(tehillimTextCollectionView.contentOffset)")
-        
+        // subtle animation to scroll bottom collection view
+        // a bit to the right to indicate right to left direction
         let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.bounds.maxX - (view.bounds.width + 80), y: 0)
-        
-        
-        
-        print("the width of view is \(view.bounds.width)")
         
         tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
         
