@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -93,10 +93,7 @@ class MasterViewController: UITableViewController {
         //tableView.rowHeight = UITableView.automaticDimension
         //tableView.estimatedRowHeight = 175
         
-        
-        //3. get the value for the key "indexOfSelectedChecklist"
-            let index = dataModel.indexOfSelectedMispaleli
-            
+      
         
             /*
            //if index is NOT -1 then we need to segue
@@ -116,6 +113,29 @@ class MasterViewController: UITableViewController {
  ````*/
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+          navigationController?.delegate = self
+          
+        let index = dataModel.indexOfSelectedPerson
+        if index >= 0 && index < dataModel.peopleArray.count {
+            let checklist = dataModel.peopleArray[index]
+            
+            
+            let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
+             
+            dataModel.indexOfSelectedPerson = index
+            
+            let selectedPerson = dataModel.peopleArray[index]
+            controller.selectedPerson = selectedPerson
+            
+            DispatchQueue.main.async {
+               // tableView.deselectRow(at: indexPath, animated: true)
+                   }
+            
+            navigationController?.pushViewController(controller, animated: true)
+            }
     }
     
     // MARK:- Table View DataSource and Delegates
@@ -186,7 +206,7 @@ class MasterViewController: UITableViewController {
       if !isEditing {
         let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
          
-        dataModel.indexOfSelectedMispaleli = indexPath.row
+        dataModel.indexOfSelectedPerson = indexPath.row
         
         let selectedPerson = dataModel.peopleArray[indexPath.row]
         controller.selectedPerson = selectedPerson
@@ -195,9 +215,8 @@ class MasterViewController: UITableViewController {
                    tableView.deselectRow(at: indexPath, animated: true)
                }
         
-        //if selectedPerson.lettersArray.count > 0  {
         navigationController?.pushViewController(controller, animated: true)
-         // }
+        
         }
      }
 
@@ -207,6 +226,15 @@ class MasterViewController: UITableViewController {
         
         present(controller, animated: true, completion: nil)
     }
+    
+    // MARK:- Navigation Controller Delegates
+     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+       if viewController === self {
+         dataModel.indexOfSelectedPerson = -1
+       }
+     }
+    
+    
 }
     
 extension MasterViewController: AddEditViewControllerDelegate {

@@ -35,7 +35,7 @@ class DataModel {
         UserDefaults.standard.register(defaults: dictionary)
     }
     
-     var indexOfSelectedMispaleli: Int {
+     var indexOfSelectedPerson: Int {
        
        get {
        
@@ -62,7 +62,7 @@ class DataModel {
           
          peopleArray.append(person)
             
-       //indexOfSelectedChecklist = 0
+       indexOfSelectedPerson = 0
        userDefaults.set(false, forKey: "FirstTime")
        userDefaults.synchronize()
        }
