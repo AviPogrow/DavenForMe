@@ -89,9 +89,6 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         tehillimTextCollectionView.isPagingEnabled = true
         
         
-      
-        
-        
         // get the stored offset and use it to set the
         // content offset of collectionView
        
@@ -253,9 +250,34 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     
     }
     
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return false 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //get the selectedTopIndex ex. 2
+         // convert the 2 into a page Number by
+        //get the distance from the end of the array
+        // in a five element bottom array
+        // selecting 2 on top should give us second to last
+        // selection 3 on top should give third from last index
+        // so selecting 2 gives us target page 4
+        //  multiply 4 by the bounds.width to get content offset
+        // set content offset
+        
+        if collectionView.tag == 101 {
+            
+        let selectedTopIndex = indexPath.item + 1
+        
+        let topArrayCount = selectedPerson.kapitelStringsArray.count
+        
+        let adjustedBottomIndex = topArrayCount - selectedTopIndex
+        
+        let targetOffsetX = collectionView.bounds.width * CGFloat(adjustedBottomIndex)
+        let targetOffset = CGPoint(x: targetOffsetX, y: 0.0)
+        
+        tehillimTextCollectionView.setContentOffset(targetOffset, animated: true)
+        }
+        
     }
+
     // courtesy of
     // http://stackoverflow.com/a/28896715/359578
     
@@ -283,9 +305,10 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension NameDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
       
         if scrollView.tag == 102 {
-                     
+            
         //get the page number of bottom collectionView
         let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
                         
@@ -298,10 +321,8 @@ extension NameDetailViewController: UIScrollViewDelegate {
                         
         //menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             
-            
         //if indexPath is at the end then set it to start
         
-            
         // set the index of current kapit and persist it
         selectedPerson.indexOfCurrentKapitel = topIndex!
         
@@ -309,20 +330,11 @@ extension NameDetailViewController: UIScrollViewDelegate {
         let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
         let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
          
-       
-      
-
         menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
             
         pageControl.currentPage = lastOpenIndex
             
-        // use the scrollView content offset and assign it
-        // tehillimTextCollectionView offset
-       
-                
-       
-            
-        }
+       }
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
