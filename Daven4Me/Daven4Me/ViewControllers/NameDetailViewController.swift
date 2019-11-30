@@ -43,6 +43,17 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
      
     }
     
+    
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        print("share tapped")
+   
+        let vc = UIActivityViewController(activityItems: [], applicationActivities:[])
+        //let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+       
+       present(vc, animated: true, completion: nil)
+    }
+    
     func configureNavController() {
         navigationController?.hidesBarsOnSwipe = false
         //navigationItem.title = currentMispaleli.displayStringForName
