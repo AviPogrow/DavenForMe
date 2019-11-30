@@ -251,7 +251,7 @@ extension MasterViewController: AddEditViewControllerDelegate {
     
     func addEditViewController(_ controller: AddEditViewController, didFinishDeleting person: Person) {
         
-        let index = dataModel.peopleArray.index(of: person)
+        let index = dataModel.peopleArray.firstIndex(of: person)
         dataModel.peopleArray.remove(at: index!)
        
         let indexPath = IndexPath(row: index!, section: 0)
