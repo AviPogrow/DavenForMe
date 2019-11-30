@@ -153,10 +153,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         
         let person = dataModel.peopleArray[indexPath.row]
         
-        let customFontName = "SBLHebrew"
-        let customFont = UIFont(name: customFontName, size: 16)
-    
-        cell.nameLabel.font = customFont
+       
         cell.nameLabel.text = person.nameToDisplay
         
         // generate special unicode string for bi directional

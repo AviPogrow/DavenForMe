@@ -18,13 +18,8 @@ class NameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
-        //if iphone 8 shrink font to 32
-        // else 38
         let customFont = UIFont(name: "SBLHebrew", size: 30)
-               
-               
         nameLabel.font = customFont
         nameLabel.textAlignment = .right
         nameLabel.semanticContentAttribute = .forceRightToLeft
