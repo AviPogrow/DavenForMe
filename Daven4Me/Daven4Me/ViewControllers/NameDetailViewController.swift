@@ -268,13 +268,8 @@ extension NameDetailViewController: UIScrollViewDelegate {
        
         let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
             
-        let indexPath = IndexPath(item: topIndex!, section: 0)
-                        
-      
-        // set the index of current kapit and persist it
         selectedPerson.indexOfCurrentKapitel = topIndex!
         
-            
         let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
         let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
          

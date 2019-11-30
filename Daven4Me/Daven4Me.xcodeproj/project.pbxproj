@@ -213,6 +213,7 @@
 				TargetAttributes = {
 					CE5C731D22B454C600F6B5E4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -435,7 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

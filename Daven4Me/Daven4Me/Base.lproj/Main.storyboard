@@ -29,20 +29,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שרה-חנה-בילא-בת-מרים-יוכבד" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
-                                            <rect key="frame" x="50" y="16" width="250" height="60"/>
+                                            <rect key="frame" x="67" y="16" width="233" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarah Chana Baila Bas Miriam Yocheved" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-Jf-uCn">
-                                            <rect key="frame" x="36" y="84" width="259" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarah Chana Baila Bas Miriam Yocheved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-Jf-uCn">
+                                            <rect key="frame" x="8" y="84" width="292" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by Avi Pogrow - 19 seconds ago" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4M-hK-vRq">
-                                            <rect key="frame" x="44.5" y="109" width="252.5" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by Avi Pogrow - 19 " lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4M-hK-vRq">
+                                            <rect key="frame" x="16" y="110" width="289" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -52,11 +52,13 @@
                                     <constraints>
                                         <constraint firstItem="DFQ-aq-S46" firstAttribute="leading" secondItem="3ip-Y6-3EI" secondAttribute="leading" constant="16" id="0pF-zs-Gg6"/>
                                         <constraint firstItem="L4M-hK-vRq" firstAttribute="top" secondItem="ZGi-Jf-uCn" secondAttribute="bottom" constant="8" id="8aP-HY-uWB"/>
-                                        <constraint firstItem="ZGi-Jf-uCn" firstAttribute="leading" secondItem="3ip-Y6-3EI" secondAttribute="leading" constant="21" id="BIR-j1-XFq"/>
                                         <constraint firstItem="DFQ-aq-S46" firstAttribute="top" secondItem="3ip-Y6-3EI" secondAttribute="top" constant="16" id="J0d-eI-aiQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="DFQ-aq-S46" secondAttribute="trailing" constant="50" id="QMo-MO-5Ry"/>
-                                        <constraint firstAttribute="leading" secondItem="L4M-hK-vRq" secondAttribute="leading" constant="-19" id="ckV-eB-Eb1"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DFQ-aq-S46" secondAttribute="trailing" constant="50" id="QMo-MO-5Ry"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="L4M-hK-vRq" secondAttribute="leading" constant="5" id="ckV-eB-Eb1"/>
                                         <constraint firstItem="ZGi-Jf-uCn" firstAttribute="top" secondItem="DFQ-aq-S46" secondAttribute="bottom" constant="8" id="eu5-wV-heM"/>
+                                        <constraint firstItem="ZGi-Jf-uCn" firstAttribute="leading" secondItem="3ip-Y6-3EI" secondAttribute="leading" constant="16" id="jgp-Lm-hMD"/>
+                                        <constraint firstAttribute="trailing" secondItem="L4M-hK-vRq" secondAttribute="trailing" constant="16" id="nw1-oe-di2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZGi-Jf-uCn" secondAttribute="trailing" id="qHw-Ed-YYn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -84,7 +86,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys4-HC-jzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471.01449275362324" y="-634.15178571428567"/>
+            <point key="canvasLocation" x="469.60000000000002" y="-634.632683658171"/>
         </scene>
         <!--Name Detail View Controller-->
         <scene sceneID="7Pj-9P-FZP">
