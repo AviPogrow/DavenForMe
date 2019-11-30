@@ -21,13 +21,13 @@ extension Date {
     if secondsAgo < minute {
       return "\(secondsAgo) seconds ago"
     } else if secondsAgo < hour {
-      return "\(secondsAgo / minute) minutes ago"
+      return "\(secondsAgo / minute) minute(s) ago"
     } else if secondsAgo < day {
       return "\(secondsAgo / hour) hour(s) ago"
     } else if secondsAgo < week {
       return "\(secondsAgo / day) day(s) ago"
     }
     
-    return "\(secondsAgo / week) weeks ago"
+    return "\(secondsAgo / week) week(s) ago"
   }
 }
