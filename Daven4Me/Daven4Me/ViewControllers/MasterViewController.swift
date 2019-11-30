@@ -120,8 +120,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
           
         let index = dataModel.indexOfSelectedPerson
         if index >= 0 && index < dataModel.peopleArray.count {
-            let checklist = dataModel.peopleArray[index]
-            
+           
             
             let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
              
@@ -154,13 +153,10 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         
         let person = dataModel.peopleArray[indexPath.row]
         
-        
-        let font = UIFont.systemFont(ofSize: 18)
         let customFontName = "SBLHebrew"
         let customFont = UIFont(name: customFontName, size: 16)
-        let textColor = UIColor.red
-      
-            
+    
+        cell.nameLabel.font = customFont
         cell.nameLabel.text = person.nameToDisplay
         
         // generate special unicode string for bi directional

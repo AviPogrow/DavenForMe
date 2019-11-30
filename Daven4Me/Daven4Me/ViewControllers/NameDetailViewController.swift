@@ -95,19 +95,11 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
      
     }
    
-    override func viewWillAppear(_ animated: Bool) {
-      
-    }
-    
-
     override func viewDidAppear(_ animated: Bool) {
         
        let index = 0
        let indexPath1 = IndexPath(item: index, section: 0)
-       let indexPath2 = IndexPath(item: 3, section: 0)
        
-        let selectedIndexPaths = menuBarCollectionView.indexPathsForSelectedItems
-        
        menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
         
         // subtle animation to scroll bottom collection view
@@ -116,43 +108,8 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         
         tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
         
-     //   } else {
-        
-       // menuBarCollectionView.selectItem(at: indexPath2, animated: true, scrollPosition: .centeredHorizontally)
-            
-       //let storedOffset = getContentOffset()
-    
-        //tehillimTextCollectionView.setContentOffset(storedOffset, animated: true)
-     //   }
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-    
-    deinit {
-        
-    }
-    
-    
-    func setAndSaveContentOffsetX(offsetX: CGFloat) {
-        UserDefaults.standard.set(offsetX, forKey: "ContentOffset")
-        
-    }
-    
-    func getContentOffset() -> CGPoint {
-        let offSetX = UserDefaults.standard.float(forKey: "ContentOffset")
-        let combinedPoint = CGPoint(x: CGFloat(offSetX), y: tehillimTextCollectionView.bounds.minY)
-        
-        return combinedPoint
-    }
-    
-    func scrollToOffset(offset: CGFloat) {
-        
     }
   
- 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let  size = CGSize(width: 44, height:  menuBarCollectionView.bounds.height/3.7)
@@ -231,19 +188,13 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         kapitelArray = selectedPerson.kapitelStringsArray.reversed()
         
         let kapitel = kapitelArray[indexPath.row]
-        
-    
-      
-        let paragraphString = kapitelArray[indexPath.row]
-         
-  
+     
         let customFont = UIFont(name: "SBLHebrew", size: 28)
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
         pageCell.tehillim1TextView.backgroundColor = UIColor.white
         
-        let semantic = tehillimTextCollectionView.effectiveUserInterfaceLayoutDirection.rawValue
         
         return pageCell
     }
@@ -319,10 +270,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
             
         let indexPath = IndexPath(item: topIndex!, section: 0)
                         
-        //menuBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-            
-        //if indexPath is at the end then set it to start
-        
+      
         // set the index of current kapit and persist it
         selectedPerson.indexOfCurrentKapitel = topIndex!
         
@@ -339,27 +287,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        setAndSaveContentOffsetX(offsetX: scrollView.contentOffset.x)
     }
 }
 
-extension NameDetailViewController: UIViewControllerTransitioningDelegate {
-    /*
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return DimmingPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return BounceAnimationController()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //switch dismissStyle {
-        //case .slide:
-       //     return SlideOutAnimationController()
-       // case .fade:
-            return FadeOutAnimationController()
-       // }
-    }
- */
-}
+

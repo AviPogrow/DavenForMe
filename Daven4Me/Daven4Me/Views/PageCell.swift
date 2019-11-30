@@ -47,8 +47,7 @@ class PageCell: UICollectionViewCell {
     
     override func layoutSubviews() {
        super.layoutSubviews()
-       //layer.borderWidth = 1.0
-       //layer.borderColor = UIColor.red.cgColor
+      
    }
     
     func addNewLineToEachSentence(paragraph: String) -> String {
@@ -76,49 +75,7 @@ class PageCell: UICollectionViewCell {
  
             
 }
-            /*
-            let kapitelAlephComponents = tehillimText.components(separatedBy: ":").dropLast()
-       var finalAttributedText = NSMutableAttributedString(string: "")
-     
-        for posuk in kapitelAlephComponents {
-            
-            //let firstIndex = posuk.startIndex
-            //let firstLetter = posuk[firstIndex]
-            
-            // let secondIndex = posuk.index(posuk.startIndex, offsetBy: 1)
-            //  let secondLetter = posuk[secondIndex]
-            
-            //  var firstLetterString = string(firstLetter)
-            //  var secondLetterString = String(secondLetter)
-        //Helvetica 11.0
-        let font = UIFont.systemFont(ofSize: 20)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-      
-        paragraphStyle.baseWritingDirection = .rightToLeft
-        paragraphStyle.firstLineHeadIndent = 12.0
-        paragraphStyle.headIndent = 16.0
-       
-        paragraphStyle.paragraphSpacingBefore = 0.0
-    
-        paragraphStyle.paragraphSpacing = 10
- 
-        let textColor = UIColor.black
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-                    .foregroundColor: textColor,
-                    .font: font,
-                    .paragraphStyle: paragraphStyle]
-           
-        // then add the paragraph style
-        var attrbPosuk  = NSMutableAttributedString(string: "\n\(posuk):", attributes: attributes)
-       
-         finalAttributedText.append(attrbPosuk)
-            }
-            //tehillim1TextView.attributedText = finalAttributedText
-        }
-    }
-    */
+          
    
  
    

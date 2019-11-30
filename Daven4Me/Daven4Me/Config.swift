@@ -50,13 +50,12 @@ func insertDirectionIsolates(userName: Person) -> String {
       
       let timeInterval = person.timeStamp.timeAgoDisplay()
       
-      // add unicode directional character
-            let lightWeightLTR = "\u{200E}"
+      
 
-      var  aviStringHeb = person.nameToDisplay
+    let  aviStringHeb = person.nameToDisplay
         
             let addedBy = "added by - "
-            let userName = aviStringHeb
+            
             let timeInterv = timeInterval
             let spaceDashSpace = " - "
 
