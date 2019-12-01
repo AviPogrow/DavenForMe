@@ -32,18 +32,16 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
+        //pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
         
         view.backgroundColor = UIColor.white
       
-         configureNavController()
-        configureTopCollectionView()
-        configureBottomCollectionView()
+        // configureNavController()
+        //configureTopCollectionView()
+        //configureBottomCollectionView()
         
      
     }
-    
-    
     
     @IBAction func shareButtonTapped(_ sender: Any) {
         print("share tapped")

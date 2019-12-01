@@ -51,15 +51,10 @@ class AddEditViewController: UIViewController {
     
     var keyboardContainView = ContainView()
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
        configureTextField()
-        
-        
-        
         
     }
     
@@ -71,18 +66,13 @@ class AddEditViewController: UIViewController {
             textField.text =  "בן"
         }
         
-        
         textField.semanticContentAttribute = .forceRightToLeft
         textField.adjustsFontSizeToFitWidth = true
         textField.delegate = self
         
-        
         let _ = "he-IL"
         
         textField.textAlignment = .center
-        
-        
-        
         
         // Set keyboard view to input view of text field
         let nib = UINib(nibName: "HebrewKeyboardView", bundle: nil)
@@ -96,21 +86,11 @@ class AddEditViewController: UIViewController {
         
         keyboardContainView.addSubview(hebrewKeyboardView)
         
-        
         textField.inputView = keyboardContainView
-        
         
         // Add KVO for textfield to determine when cursor moves
         textField.addObserver(self, forKeyPath: "selectedTextRange", options: .new, context: nil)
     }
-    
-    // deal with changes in cursor position
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "selectedTextRange" {
-           // do something when cursor changes
-        }
-    }
-    
     
     func configureTextField(textField: UITextField) {
            
@@ -142,7 +122,12 @@ class AddEditViewController: UIViewController {
            textField.addObserver(self, forKeyPath: "selectedTextRange", options: .new, context: nil)
        }
     
-    
+    // deal with changes in cursor position
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "selectedTextRange" {
+           // do something when cursor changes
+        }
+    }
     
    
     deinit {

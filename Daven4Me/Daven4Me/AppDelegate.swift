@@ -12,30 +12,47 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
-     let dataModel = DataModel()
+    let dataModel = DataModel()
      
     let tehillimDataModel = TehillimDataModel()
     
     var window: UIWindow?
     
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // The window's root vc
          let tabBarController = window!.rootViewController as! UITabBarController
-         let navViewController = tabBarController.viewControllers![0] as! UINavigationController
-         let masterViewController = navViewController.viewControllers[0] as! MasterViewController
+        
+        //tabBarController.view.semanticContentAttribute = .forceRightToLeft
+        
+        // inside the Tab we have a split vc
+        let splitVC: UISplitViewController  = tabBarController.viewControllers![0] as! UISplitViewController
+        
+        splitVC.view.semanticContentAttribute = .forceRightToLeft
+        
+        // split vc first vc is Nav controller wrapping the master
+        let masterNavController = splitVC.viewControllers.first as! UINavigationController
+        
+        masterNavController.view.semanticContentAttribute = .forceRightToLeft
+        
+        // Master View Controller
+        let masterViewController =  masterNavController.topViewController as! MasterViewController
         
          masterViewController.dataModel = dataModel
+      
         
+        let nameDetailNavController = splitVC.viewControllers.last as! UINavigationController
         
-        //let tehillimNavController = tabBarController.viewControllers![1] as! UINavigationController
+        nameDetailNavController.view.semanticContentAttribute = .forceRightToLeft
         
+        let nameDetailViewController = nameDetailNavController.topViewController as! NameDetailViewController
         
+        nameDetailViewController.view.semanticContentAttribute = .forceRightToLeft
         
-        //let tehillimTableViewController = tehillimNavController.viewControllers[0] as! TehillimTableViewController
+         nameDetailViewController.navigationItem.rightBarButtonItem = splitVC.displayModeButtonItem
         
-       
-        //tehillimTableViewController.tehillimDataModel = tehillimDataModel
-        //print("the state of tehillim chaptersi is \(tehillimDataModel.chapters)")
+          masterViewController.splitViewDetail = nameDetailViewController
         
         
         return true

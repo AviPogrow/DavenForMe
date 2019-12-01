@@ -20,7 +20,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     let personService = PersonService()
     var people = [Person]()
     
-
+    weak var splitViewDetail: NameDetailViewController?
     
      let segmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["All","Loved Ones","Cholim","Yahrzeits"])
@@ -47,6 +47,8 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
      */
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
           navigationController?.title = "Mispalelis"
@@ -65,6 +67,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         navigationController?.navigationBar.titleTextAttributes = attributes
         
         navigationController?.view.semanticContentAttribute = .forceRightToLeft
+        
         navigationController?.navigationBar.semanticContentAttribute = .forceRightToLeft
         
         
