@@ -120,6 +120,15 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         
     }
     
+    // if view controller is collapsed then clear selection
+    // of tableView
+    override func viewWillAppear(_ animated: Bool) {
+        //clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
+    }
+    
+    
+    
     // in portrait mode when a cell is selectedd hide the
     // master pane
     private func hideMasterPane() { UIView.animate(withDuration: 0.25, animations: {
@@ -133,23 +142,9 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         self.splitViewController!.preferredDisplayMode = .automatic
     }) }
     
-    override func viewDidAppear(_ animated: Bool) {
-          navigationController?.delegate = self
-          
-        let index = dataModel.indexOfSelectedPerson
-        if index >= 0 && index < dataModel.peopleArray.count {
-           
-            
-           // let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
-             
-            //dataModel.indexOfSelectedPerson = index
-            
-            //let selectedPerson = dataModel.peopleArray[index]
-            //controller.selectedPerson = selectedPerson
-            
-            //navigationController?.pushViewController(controller, animated: true)
-            }
-    }
+    
+  
+ 
     
     // MARK:- Table View DataSource and Delegates
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
