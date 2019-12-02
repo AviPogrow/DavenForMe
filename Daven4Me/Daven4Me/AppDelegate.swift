@@ -9,23 +9,19 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
 
     var window: UIWindow?
     
     let dataModel = DataModel()
         
-       let tehillimDataModel = TehillimDataModel()
+    let tehillimDataModel = TehillimDataModel()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             guard
-            // The window's root vc
-            // let tabBarController = window!.rootViewController as? UITabBarController,
-        
-            // inside the Tab we have a split vc
-            //let splitViewController: UISplitViewController  = tabBarController.viewControllers![0] as! UISplitViewController,
-                let splitViewController = window!.rootViewController as? UISplitViewController,
+            
+            let splitViewController = window!.rootViewController as? UISplitViewController,
             
             let masterNavController = splitViewController.viewControllers.first as? UINavigationController,
             
@@ -37,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NameDetailViewController
             
             else {fatalError() }
+        
+        
+        splitViewController.delegate = self
             
             // flip the semantic content attributes
             splitViewController.view.semanticContentAttribute = .forceRightToLeft
@@ -48,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
           // flips the back button and the share button
           nameDetailNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
+        nameDetailNavController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        nameDetailNavController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
                    
             
             masterViewController.dataModel = dataModel
@@ -57,10 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             masterViewController.delegate = nameDetailViewController
             
-        //nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        
+    
         return true
     }
+    
+    
 
     func createArrayOfTehillimChapters() -> [String] {
       
@@ -93,3 +95,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
+extension AppDelegate: UISplitViewControllerDelegate {
+    
+    
+    // in a transition to a compact environment should the detail
+    // scene be discarded or incorporated?
+    // i.e. on a regular iphone don't launch directly into the
+    // detail scene
+    // In iPhone 6s Plus this affects behavior when rotating
+    // from horizontal - regular size to portrait - compact
+    //will collapse the detail scene
+    // if nothing to show and keep it if something to show
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+       
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? NameDetailViewController else { return false }
+        
+        // if no item is selected there is nothing to
+        // display in the detail scene so collapse detail scene
+        if topAsDetailController.selectedPerson == nil {
+           
+            
+            // let the detail vc be discarded
+            return true
+        }
+        
+        // if there is a person selected then try to incorporate
+        // the detail scene in the compact space
+        return false
+    }
+}
