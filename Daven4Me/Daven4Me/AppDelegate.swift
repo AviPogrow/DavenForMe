@@ -11,53 +11,57 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
-    let dataModel = DataModel()
-     
-    let tehillimDataModel = TehillimDataModel()
-    
+
     var window: UIWindow?
     
+    let dataModel = DataModel()
+        
+       let tehillimDataModel = TehillimDataModel()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            guard
+            // The window's root vc
+            // let tabBarController = window!.rootViewController as? UITabBarController,
         
-        // The window's root vc
-         let tabBarController = window!.rootViewController as! UITabBarController
+            // inside the Tab we have a split vc
+            //let splitViewController: UISplitViewController  = tabBarController.viewControllers![0] as! UISplitViewController,
+                let splitViewController = window!.rootViewController as? UISplitViewController,
+            
+            let masterNavController = splitViewController.viewControllers.first as? UINavigationController,
+            
+            let masterViewController = masterNavController.topViewController as? MasterViewController,
         
-        //tabBarController.view.semanticContentAttribute = .forceRightToLeft
+            let nameDetailNavController = splitViewController.viewControllers.last as? UINavigationController,
+            let nameDetailViewController = (splitViewController.viewControllers.last as?
+            UINavigationController)?.topViewController as?
+                NameDetailViewController
+            
+            else {fatalError() }
+            
+            // flip the semantic content attributes
+            splitViewController.view.semanticContentAttribute = .forceRightToLeft
+            // pushes it right to left
+            masterNavController.view.semanticContentAttribute = .forceRightToLeft
+            
+            // flips the bar buttons like "edit" and "+"
+            masterNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
         
-        // inside the Tab we have a split vc
-        let splitVC: UISplitViewController  = tabBarController.viewControllers![0] as! UISplitViewController
-        
-        splitVC.view.semanticContentAttribute = .forceRightToLeft
-        
-        // split vc first vc is Nav controller wrapping the master
-        let masterNavController = splitVC.viewControllers.first as! UINavigationController
-        
-        masterNavController.view.semanticContentAttribute = .forceRightToLeft
-        
-        // Master View Controller
-        let masterViewController =  masterNavController.topViewController as! MasterViewController
-        
-         masterViewController.dataModel = dataModel
-      
-        
-        let nameDetailNavController = splitVC.viewControllers.last as! UINavigationController
-        
-        nameDetailNavController.view.semanticContentAttribute = .forceRightToLeft
-        
-        let nameDetailViewController = nameDetailNavController.topViewController as! NameDetailViewController
-        
-        nameDetailViewController.view.semanticContentAttribute = .forceRightToLeft
-        
-         nameDetailViewController.navigationItem.rightBarButtonItem = splitVC.displayModeButtonItem
-        
-          masterViewController.splitViewDetail = nameDetailViewController
-        
+          // flips the back button and the share button
+          nameDetailNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
+                   
+            
+            masterViewController.dataModel = dataModel
+            
+            // add the "Mispalelis" to the back arrow
+            masterViewController.title = "Mispalelis"
+            
+            masterViewController.delegate = nameDetailViewController
+            
+        //nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         
         return true
     }
-    
+
     func createArrayOfTehillimChapters() -> [String] {
       
           //load text file as one long string
@@ -70,12 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           
           return splitByChapters
       }
-    
-    
-    
-    
-    
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
       saveData()

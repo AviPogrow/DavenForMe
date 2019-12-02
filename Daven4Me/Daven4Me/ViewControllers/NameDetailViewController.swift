@@ -17,6 +17,8 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+   
+    
     let cellId = "cellId"
     let cellID2 = "cellId2"
     let pageCellID = "pageCellID"
@@ -28,36 +30,58 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     var tempOffset: CGFloat = 1.0
 
     
-    var selectedPerson: Person!
+    var selectedPerson: Person! {
+        didSet {
+        updateUI()
+        }
+     }
+    
+    
+    private func updateUI() {
+        loadViewIfNeeded()
+        configureNavController()
+        configurePageControl()
+        configureTopCollectionView()
+        configureBottomCollectionView()
+    
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
+        
         
         view.backgroundColor = UIColor.white
-      
-        // configureNavController()
-        //configureTopCollectionView()
-        //configureBottomCollectionView()
         
-     
+        //updateUI()
+    }
+    
+    func configurePageControl() {
+        
+        if selectedPerson != nil {
+        pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
+        } else {
+            pageControl.numberOfPages = 8
+        }
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
         print("share tapped")
    
-        let vc = UIActivityViewController(activityItems: [], applicationActivities:[])
+        //let vc = UIActivityViewController(activityItems: [], applicationActivities:[])
         //let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
        
-       present(vc, animated: true, completion: nil)
+       //present(vc, animated: true, completion: nil)
     }
     
     func configureNavController() {
+        
+        
         navigationController?.hidesBarsOnSwipe = false
-        //navigationItem.title = currentMispaleli.displayStringForName
+        
         let _ = UIFont(name: "SBLHebrew", size: 34)
         //navigationController?.navigationBar.titleTextAttributes = customFont
-        //navigationItem.title = currentMispaleli.displayStringForName
+        
         navigationItem.titleView?.backgroundColor = UIColor.red 
         navigationItem.title = selectedPerson.nameToDisplay
         navigationController?.navigationBar.isTranslucent = false
@@ -66,6 +90,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     func configureTopCollectionView() {
         
+       
         let layout = menuBarCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = .vertical
         menuBarCollectionView.semanticContentAttribute = .forceRightToLeft
@@ -81,6 +106,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         menuBarCollectionView.isScrollEnabled = false 
         menuBarCollectionView.bounces = false
         menuBarCollectionView.isPagingEnabled = false
+        
         
     }
     
@@ -159,6 +185,12 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return .init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension NameDetailViewController: PersonSelectionDelegate {
+    func personSelected(_ newPerson: Person) {
+        selectedPerson = newPerson
     }
 }
 
@@ -273,6 +305,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
         let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
                         
       
+        /*
         let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
        
         let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
@@ -285,7 +318,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
         menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
             
         pageControl.currentPage = lastOpenIndex
-            
+          */
        }
     }
     

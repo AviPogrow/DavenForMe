@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol PersonSelectionDelegate: class {
+  func personSelected(_ newPerson: Person)
+}
+
+
 class MasterViewController: UITableViewController, UINavigationControllerDelegate {
     
-    
+    weak var delegate: PersonSelectionDelegate?
+
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     var dataModel =  DataModel()
@@ -66,11 +72,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         navigationItem.title = "Mispalelis"
         navigationController?.navigationBar.titleTextAttributes = attributes
         
-        navigationController?.view.semanticContentAttribute = .forceRightToLeft
-        
-        navigationController?.navigationBar.semanticContentAttribute = .forceRightToLeft
-        
-        
+       
        
         //tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
         
@@ -118,6 +120,19 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         
     }
     
+    // in portrait mode when a cell is selectedd hide the
+    // master pane
+    private func hideMasterPane() { UIView.animate(withDuration: 0.25, animations: {
+        
+    // hide the master pane
+    self.splitViewController!.preferredDisplayMode =
+    .primaryHidden
+    }, completion: { _ in
+        
+        // but don't keep the master pane hidden
+        self.splitViewController!.preferredDisplayMode = .automatic
+    }) }
+    
     override func viewDidAppear(_ animated: Bool) {
           navigationController?.delegate = self
           
@@ -125,18 +140,14 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         if index >= 0 && index < dataModel.peopleArray.count {
            
             
-            let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
+           // let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
              
-            dataModel.indexOfSelectedPerson = index
+            //dataModel.indexOfSelectedPerson = index
             
-            let selectedPerson = dataModel.peopleArray[index]
-            controller.selectedPerson = selectedPerson
+            //let selectedPerson = dataModel.peopleArray[index]
+            //controller.selectedPerson = selectedPerson
             
-            DispatchQueue.main.async {
-               // tableView.deselectRow(at: indexPath, animated: true)
-                   }
-            
-            navigationController?.pushViewController(controller, animated: true)
+            //navigationController?.pushViewController(controller, animated: true)
             }
     }
     
@@ -198,23 +209,28 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
+    
+   
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      if !isEditing {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
-         
-        dataModel.indexOfSelectedPerson = indexPath.row
+        
+        if isEditing {
+            return
+        } else {
         
         let selectedPerson = dataModel.peopleArray[indexPath.row]
-        controller.selectedPerson = selectedPerson
+        delegate?.personSelected(selectedPerson)
         
-        DispatchQueue.main.async {
-                   tableView.deselectRow(at: indexPath, animated: true)
-               }
         
-        navigationController?.pushViewController(controller, animated: true)
-        
+        if let detailViewController = delegate as? NameDetailViewController,
+            let detailNavigationController = detailViewController.navigationController {
+            splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+            }
+            if splitViewController!.displayMode != .allVisible {
+                   hideMasterPane()
+            }
         }
-     }
+    }
 
     @IBAction func addNameTapped(_ sender: Any) {
        let controller = storyboard!.instantiateViewController(withIdentifier: "AddEditViewController") as! AddEditViewController
