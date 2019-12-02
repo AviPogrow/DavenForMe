@@ -42,6 +42,19 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         setupTopCollectionView()
         setupBottomCollectionView()
         
+        
+        //customize text display on nav bar
+        let textColor = UIColor.red
+            
+        let customFont = UIFont(name: "SBLHebrew", size: 30)
+        let attributes: [NSAttributedString.Key: Any] = [
+                        .foregroundColor: textColor,
+                        .font: customFont as Any]
+            
+        navigationController?.navigationBar.titleTextAttributes = attributes
+            
+        navigationItem.title = "Mispalelis"
+        
         updateUI()
     }
     
@@ -298,7 +311,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
       
-        if scrollView.tag == 102 {
+        if scrollView.tag == 102 && selectedPerson != nil {
             
         //get the page number of bottom collectionView
         let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1

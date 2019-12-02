@@ -57,77 +57,33 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
+        
           navigationController?.title = "Mispalelis"
         //customize text display on nav bar
           let textColor = UIColor.red
-        
-       
         let font = UIFont(name: "Rockwell", size: 24.0)
         let attributes: [NSAttributedString.Key: Any] = [
                     .foregroundColor: textColor,
                     .font: font as Any]
-        
-        
-        navigationItem.leftBarButtonItem = editButtonItem
+         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = "Mispalelis"
-        navigationController?.navigationBar.titleTextAttributes = attributes
-        
        
-       
-        //tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
-        
-        //let tableView = UITableView(frame: .zero, style: .plain)
-        
-        // let paddedStackView = UIStackView(arrangedSubviews: [segmentedControl])
-        //paddedStackView.layoutMargins = .init(top: 12, left: 12, bottom: 6, right: 12)
-        //paddedStackView.isLayoutMarginsRelativeArrangement = true
-        
-        ///let stackView = UIStackView(arrangedSubviews: [
-         //   paddedStackView, tableView
-         //   ])
-        //stackView.axis = .vertical
         let insets = UIEdgeInsets(top: 58, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.backgroundColor = UIColor.groupTableViewBackground
         let segmentControlRect = CGRect(x: 16, y: -48, width: view.bounds.width - 24, height: segmentedControl.frame.height)
         segmentedControl.frame = segmentControlRect
         view.addSubview(segmentedControl)
-        //stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
-        
-        // scale tableView to its intrinsic content
-        //tableView.rowHeight = UITableView.automaticDimension
-        //tableView.estimatedRowHeight = 175
-        
-      
-        
-            /*
-           //if index is NOT -1 then we need to segue
-            if index != -1 {
-            
-            let indexPath = IndexPath(row: index, section: 0)
-           
-            let person = dataModel.peopleArray[indexPath.row]
-              
-            let controller = storyboard!.instantiateViewController(withIdentifier: "NameDetailViewController") as! NameDetailViewController
-                
-            
-            controller.selectedPerson = person
-                
-            navigationController?.pushViewController(controller, animated: true)
-        }
- ````*/
-        
-        
-    }
+       
+      }
     
     // if view controller is collapsed then clear selection
     // of tableView
     override func viewWillAppear(_ animated: Bool) {
-        //clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
-    
-    
     
     // in portrait mode when a cell is selectedd hide the
     // master pane
