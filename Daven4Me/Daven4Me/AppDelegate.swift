@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             guard
             
-            let splitViewController = window!.rootViewController as? UISplitViewController,
+        let rootTabController = window?.rootViewController as? UITabBarController,
+        let rootNavController = rootTabController.viewControllers?.first as? UINavigationController,
+            
+        let splitViewController = rootNavController.topViewController as? UISplitViewController,
             
             let masterNavController = splitViewController.viewControllers.first as? UINavigationController,
             
