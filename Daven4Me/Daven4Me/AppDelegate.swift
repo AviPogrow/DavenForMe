@@ -37,19 +37,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         splitViewController.delegate = self
             
-            // flip the semantic content attributes
+            // Put the master list on right side instead of left
             splitViewController.view.semanticContentAttribute = .forceRightToLeft
-            // pushes it right to left
+            
+            //in compact mode this tells nav controller
+            // to push new detail vcs from left to right
+           // instead of right to left and adjusts the back button
             masterNavController.view.semanticContentAttribute = .forceRightToLeft
             
             // flips the bar buttons like "edit" and "+"
-            masterNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
+        masterNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
         
           // flips the back button and the share button
-          nameDetailNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
-        nameDetailNavController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        nameDetailNavController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
-                   
+        nameDetailNavController.navigationBar.semanticContentAttribute = .forceRightToLeft
+        
             
             masterViewController.dataModel = dataModel
             
@@ -57,15 +58,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             masterViewController.title = "Mispalelis"
             
             masterViewController.delegate = nameDetailViewController
+        
+        // back button on leading edge to toggle the masterView Controller
+        nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        nameDetailViewController.navigationItem.leftItemsSupplementBackButton = true
             
     
         return true
     }
     
-    
 
-   
-    
     func applicationWillResignActive(_ application: UIApplication) {
       saveData()
      }

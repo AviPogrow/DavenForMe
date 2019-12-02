@@ -26,6 +26,8 @@ class TehillimDataModel: Codable {
         
     }
     
+    
+    
     func createArrayOfChapterString() -> [String] {
        //load text file as one long string
          let tehillimTextURL = Bundle.main.url(forResource: "RawTehillimText", withExtension: ".txt")
@@ -72,7 +74,6 @@ func createArrayOfChapterObjects(chapterStrings:[String]) -> [String] {
       
     }
     
- 
     func createArrayOfTehillimChapters() -> [String] {
     
         //load text file as one long string
@@ -85,6 +86,7 @@ func createArrayOfChapterObjects(chapterStrings:[String]) -> [String] {
         
         return splitByChapters
     }
+    
     // passing in an ordered list of paragraphs set up a dictionary
         func createDictionaryNamesToChapters(chapters: [String]) -> [String: String] {
       

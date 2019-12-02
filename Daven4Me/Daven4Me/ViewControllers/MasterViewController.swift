@@ -218,14 +218,22 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
             return
         } else {
         
+        // get the selected person
         let selectedPerson = dataModel.peopleArray[indexPath.row]
+            
+        // tell the delegate i.e. detailViewController
+        // that a person was selected and it needs to
+        // update its views
         delegate?.personSelected(selectedPerson)
         
         
-        if let detailViewController = delegate as? NameDetailViewController,
-            let detailNavigationController = detailViewController.navigationController {
+        if
+        let detailViewController = delegate as? NameDetailViewController,
+            
+         let detailNavigationController = detailViewController.navigationController {
             splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
             }
+            
             if splitViewController!.displayMode != .allVisible {
                    hideMasterPane()
             }

@@ -11,10 +11,7 @@ import UIKit
 class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     
     @IBOutlet weak var menuBarCollectionView: UICollectionView!
-    
     @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
-    
-    
     @IBOutlet weak var pageControl: UIPageControl!
     
    
@@ -36,24 +33,25 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         }
      }
     
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        
+        // only happens once when first loaded
+        setupTopCollectionView()
+        setupBottomCollectionView()
+        
+        updateUI()
+    }
     
     private func updateUI() {
         loadViewIfNeeded()
         configureNavController()
         configurePageControl()
-        configureTopCollectionView()
-        configureBottomCollectionView()
-    
+        menuBarCollectionView.reloadData()
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        view.backgroundColor = UIColor.white
-        
-        //updateUI()
+        tehillimTextCollectionView.reloadData()
     }
     
     func configurePageControl() {
@@ -61,9 +59,55 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         if selectedPerson != nil {
         pageControl.numberOfPages = selectedPerson.kapitelStringsArray.count
         } else {
-            pageControl.numberOfPages = 8
+            pageControl.numberOfPages = 1
         }
     }
+    
+    func configureNavController() {
+           
+           if selectedPerson != nil {
+            navigationItem.title = selectedPerson.nameToDisplay
+           }
+           
+       }
+    
+    func setupTopCollectionView() {
+           
+          
+           let layout = menuBarCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+           layout.scrollDirection = .vertical
+           menuBarCollectionView.semanticContentAttribute = .forceRightToLeft
+           menuBarCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId )
+             menuBarCollectionView.register(KeyCell.self, forCellWithReuseIdentifier: cellID2 )
+           
+           menuBarCollectionView.dataSource = self
+           menuBarCollectionView.delegate = self
+           menuBarCollectionView.tag = 101
+           menuBarCollectionView.contentInset = UIEdgeInsets(top: 4, left: 16, bottom: 0, right:                                              16)
+           menuBarCollectionView.isScrollEnabled = false
+           menuBarCollectionView.bounces = false
+           menuBarCollectionView.isPagingEnabled = false
+           
+           
+       }
+    
+    
+       func setupBottomCollectionView() {
+           
+           let bottomLayout = tehillimTextCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+           bottomLayout.scrollDirection = .horizontal
+            tehillimTextCollectionView.semanticContentAttribute = .forceRightToLeft
+           tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
+           
+           
+           tehillimTextCollectionView.dataSource = self
+           tehillimTextCollectionView.delegate = self
+           tehillimTextCollectionView.tag = 102
+           tehillimTextCollectionView.isPagingEnabled = true
+        
+        }
+    
+    
     
     @IBAction func shareButtonTapped(_ sender: Any) {
         print("share tapped")
@@ -74,61 +118,11 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
        //present(vc, animated: true, completion: nil)
     }
     
-    func configureNavController() {
-        
-        
-        navigationController?.hidesBarsOnSwipe = false
-        
-        let _ = UIFont(name: "SBLHebrew", size: 34)
-        //navigationController?.navigationBar.titleTextAttributes = customFont
-        
-        navigationItem.titleView?.backgroundColor = UIColor.red 
-        navigationItem.title = selectedPerson.nameToDisplay
-        navigationController?.navigationBar.isTranslucent = false
-    }
+   
     
     
-    func configureTopCollectionView() {
-        
-       
-        let layout = menuBarCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.scrollDirection = .vertical
-        menuBarCollectionView.semanticContentAttribute = .forceRightToLeft
-        menuBarCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId )
-          menuBarCollectionView.register(KeyCell.self, forCellWithReuseIdentifier: cellID2 )
-        
-        menuBarCollectionView.dataSource = self
-        menuBarCollectionView.delegate = self
-        menuBarCollectionView.tag = 101
-        menuBarCollectionView.contentInset = UIEdgeInsets(top: 4, left: 16, bottom: 0, right:                                              16)
-                                              
-        //menuBarCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
-        menuBarCollectionView.isScrollEnabled = false 
-        menuBarCollectionView.bounces = false
-        menuBarCollectionView.isPagingEnabled = false
-        
-        
-    }
-    
-    func configureBottomCollectionView() {
-        
-        let bottomLayout = tehillimTextCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        bottomLayout.scrollDirection = .horizontal
-         tehillimTextCollectionView.semanticContentAttribute = .forceRightToLeft
-        tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
-        
-        
-        tehillimTextCollectionView.dataSource = self
-        tehillimTextCollectionView.delegate = self
-        tehillimTextCollectionView.tag = 102
-        tehillimTextCollectionView.isPagingEnabled = true
-        
-        
-        // get the stored offset and use it to set the
-        // content offset of collectionView
-       
-     
-    }
+   
+   
    
     override func viewDidAppear(_ animated: Bool) {
         
@@ -141,7 +135,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         // a bit to the right to indicate right to left direction
         let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.bounds.maxX - (view.bounds.width + 80), y: 0)
         
-        tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
+        //tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
         
     }
   
@@ -197,20 +191,22 @@ extension NameDetailViewController: PersonSelectionDelegate {
 extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView.tag == 101 {
         
+        if selectedPerson != nil && collectionView.tag == 101 {
         
-        return selectedPerson.lettersArray.count
-        } else {
-         
-            return selectedPerson.kapitelStringsArray.count
+           return selectedPerson.lettersArray.count
+        
+          } else if selectedPerson != nil && collectionView.tag == 102 {
+           return selectedPerson.kapitelStringsArray.count
+          }
+        else {
+            return 0
         }
+     }
         
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-     if collectionView.tag == 101 {
+        if selectedPerson != nil && collectionView.tag == 101 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
     
         let lettr = selectedPerson.lettersArray[indexPath.item]
@@ -221,7 +217,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         return cell
         
-        } else {
+        } else if selectedPerson != nil && collectionView.tag == 102 {
             
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: pageCellID, for: indexPath) as! PageCell
         
@@ -238,6 +234,9 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         
         return pageCell
+        }
+        else {
+            return UICollectionViewCell()
     }
     
     }
@@ -304,8 +303,6 @@ extension NameDetailViewController: UIScrollViewDelegate {
         //get the page number of bottom collectionView
         let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
                         
-      
-        /*
         let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
        
         let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
@@ -318,7 +315,7 @@ extension NameDetailViewController: UIScrollViewDelegate {
         menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
             
         pageControl.currentPage = lastOpenIndex
-          */
+          
        }
     }
     
