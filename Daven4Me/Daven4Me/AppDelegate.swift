@@ -64,18 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     
 
-    func createArrayOfTehillimChapters() -> [String] {
-      
-          //load text file as one long string
-         let tehillimTextURL = Bundle.main.url(forResource: "Chapter119Plain", withExtension: ".txt")
-         
-         let textString = try! String(contentsOf: tehillimTextURL!)
-         
-        
-         let splitByChapters = textString.components(separatedBy: ".")
-          
-          return splitByChapters
-      }
+   
     
     func applicationWillResignActive(_ application: UIApplication) {
       saveData()
