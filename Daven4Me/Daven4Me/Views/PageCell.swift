@@ -20,7 +20,7 @@ class PageCell: UICollectionViewCell {
     
     override  func awakeFromNib() {
         super.awakeFromNib()
-        print("awake from nib invoked")
+        
         setupViews()
        
         
@@ -41,13 +41,13 @@ class PageCell: UICollectionViewCell {
             
             // add some padding around the text inside the text view
             let textInset = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
-            tehillim1TextView.textContainerInset = textInset
+            
+        tehillim1TextView.textContainerInset = textInset
+        
+      
     }
     
-    override func layoutSubviews() {
-       super.layoutSubviews()
-      
-   }
+  
     
     func addNewLineToEachSentence(paragraph: String) -> String {
            var newString = " "

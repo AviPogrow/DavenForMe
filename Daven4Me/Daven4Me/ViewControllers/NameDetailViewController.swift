@@ -11,7 +11,7 @@ import UIKit
 class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     
     @IBOutlet weak var menuBarCollectionView: UICollectionView!
-    @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
+    @IBOutlet weak var tehillimTextCollectionView: TehillimTextCollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
     
@@ -67,6 +67,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         
         tehillimTextCollectionView.reloadData()
         
+        // after reloading we update the scrollViews and page control
         let index = 0
             let indexPath1 = IndexPath(item: index, section: 0)
             
@@ -126,9 +127,6 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
            let bottomLayout = tehillimTextCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
            bottomLayout.scrollDirection = .horizontal
             tehillimTextCollectionView.semanticContentAttribute = .forceRightToLeft
-          // tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
-           
-           
            tehillimTextCollectionView.dataSource = self
            tehillimTextCollectionView.delegate = self
            tehillimTextCollectionView.tag = 102
@@ -165,7 +163,9 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         
         tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: false)
         
-    }
+        }
+    
+    
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -284,7 +284,8 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         if collectionView.tag == 101 {
             
         let selectedTopIndex = indexPath.item + 1
-        
+        scrollToPageAt(selectedTopIndex)
+        /*
         let topArrayCount = selectedPerson.kapitelStringsArray.count
         
         // get the index of the bottom view we want to
@@ -303,9 +304,38 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         // update the page control
         pageControl.currentPage = selectedTopIndex -  1
+ */
         }
         
     }
+    
+    
+    
+    func scrollToPageAt(_ index: Int) {
+        let selectedTopIndex = index
+               
+               let topArrayCount = selectedPerson.kapitelStringsArray.count
+               
+               // get the index of the bottom view we want to
+               // page to
+               let adjustedBottomIndex = topArrayCount - selectedTopIndex
+               
+               // take the page width and multiply it by the
+               // index of the page we want to scroll to
+               // that is  the distance we need to scroll
+               let targetOffsetX = tehillimTextCollectionView.bounds.width * CGFloat(adjustedBottomIndex)
+                   
+               let targetOffset = CGPoint(x: targetOffsetX, y: 0.0)
+               
+               // scroll the lower collectionView
+               tehillimTextCollectionView.setContentOffset(targetOffset, animated: true)
+               
+               // update the page control
+               pageControl.currentPage = selectedTopIndex -  1
+        
+    }
+    
+   
 
     // courtesy of
     // http://stackoverflow.com/a/28896715/359578

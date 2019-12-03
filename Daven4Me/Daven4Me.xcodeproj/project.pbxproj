@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE10F80D239725DA00926F57 /* TehillimTextCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */; };
 		CE49CB8422BD392D0064B992 /* RawTehillimText.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE49CB8322BD392D0064B992 /* RawTehillimText.txt */; };
 		CE49CB8822BD3CA60064B992 /* Chapter119Plain.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE49CB8722BD3CA60064B992 /* Chapter119Plain.txt */; };
 		CE5C732222B454C600F6B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C732122B454C600F6B5E4 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTextCollectionView.swift; sourceTree = "<group>"; };
 		CE49CB8322BD392D0064B992 /* RawTehillimText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RawTehillimText.txt; sourceTree = "<group>"; };
 		CE49CB8722BD3CA60064B992 /* Chapter119Plain.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter119Plain.txt; sourceTree = "<group>"; usesTabs = 0; };
 		CE5C731E22B454C600F6B5E4 /* Daven4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daven4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 		CE5C734022B5526E00F6B5E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */,
 				CE5C734122B5528C00F6B5E4 /* KeyCell.swift */,
 				CED85843236CB5420086E869 /* MenuCell.swift */,
 				CED85841236CB52E0086E869 /* PageCell.swift */,
@@ -269,6 +272,7 @@
 				CEBDB12C22B9AE51007E743A /* KeyboardViewController.swift in Sources */,
 				CE5C732422B454C600F6B5E4 /* MasterViewController.swift in Sources */,
 				CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */,
+				CE10F80D239725DA00926F57 /* TehillimTextCollectionView.swift in Sources */,
 				CEE1514D22BF870C00E4C9F4 /* TehillimTableViewController.swift in Sources */,
 				CEE6297D2372F9FE003DDEE5 /* PersonService.swift in Sources */,
 				CE5C732222B454C600F6B5E4 /* AppDelegate.swift in Sources */,
