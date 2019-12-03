@@ -132,7 +132,9 @@ extension UIView {
     }
     
     func fillSuperview(padding: UIEdgeInsets = .zero) {
+        
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let superviewTopAnchor = superview?.topAnchor {
             topAnchor.constraint(equalTo: superviewTopAnchor, constant: padding.top).isActive = true
         }

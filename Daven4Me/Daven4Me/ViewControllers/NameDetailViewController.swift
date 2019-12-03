@@ -14,11 +14,12 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBOutlet weak var tehillimTextCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    
    
     
     let cellId = "cellId"
     let cellID2 = "cellId2"
-    let pageCellID = "pageCellID"
+    let pageCellID = "PageCellID"
     
     var currentNumber: Int = 0
     var topIndexReversed: [Int] = []
@@ -110,7 +111,7 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
            let bottomLayout = tehillimTextCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
            bottomLayout.scrollDirection = .horizontal
             tehillimTextCollectionView.semanticContentAttribute = .forceRightToLeft
-           tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
+          // tehillimTextCollectionView.register(PageCell.self, forCellWithReuseIdentifier: pageCellID)
            
            
            tehillimTextCollectionView.dataSource = self
@@ -131,24 +132,21 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
        //present(vc, animated: true, completion: nil)
     }
     
-   
     
-    
-   
-   
-   
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
        let index = 0
        let indexPath1 = IndexPath(item: index, section: 0)
        
        menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
+        pageControl.currentPage = indexPath1.item
         
-        // subtle animation to scroll bottom collection view
+        
+       // subtle animation to scroll bottom collection view
         // a bit to the right to indicate right to left direction
-        let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.bounds.maxX - (view.bounds.width + 80), y: 0)
+        let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.contentSize.width - (view.bounds.width + 0), y: 0)
         
-        //tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: true)
+        tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: false)
         
     }
   
@@ -243,7 +241,7 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
-        pageCell.tehillim1TextView.backgroundColor = UIColor.white
+        
         
         
         return pageCell
@@ -272,12 +270,22 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let topArrayCount = selectedPerson.kapitelStringsArray.count
         
+        // get the index of the bottom view we want to
+        // page to
         let adjustedBottomIndex = topArrayCount - selectedTopIndex
         
+        // take the page width and multiply it by the
+        // index of the page we want to scroll to
+        // that is  the distance we need to scroll
         let targetOffsetX = collectionView.bounds.width * CGFloat(adjustedBottomIndex)
+            
         let targetOffset = CGPoint(x: targetOffsetX, y: 0.0)
         
+        // scroll the lower collectionView
         tehillimTextCollectionView.setContentOffset(targetOffset, animated: true)
+        
+        // update the page control
+        pageControl.currentPage = selectedTopIndex -  1
         }
         
     }
@@ -308,33 +316,38 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension NameDetailViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-      
-        if scrollView.tag == 102 && selectedPerson != nil {
-            
-        //get the page number of bottom collectionView
-        let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
-                        
-        let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
-       
-        let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
-            
-        selectedPerson.indexOfCurrentKapitel = topIndex!
-        
-        let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
-        let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
-         
-        menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
-            
-        pageControl.currentPage = lastOpenIndex
-          
-       }
-    }
+   
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+  
+      
+      // when paging happend there is deceleration when the
+      // the scrollview snaps so we update the top controls
+      func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            updateTopControls(scrollView: scrollView)
+      }
+    
+  
         
-    }
+    func updateTopControls(scrollView: UIScrollView) {
+            if scrollView.tag == 102 && selectedPerson != nil {
+                 
+             //get the page number of bottom collectionView
+             let pageNum = Int(scrollView.contentOffset.x / view.frame.width) + 1
+                             
+             let lastIndex =    selectedPerson.kapitelStringsArray.endIndex
+            
+             let topIndex = selectedPerson.kapitelStringsArray.index(lastIndex, offsetBy: -pageNum, limitedBy: 0)
+                 
+             selectedPerson.indexOfCurrentKapitel = topIndex!
+             
+             let lastOpenIndex = selectedPerson.indexOfCurrentKapitel
+             let lastOpenIndexPath = IndexPath(row: lastOpenIndex, section: 0)
+              
+             menuBarCollectionView.selectItem(at: lastOpenIndexPath, animated: true, scrollPosition: .top)
+                 
+             pageControl.currentPage = lastOpenIndex
+        }
 }
 
 
+}

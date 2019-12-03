@@ -10,39 +10,38 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
   
-    var  tehillim1TextView =  UITextView()
     
-    
-    
-    
-    var page: String? {
-        
-        didSet {
-           guard let tehillimText = page else { return }
-              let formattedString = addNewLineToEachSentence(paragraph: tehillimText)
-             tehillim1TextView.text = formattedString
-        }
-    }
-    
-    override init(frame: CGRect) {
-           super.init(frame: frame)
-           //print("the page cell's direction is \(effectiveUserInterfaceLayoutDirection)")
-           tehillim1TextView.isEditable = false
-           tehillim1TextView.isSelectable = false
-       
-       tehillim1TextView.makeTextWritingDirectionRightToLeft(self)
-        tehillim1TextView.textAlignment = .right
-        tehillim1TextView.semanticContentAttribute = .forceRightToLeft
-        
-        let inset = UIEdgeInsets(top: -4 , left: 16, bottom: 8, right: 16)
-        
-        addSubview(tehillim1TextView)
-      
-        tehillim1TextView.fillSuperview(padding: inset)
-       }
+    @IBOutlet weak var tehillim1TextView: UITextView!
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        
+    }
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        print("awake from nib invoked")
+        setupViews()
+       
+        
+    }
+    
+    func setupViews() {
+        tehillim1TextView.backgroundColor = UIColor.white 
+               tehillim1TextView.isEditable = false
+               tehillim1TextView.isSelectable = false
+           
+           tehillim1TextView.makeTextWritingDirectionRightToLeft(self)
+            tehillim1TextView.textAlignment = .right
+            tehillim1TextView.semanticContentAttribute = .forceRightToLeft
+            
+            // add padding to the page cell inside the collectionView
+            //
+            let inset = UIEdgeInsets(top: 8 , left: 64, bottom: 8, right: 64)
+            
+            // add some padding around the text inside the text view
+            let textInset = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
+            tehillim1TextView.textContainerInset = textInset
     }
     
     override func layoutSubviews() {
