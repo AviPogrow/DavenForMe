@@ -66,6 +66,21 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         menuBarCollectionView.reloadData()
         
         tehillimTextCollectionView.reloadData()
+        
+        let index = 0
+            let indexPath1 = IndexPath(item: index, section: 0)
+            
+            menuBarCollectionView.selectItem(at: indexPath1, animated: true, scrollPosition: .centeredHorizontally)
+             pageControl.currentPage = indexPath1.item
+             
+             
+            // subtle animation to scroll bottom collection view
+             // a bit to the right to indicate right to left direction
+             let adjustedXOffset = CGPoint(x: tehillimTextCollectionView.contentSize.width - (view.bounds.width + 0), y: 0)
+             
+             tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: false)
+        
+        
     }
     
     func configurePageControl() {
@@ -134,6 +149,8 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+       print("view will appear invoked")
         
        let index = 0
        let indexPath1 = IndexPath(item: index, section: 0)
@@ -317,17 +334,12 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension NameDetailViewController: UIScrollViewDelegate {
    
-    
-  
-      
       // when paging happend there is deceleration when the
       // the scrollview snaps so we update the top controls
       func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             updateTopControls(scrollView: scrollView)
       }
     
-  
-        
     func updateTopControls(scrollView: UIScrollView) {
             if scrollView.tag == 102 && selectedPerson != nil {
                  
