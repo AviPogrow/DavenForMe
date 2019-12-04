@@ -26,13 +26,13 @@ class NameTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.borderWidth = 0.75
-        layer.borderColor = UIColor.red.cgColor
-        layer.cornerRadius = 25.0
-        layer.masksToBounds = true 
+        layer.borderWidth = 1.75
+        layer.borderColor = UIColor.darkGray.cgColor
+        //layer.cornerRadius = 25.0
+        //layer.masksToBounds = true
        
-        layer.shadowRadius = 5.0
-        layer.shadowOpacity = 0.33
+        //layer.shadowRadius = 5.0
+        //layer.shadowOpacity = 0.33
         
     }
 }

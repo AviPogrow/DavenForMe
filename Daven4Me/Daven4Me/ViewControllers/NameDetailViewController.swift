@@ -165,27 +165,20 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         
         }
  
-    
+  // When in IPAD and device rotates then wait for rotation
+  // to end and recalculate the scrollView offset
    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
         coordinator.animate(alongsideTransition: { [unowned self] _ in
             
-            self.view.backgroundColor = UIColor.blue
-            print("rotation in progress")
-            
         }) { [unowned self] _ in
-            self.view.backgroundColor = UIColor.green
-            print("rotation complete")
-       
+    
             let offset = CGPoint(x: 55, y: 0)
             self.scrollToPageAt(self.pageControl.currentPage + 1)
         }
     }
     
-  
-    
-  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let  size = CGSize(width: 44, height:  menuBarCollectionView.bounds.height/3.7)
