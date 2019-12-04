@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             
             // Put the master list on right side instead of left
             splitViewController.view.semanticContentAttribute = .forceRightToLeft
+        
+        // when first appearing show the master list on the right
+        splitViewController.preferredDisplayMode = .allVisible
             
             //in compact mode this tells nav controller
             // to push new detail vcs from left to right
@@ -63,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             masterViewController.delegate = nameDetailViewController
         
         // back button on leading edge to toggle the masterView Controller
-        nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        nameDetailViewController.navigationItem.leftItemsSupplementBackButton = true
+        //nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        //nameDetailViewController.navigationItem.leftItemsSupplementBackButton = true
             
     
         return true

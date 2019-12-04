@@ -188,7 +188,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
             }
             
             if splitViewController!.displayMode != .allVisible {
-                   hideMasterPane()
+                 //  hideMasterPane()
             }
         }
     }
