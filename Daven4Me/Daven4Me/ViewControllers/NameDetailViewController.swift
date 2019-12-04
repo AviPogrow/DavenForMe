@@ -164,7 +164,26 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
         tehillimTextCollectionView.setContentOffset(adjustedXOffset, animated: false)
         
         }
+ 
     
+   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: { [unowned self] _ in
+            
+            self.view.backgroundColor = UIColor.blue
+            print("rotation in progress")
+            
+        }) { [unowned self] _ in
+            self.view.backgroundColor = UIColor.green
+            print("rotation complete")
+       
+            let offset = CGPoint(x: 55, y: 0)
+            self.scrollToPageAt(self.pageControl.currentPage + 1)
+        }
+    }
+    
+  
     
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -258,9 +277,6 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         pageCell.tehillim1TextView.font = customFont
         pageCell.tehillim1TextView.text = kapitel
         
-        
-        
-        
         return pageCell
         }
         else {
@@ -285,31 +301,11 @@ extension NameDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             
         let selectedTopIndex = indexPath.item + 1
         scrollToPageAt(selectedTopIndex)
-        /*
-        let topArrayCount = selectedPerson.kapitelStringsArray.count
         
-        // get the index of the bottom view we want to
-        // page to
-        let adjustedBottomIndex = topArrayCount - selectedTopIndex
-        
-        // take the page width and multiply it by the
-        // index of the page we want to scroll to
-        // that is  the distance we need to scroll
-        let targetOffsetX = collectionView.bounds.width * CGFloat(adjustedBottomIndex)
-            
-        let targetOffset = CGPoint(x: targetOffsetX, y: 0.0)
-        
-        // scroll the lower collectionView
-        tehillimTextCollectionView.setContentOffset(targetOffset, animated: true)
-        
-        // update the page control
-        pageControl.currentPage = selectedTopIndex -  1
- */
+ 
         }
         
     }
-    
-    
     
     func scrollToPageAt(_ index: Int) {
         let selectedTopIndex = index

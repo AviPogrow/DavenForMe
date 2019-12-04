@@ -151,6 +151,8 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
            }
       }
     
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         let index = indexPath.row
