@@ -72,6 +72,10 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         let insets = UIEdgeInsets(top: 58, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.backgroundColor = UIColor.groupTableViewBackground
+        
+        
+       
+        
         let segmentControlRect = CGRect(x: 16, y: -48, width: view.bounds.width - 24, height: segmentedControl.frame.height)
         segmentedControl.frame = segmentControlRect
         view.addSubview(segmentedControl)
@@ -81,10 +85,18 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     // if view controller is collapsed then clear selection
     // of tableView
     override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        
+        // select the first person on the list
+        let firstIndex = 0
+        let firstIndexPath = IndexPath(row: firstIndex, section: 0)
+        let firstPerson = dataModel.peopleArray[0]
+        delegate!.personSelected(firstPerson)
+        
+        tableView.selectRow(at: firstIndexPath  , animated: false, scrollPosition: .top)
     }
     
+   
     // in portrait mode when a cell is selectedd hide the
     // master pane
     private func hideMasterPane() { UIView.animate(withDuration: 0.25, animations: {
@@ -186,10 +198,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
          let detailNavigationController = detailViewController.navigationController {
             splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
             }
-            
-            if splitViewController!.displayMode != .allVisible {
-                 //  hideMasterPane()
-            }
+           
         }
     }
 
