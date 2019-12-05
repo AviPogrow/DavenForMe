@@ -87,6 +87,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if dataModel.peopleArray.count > 0 {
         // select the first person on the list
         let firstIndex = 0
         let firstIndexPath = IndexPath(row: firstIndex, section: 0)
@@ -94,6 +95,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         delegate!.personSelected(firstPerson)
         
         tableView.selectRow(at: firstIndexPath  , animated: false, scrollPosition: .top)
+        }
     }
     
    
