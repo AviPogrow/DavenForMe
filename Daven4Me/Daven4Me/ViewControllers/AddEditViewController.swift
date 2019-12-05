@@ -63,10 +63,11 @@ class AddEditViewController: UIViewController {
         if personToEdit != nil {
             textField.text = personToEdit?.nameToDisplay
         } else {
-            textField.text =  "בן"
+            //textField.text =  "בן"
         }
         
-        textField.semanticContentAttribute = .forceRightToLeft
+        //textField.semanticContentAttribute = .forceRightToLeft
+        textField.makeTextWritingDirectionRightToLeft(self)
         textField.adjustsFontSizeToFitWidth = true
         textField.delegate = self
         
@@ -94,7 +95,7 @@ class AddEditViewController: UIViewController {
     
     func configureTextField(textField: UITextField) {
            
-           textField.text =  "בן"
+           //textField.text =  "בן"
            textField.semanticContentAttribute = .forceRightToLeft
            textField.adjustsFontSizeToFitWidth = true
            textField.delegate = self
