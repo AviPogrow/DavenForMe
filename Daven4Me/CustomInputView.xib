@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomInputView" customModule="TextFieldMania" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="492"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfR-OC-JG9">
+                    <rect key="frame" x="2" y="4" width="558" height="472"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-wj-HkM">
+                            <rect key="frame" x="0.0" y="0.0" width="558" height="391"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="quH-D1-1Vj" userLabel="TopRowStack View">
+                                    <rect key="frame" x="0.0" y="0.0" width="558" height="70"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0q-sh-7Ni" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ה">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="08E-Hk-AXQ"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCb-2V-InJ" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="93.5" y="0.0" width="90" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ד">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="f4H-2t-NL1"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1HO-4v-CNZ" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="187.5" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ג">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="OZJ-dY-a00"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-pj-DUo" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="281" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ב">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="5cI-6g-A06"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5l5-ik-bQq" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="374.5" y="0.0" width="90" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="א">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Ina-WE-je2"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc8-SZ-DdJ" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="468.5" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" image="delete.right" catalog="system">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="medium" weight="regular">
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                </preferredSymbolConfiguration>
+                                            </state>
+                                            <connections>
+                                                <action selector="backspaceWithSender:" destination="-1" eventType="touchUpInside" id="gh1-UO-R6k"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iKy-S0-LWK" userLabel="Row2Stack View">
+                                    <rect key="frame" x="0.0" y="80" width="558" height="70.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-bc-nJD" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="כ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Onj-IG-ZFF"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVj-mS-Uah" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="93.5" y="0.0" width="90" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="י">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="ZxP-xO-Ai7"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMd-1u-tgf" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="187.5" y="0.0" width="89.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ט">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="t5q-dm-2cq"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KIy-i2-AGt" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="281" y="0.0" width="89.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ח">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="esV-uP-Zcb"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hst-do-qfz" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="374.5" y="0.0" width="90" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ז">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Y2z-WF-d4q"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-aw-bSc" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="468.5" y="0.0" width="89.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ו">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="DIA-VG-1fZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ePi-rw-RBr" userLabel="Row3Stack View">
+                                    <rect key="frame" x="0.0" y="160.5" width="558" height="70"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOZ-4C-wd6" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ן">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Y5c-05-NCG"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4n-k3-gMa" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="93.5" y="0.0" width="90" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="נ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="l3b-G4-Le0"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wi5-q6-P4a" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="187.5" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ם">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="a9H-F3-eqK"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsP-Dg-yF8" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="281" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="מ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="f2t-QQ-pio"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nop-yo-rbc" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="374.5" y="0.0" width="90" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ל">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="GbT-hP-0bc"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAJ-KU-fEI" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="468.5" y="0.0" width="89.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ך">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="94F-6v-2r7"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d0H-cE-LwH" userLabel="Row4Stack View">
+                                    <rect key="frame" x="0.0" y="240.5" width="558" height="70.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FnK-vg-hGa" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ץ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="7zr-FZ-Y6P"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8c-48-iFm" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="93.5" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="צ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="UBK-a2-IKk"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-Ar-mUW" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="187" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ף">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="mik-3o-JCG"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-uP-d9H" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="280.5" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="פ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="pqI-nE-7Zn"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHr-LM-lYU" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="374" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ע">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="nSn-By-2UC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-yp-iYb" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="467.5" y="0.0" width="90.5" height="70.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ס">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="n1H-O9-nmv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PXK-Ac-3NP" userLabel="Row5Stack View">
+                                    <rect key="frame" x="0.0" y="321" width="558" height="70"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-Jn-qSx" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="136.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ת">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Nou-bK-D2C"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-LM-3PW" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="140.5" y="0.0" width="136.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ש">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="stH-jj-YyI"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mRk-Kb-3ux" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="281" y="0.0" width="136.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ר">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="Ox1-hG-nxx"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AA-9r-fbM" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                            <rect key="frame" x="421.5" y="0.0" width="136.5" height="70"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="ק">
+                                                        <attributes>
+                                                            <font key="NSFont" size="45" name="SBLHebrew"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="6eO-U5-xPk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="B1X-x5-y6P" userLabel="LastRowStack View">
+                            <rect key="frame" x="0.0" y="399" width="558" height="73"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-Qf-aJt">
+                                    <rect key="frame" x="0.0" y="0.0" width="180.5" height="73"/>
+                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Save">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="31" name="SBLHebrew"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="savePressed:" destination="-1" eventType="touchUpInside" id="ptc-lp-r9A"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvK-ai-qhj" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                    <rect key="frame" x="188.5" y="0.0" width="181" height="73"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                    <state key="normal" title="-"/>
+                                    <connections>
+                                        <action selector="keyTappedWithSender:" destination="-1" eventType="touchUpInside" id="o13-jM-6fY"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyG-Bu-AEA" customClass="KeyboardButton" customModule="TextFieldMania" customModuleProvider="target">
+                                    <rect key="frame" x="377.5" y="0.0" width="180.5" height="73"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                    <state key="normal" title="↪︎"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YfR-OC-JG9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="1iJ-2c-rrF"/>
+                <constraint firstAttribute="bottom" secondItem="YfR-OC-JG9" secondAttribute="bottom" constant="16" id="DLA-Rz-vVR"/>
+                <constraint firstItem="YfR-OC-JG9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="FqO-Bk-qhF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YfR-OC-JG9" secondAttribute="trailing" constant="4" id="VXC-eC-zp2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="421.73913043478262" y="87.723214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.right" catalog="system" width="64" height="52"/>
+    </resources>
+</document>

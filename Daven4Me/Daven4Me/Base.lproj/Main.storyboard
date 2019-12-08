@@ -29,21 +29,27 @@
                                     <rect key="frame" x="63" y="0.0" width="351" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שרה-חנה-בילא-בת-מרים-יוכבד" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
-                                            <rect key="frame" x="61.5" y="16" width="273.5" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-aq-S46">
+                                            <rect key="frame" x="54.5" y="16" width="280.5" height="58.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
-                                            <nil key="textColor"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="שרה-חנה-בילא-בת-מרים-יוכבד">
+                                                    <attributes>
+                                                        <font key="NSFont" size="25" name="SBLHebrew"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarah Chana Baila Bas Miriam Yocheved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-Jf-uCn">
-                                            <rect key="frame" x="8" y="84" width="327" height="18"/>
+                                            <rect key="frame" x="8" y="82.5" width="327" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by Avi Pogrow - 19 " lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4M-hK-vRq">
-                                            <rect key="frame" x="16" y="110" width="320" height="17"/>
+                                            <rect key="frame" x="16" y="108.5" width="320" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -328,7 +334,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RR4-KI-eU9"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerView" destination="2fq-Vg-ohI" id="B8C-fh-LHr"/>
                         <outlet property="textField" destination="lFw-2i-eBa" id="8DB-Yd-XyM"/>
                     </connections>
                 </viewController>

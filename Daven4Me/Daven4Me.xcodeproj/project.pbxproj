@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE10F80D239725DA00926F57 /* TehillimTextCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */; };
+		CE10F8D6239C79FF00926F57 /* CustomInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10F8D5239C79FF00926F57 /* CustomInputView.xib */; };
+		CE10F8D8239C7A1900926F57 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F8D7239C7A1900926F57 /* CustomInputView.swift */; };
+		CE10F8DA239C7A8300926F57 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F8D9239C7A8200926F57 /* KeyboardButton.swift */; };
 		CE49CB8422BD392D0064B992 /* RawTehillimText.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE49CB8322BD392D0064B992 /* RawTehillimText.txt */; };
 		CE49CB8822BD3CA60064B992 /* Chapter119Plain.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE49CB8722BD3CA60064B992 /* Chapter119Plain.txt */; };
 		CE5C732222B454C600F6B5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C732122B454C600F6B5E4 /* AppDelegate.swift */; };
@@ -25,9 +28,6 @@
 		CE5C734622B57C4300F6B5E4 /* SBL_Hbrw.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */; };
 		CE5C734822B5960500F6B5E4 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */; };
 		CE7C6545237C3B0C0076BDF1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */; };
-		CEBDB0FF22B692DB007E743A /* HebrewKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBDB0FE22B692DB007E743A /* HebrewKeyboardView.xib */; };
-		CEBDB10122B694A5007E743A /* HebrewKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDB10022B694A5007E743A /* HebrewKeyboardView.swift */; };
-		CEBDB12C22B9AE51007E743A /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDB11A22B95E9D007E743A /* KeyboardViewController.swift */; };
 		CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8583F236CB4810086E869 /* NameDetailViewController.swift */; };
 		CED85842236CB52E0086E869 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85841236CB52E0086E869 /* PageCell.swift */; };
 		CED85844236CB5420086E869 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85843236CB5420086E869 /* MenuCell.swift */; };
@@ -53,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTextCollectionView.swift; sourceTree = "<group>"; };
+		CE10F8D5239C79FF00926F57 /* CustomInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInputView.xib; sourceTree = "<group>"; };
+		CE10F8D7239C7A1900926F57 /* CustomInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		CE10F8D9239C7A8200926F57 /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		CE49CB8322BD392D0064B992 /* RawTehillimText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RawTehillimText.txt; sourceTree = "<group>"; };
 		CE49CB8722BD3CA60064B992 /* Chapter119Plain.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter119Plain.txt; sourceTree = "<group>"; usesTabs = 0; };
 		CE5C731E22B454C600F6B5E4 /* Daven4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daven4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,9 +75,6 @@
 		CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SBL_Hbrw.ttf; sourceTree = "<group>"; };
 		CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		CEBDB0FE22B692DB007E743A /* HebrewKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HebrewKeyboardView.xib; sourceTree = "<group>"; };
-		CEBDB10022B694A5007E743A /* HebrewKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HebrewKeyboardView.swift; sourceTree = "<group>"; };
-		CEBDB11A22B95E9D007E743A /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		CED8583F236CB4810086E869 /* NameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameDetailViewController.swift; sourceTree = "<group>"; };
 		CED85841236CB52E0086E869 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		CED85843236CB5420086E869 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 		CE5C731522B454C600F6B5E4 = {
 			isa = PBXGroup;
 			children = (
-				CEBDB10022B694A5007E743A /* HebrewKeyboardView.swift */,
-				CEBDB11A22B95E9D007E743A /* KeyboardViewController.swift */,
-				CEBDB0FE22B692DB007E743A /* HebrewKeyboardView.xib */,
+				CE10F8D7239C7A1900926F57 /* CustomInputView.swift */,
+				CE10F8D5239C79FF00926F57 /* CustomInputView.xib */,
+				CE10F8D9239C7A8200926F57 /* KeyboardButton.swift */,
 				CE5C732022B454C600F6B5E4 /* Daven4Me */,
 				CE5C731F22B454C600F6B5E4 /* Products */,
 			);
@@ -241,8 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBDB0FF22B692DB007E743A /* HebrewKeyboardView.xib in Resources */,
 				CE5C732C22B454CB00F6B5E4 /* LaunchScreen.storyboard in Resources */,
+				CE10F8D6239C79FF00926F57 /* CustomInputView.xib in Resources */,
 				CE5C732922B454CB00F6B5E4 /* Assets.xcassets in Resources */,
 				CE5C732722B454C600F6B5E4 /* Main.storyboard in Resources */,
 				CE49CB8422BD392D0064B992 /* RawTehillimText.txt in Resources */,
@@ -267,10 +267,10 @@
 				CE5C734822B5960500F6B5E4 /* NameTableViewCell.swift in Sources */,
 				CED85844236CB5420086E869 /* MenuCell.swift in Sources */,
 				CE5C733822B459A600F6B5E4 /* DataModel.swift in Sources */,
-				CEBDB10122B694A5007E743A /* HebrewKeyboardView.swift in Sources */,
 				CEE1514922BF853C00E4C9F4 /* Chapter.swift in Sources */,
-				CEBDB12C22B9AE51007E743A /* KeyboardViewController.swift in Sources */,
+				CE10F8DA239C7A8300926F57 /* KeyboardButton.swift in Sources */,
 				CE5C732422B454C600F6B5E4 /* MasterViewController.swift in Sources */,
+				CE10F8D8239C7A1900926F57 /* CustomInputView.swift in Sources */,
 				CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */,
 				CE10F80D239725DA00926F57 /* TehillimTextCollectionView.swift in Sources */,
 				CEE1514D22BF870C00E4C9F4 /* TehillimTableViewController.swift in Sources */,
