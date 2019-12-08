@@ -67,7 +67,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
           
         }
         
-        
+       
         textField.makeTextWritingDirectionRightToLeft(self)
         textField.adjustsFontSizeToFitWidth = true
        
@@ -92,6 +92,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+       
         textField.becomeFirstResponder()
     }
     
@@ -171,6 +172,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
     
     func keyDone() {
          view.endEditing(true)
+        saveButtonPressed()
     }
     
     func backspace() {
@@ -178,7 +180,12 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
     }
 }
 
-
+extension AddEditViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+}
 
 
 
