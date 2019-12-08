@@ -35,6 +35,7 @@ class CustomInputView: UIView {
       super.awakeFromNib()
         initializeSubviews()
           setColorScheme()
+        
     }
 
        override init(frame: CGRect) {

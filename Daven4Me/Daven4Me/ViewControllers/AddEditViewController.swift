@@ -64,11 +64,11 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         if personToEdit != nil {
             textField.text = personToEdit?.nameToDisplay
         } else {
-          
+            textField.text = "בן"
         }
         
        
-        textField.makeTextWritingDirectionRightToLeft(self)
+       
         textField.adjustsFontSizeToFitWidth = true
        
         
@@ -78,13 +78,14 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         textField.textAlignment = .center
         
      
-        let customInputView = CustomInputView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+        let customInputView = CustomInputView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
         // set container view to the be the input view for
         // textField
         customInputView.delegate = self // the view controller will be notified by the keyboard whenever a key is tapped
         // replace system keyboard with custom keyboard
         textField.inputView = customInputView
-        
+      
+         textField.makeTextWritingDirectionRightToLeft(self)
         
      
     }
