@@ -16,9 +16,6 @@ protocol AddEditViewControllerDelegate: class {
 
 class AddEditViewController: UIViewController, CustomInputViewDelegate {
     
-    
-
-    
     // Array of Letters to Populate the Keyboard
     let chars = HebrewData.LetterHebrew.allCases[0...5]
     
@@ -41,16 +38,12 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
     @IBOutlet weak var textField: UITextField!
     
     
-    
-    
     fileprivate let cellId = "cellId"
     var displayString: String = ""
     
     weak var delegate: AddEditViewControllerDelegate?
     
     var personToEdit : Person?
-    
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,13 +59,9 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         } else {
             textField.text = "בן"
         }
-        
-       
-       
+    
         textField.adjustsFontSizeToFitWidth = true
-       
-        
-       
+
         let customFont = UIFont(name: "SBLHebrew", size: 34)
         textField.font = customFont
         textField.textAlignment = .center
@@ -87,9 +76,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
       
          textField.makeTextWritingDirectionRightToLeft(self)
         
-     
-    }
-    
+     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -102,7 +89,6 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-
     func saveButtonPressed() {
         
          // if user hits add new person but never enters text
@@ -183,8 +169,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
 
 extension AddEditViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
-        return true
+    return true
     }
 }
 

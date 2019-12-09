@@ -27,24 +27,26 @@ class TehillimTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-      return 2
+      return 1
         //return tehillimDataModel.chapters.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   // override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let reuseId = "ChapterTableCell"
+       // let cell = UITableViewCell()
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! ChapterTableCell
+       /// let reuseId = "ChapterTableCell"
         
-         let currentChapter = tehillimDataModel.chapters[indexPath.row]
-        print("the state of current chapter is \(currentChapter)")
-        cell.chapterLabel.text = currentChapter
-        cell.firstVerseLabel.text = currentChapter
+        //let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! ChapterTableCell
+        
+         //let currentChapter = tehillimDataModel.chapters[indexPath.row]
+        //print("the state of current chapter is \(currentChapter)")
+        //cell.chapterLabel.text = currentChapter
+        //cell.firstVerseLabel.text = currentChapter
 
-        return cell
-    }
+      //  return cell
+   // }
     
 
   

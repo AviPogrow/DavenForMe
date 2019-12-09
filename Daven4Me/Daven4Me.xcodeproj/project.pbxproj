@@ -28,6 +28,8 @@
 		CE5C734622B57C4300F6B5E4 /* SBL_Hbrw.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */; };
 		CE5C734822B5960500F6B5E4 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */; };
 		CE7C6545237C3B0C0076BDF1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */; };
+		CEABFE58239E97CF00970E2B /* ElasticTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEABFE56239E976000970E2B /* ElasticTextField.framework */; };
+		CEABFE59239E97CF00970E2B /* ElasticTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEABFE56239E976000970E2B /* ElasticTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8583F236CB4810086E869 /* NameDetailViewController.swift */; };
 		CED85842236CB52E0086E869 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85841236CB52E0086E869 /* PageCell.swift */; };
 		CED85844236CB5420086E869 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85843236CB5420086E869 /* MenuCell.swift */; };
@@ -38,7 +40,28 @@
 		CEE6297D2372F9FE003DDEE5 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6297C2372F9FE003DDEE5 /* PersonService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CEABFE55239E976000970E2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEABFE33239E963B00970E2B;
+			remoteInfo = ElasticTextField;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		CEABFE5A239E97CF00970E2B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEABFE59239E97CF00970E2B /* ElasticTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEBDB11122B90B4C007E743A /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +98,7 @@
 		CE5C734522B57C3500F6B5E4 /* SBL_Hbrw.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SBL_Hbrw.ttf; sourceTree = "<group>"; };
 		CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElasticTextField.xcodeproj; path = ElasticTextField/ElasticTextField.xcodeproj; sourceTree = "<group>"; };
 		CED8583F236CB4810086E869 /* NameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameDetailViewController.swift; sourceTree = "<group>"; };
 		CED85841236CB52E0086E869 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		CED85843236CB5420086E869 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -90,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEABFE58239E97CF00970E2B /* ElasticTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +124,10 @@
 		CE5C731522B454C600F6B5E4 = {
 			isa = PBXGroup;
 			children = (
-				CE10F8D7239C7A1900926F57 /* CustomInputView.swift */,
-				CE10F8D5239C79FF00926F57 /* CustomInputView.xib */,
-				CE10F8D9239C7A8200926F57 /* KeyboardButton.swift */,
+				CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */,
 				CE5C732022B454C600F6B5E4 /* Daven4Me */,
 				CE5C731F22B454C600F6B5E4 /* Products */,
+				CEABFE57239E97CF00970E2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +195,9 @@
 		CE5C734022B5526E00F6B5E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE10F8D7239C7A1900926F57 /* CustomInputView.swift */,
+				CE10F8D9239C7A8200926F57 /* KeyboardButton.swift */,
+				CE10F8D5239C79FF00926F57 /* CustomInputView.xib */,
 				CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */,
 				CE5C734122B5528C00F6B5E4 /* KeyCell.swift */,
 				CED85843236CB5420086E869 /* MenuCell.swift */,
@@ -179,6 +206,21 @@
 				CEE1514E22BF8B2100E4C9F4 /* ChapterTableCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CEABFE52239E976000970E2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEABFE56239E976000970E2B /* ElasticTextField.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEABFE57239E97CF00970E2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +234,7 @@
 				CE5C731B22B454C600F6B5E4 /* Frameworks */,
 				CE5C731C22B454C600F6B5E4 /* Resources */,
 				CEBDB11122B90B4C007E743A /* Embed App Extensions */,
+				CEABFE5A239E97CF00970E2B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,12 +272,28 @@
 			mainGroup = CE5C731522B454C600F6B5E4;
 			productRefGroup = CE5C731F22B454C600F6B5E4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CEABFE52239E976000970E2B /* Products */;
+					ProjectRef = CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CE5C731D22B454C600F6B5E4 /* Daven4Me */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CEABFE56239E976000970E2B /* ElasticTextField.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ElasticTextField.framework;
+			remoteRef = CEABFE55239E976000970E2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE5C731C22B454C600F6B5E4 /* Resources */ = {

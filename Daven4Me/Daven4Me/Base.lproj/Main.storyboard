@@ -294,7 +294,7 @@
                                 <rect key="frame" x="0.0" y="304.5" width="414" height="537.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אברהם פנחס בן מרים" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-2i-eBa">
+                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אברהם פנחס בן מרים" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-2i-eBa" customClass="ElasticTextField" customModule="ElasticTextField">
                                 <rect key="frame" x="16" y="204" width="382" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -397,34 +397,52 @@
             </objects>
             <point key="canvasLocation" x="-800.79999999999995" y="-1048.4257871064469"/>
         </scene>
-        <!--Root View Controller-->
+        <!--TehillimTableViewController-->
         <scene sceneID="7wm-Ym-3Nc">
             <objects>
-                <tableViewController id="kQ1-6s-FpG" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rlD-a9-9av">
+                <tableViewController id="kQ1-6s-FpG" customClass="TehillimTableViewController" customModule="Daven4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rlD-a9-9av">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ioi-Vq-jbV">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ioi-Vq-jbV" id="27J-12-L90">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="YdP-Kl-tqH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="133" id="Ioi-Vq-jbV">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ioi-Vq-jbV" id="27J-12-L90">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86Q-ca-Y9C" customClass="ElasticTextField" customModule="ElasticTextField">
+                                                    <rect key="frame" x="20" y="49" width="374" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="86Q-ca-Y9C" firstAttribute="leading" secondItem="27J-12-L90" secondAttribute="leadingMargin" id="63B-Zg-BGB"/>
+                                                <constraint firstItem="86Q-ca-Y9C" firstAttribute="trailing" secondItem="27J-12-L90" secondAttribute="trailingMargin" id="Pu5-bC-X7Y"/>
+                                                <constraint firstItem="86Q-ca-Y9C" firstAttribute="centerY" secondItem="27J-12-L90" secondAttribute="centerY" id="a3g-yP-KZr"/>
+                                                <constraint firstItem="86Q-ca-Y9C" firstAttribute="top" secondItem="27J-12-L90" secondAttribute="topMargin" constant="38" id="lad-6i-4eb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="kQ1-6s-FpG" id="rJ1-eV-fqo"/>
                             <outlet property="delegate" destination="kQ1-6s-FpG" id="MqH-mp-XEI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nQ7-RS-DvO"/>
+                    <navigationItem key="navigationItem" title="TehillimTableViewController" id="nQ7-RS-DvO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvb-5f-vpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4391" y="87"/>
+            <point key="canvasLocation" x="-4095.652173913044" y="83.705357142857139"/>
         </scene>
         <!--More-->
         <scene sceneID="SoJ-oT-Ff8">
