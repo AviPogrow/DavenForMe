@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import MBProgressHUD
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  {
@@ -68,10 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         // back button on leading edge to toggle the masterView Controller
         //nameDetailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         //nameDetailViewController.navigationItem.leftItemsSupplementBackButton = true
-            
-    
+ 
         return true
     }
+    
+ 
+
+    
+    
+    
+    
     
 
     func applicationWillResignActive(_ application: UIApplication) {

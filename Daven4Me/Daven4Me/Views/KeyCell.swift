@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class KeyCell: UICollectionViewCell {
     
@@ -26,6 +27,8 @@ class KeyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+
         backgroundColor = defaultBGColor
         
         digitsLabel.text = "8"

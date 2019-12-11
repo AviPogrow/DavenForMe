@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCF3CC0235D34B917B4F639E /* Pods_Daven4Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3DB14A17B95CA98A2F9707 /* Pods_Daven4Me.framework */; };
 		CE10F80D239725DA00926F57 /* TehillimTextCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */; };
 		CE10F8D6239C79FF00926F57 /* CustomInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10F8D5239C79FF00926F57 /* CustomInputView.xib */; };
 		CE10F8D8239C7A1900926F57 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10F8D7239C7A1900926F57 /* CustomInputView.swift */; };
@@ -30,6 +31,7 @@
 		CE7C6545237C3B0C0076BDF1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */; };
 		CEABFE58239E97CF00970E2B /* ElasticTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEABFE56239E976000970E2B /* ElasticTextField.framework */; };
 		CEABFE59239E97CF00970E2B /* ElasticTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEABFE56239E976000970E2B /* ElasticTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEABFE7A239EAF1B00970E2B /* Daven4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABFE79239EAF1B00970E2B /* Daven4MeTests.swift */; };
 		CED85840236CB4820086E869 /* NameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8583F236CB4810086E869 /* NameDetailViewController.swift */; };
 		CED85842236CB52E0086E869 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85841236CB52E0086E869 /* PageCell.swift */; };
 		CED85844236CB5420086E869 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED85843236CB5420086E869 /* MenuCell.swift */; };
@@ -48,6 +50,20 @@
 			remoteGlobalIDString = CEABFE33239E963B00970E2B;
 			remoteInfo = ElasticTextField;
 		};
+		CEABFE7C239EAF1B00970E2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5C731622B454C600F6B5E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE5C731D22B454C600F6B5E4;
+			remoteInfo = Daven4Me;
+		};
+		CEABFE8E239EB7A500970E2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEABFE8A239EB7A500970E2B /* ElasticTextField.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEABFE33239E963B00970E2B;
+			remoteInfo = ElasticTextField;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,19 +78,10 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEBDB11122B90B4C007E743A /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9764DE7D46376259C492EE90 /* Pods-Daven4Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daven4Me.debug.xcconfig"; path = "Target Support Files/Pods-Daven4Me/Pods-Daven4Me.debug.xcconfig"; sourceTree = "<group>"; };
 		CE10F80C239725DA00926F57 /* TehillimTextCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTextCollectionView.swift; sourceTree = "<group>"; };
 		CE10F8D5239C79FF00926F57 /* CustomInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInputView.xib; sourceTree = "<group>"; };
 		CE10F8D7239C7A1900926F57 /* CustomInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
@@ -99,6 +106,12 @@
 		CE5C734722B5960500F6B5E4 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		CE7C6544237C3B0C0076BDF1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElasticTextField.xcodeproj; path = ElasticTextField/ElasticTextField.xcodeproj; sourceTree = "<group>"; };
+		CEABFE63239EA8FC00970E2B /* jwvioard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = jwvioard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEABFE77239EAF1B00970E2B /* Daven4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Daven4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEABFE79239EAF1B00970E2B /* Daven4MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daven4MeTests.swift; sourceTree = "<group>"; };
+		CEABFE7B239EAF1B00970E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEABFE81239EAF6C00970E2B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CEABFE8A239EB7A500970E2B /* ElasticTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElasticTextField.xcodeproj; path = ElasticTextField/ElasticTextField.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CED8583F236CB4810086E869 /* NameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameDetailViewController.swift; sourceTree = "<group>"; };
 		CED85841236CB52E0086E869 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		CED85843236CB5420086E869 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -107,6 +120,8 @@
 		CEE1514C22BF870C00E4C9F4 /* TehillimTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTableViewController.swift; sourceTree = "<group>"; };
 		CEE1514E22BF8B2100E4C9F4 /* ChapterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableCell.swift; sourceTree = "<group>"; };
 		CEE6297C2372F9FE003DDEE5 /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		D234DA337760F09B6790EF3F /* Pods-Daven4Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daven4Me.release.xcconfig"; path = "Target Support Files/Pods-Daven4Me/Pods-Daven4Me.release.xcconfig"; sourceTree = "<group>"; };
+		DD3DB14A17B95CA98A2F9707 /* Pods_Daven4Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daven4Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +130,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEABFE58239E97CF00970E2B /* ElasticTextField.framework in Frameworks */,
+				CCF3CC0235D34B917B4F639E /* Pods_Daven4Me.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEABFE60239EA8FC00970E2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEABFE74239EAF1A00970E2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +156,10 @@
 			children = (
 				CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */,
 				CE5C732022B454C600F6B5E4 /* Daven4Me */,
+				CEABFE78239EAF1B00970E2B /* Daven4MeTests */,
 				CE5C731F22B454C600F6B5E4 /* Products */,
 				CEABFE57239E97CF00970E2B /* Frameworks */,
+				EC91E926B51DABDBC08EC933 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5C731E22B454C600F6B5E4 /* Daven4Me.app */,
+				CEABFE63239EA8FC00970E2B /* jwvioard.appex */,
+				CEABFE77239EAF1B00970E2B /* Daven4MeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,8 +253,37 @@
 		CEABFE57239E97CF00970E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEABFE81239EAF6C00970E2B /* XCTest.framework */,
+				DD3DB14A17B95CA98A2F9707 /* Pods_Daven4Me.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEABFE78239EAF1B00970E2B /* Daven4MeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEABFE8A239EB7A500970E2B /* ElasticTextField.xcodeproj */,
+				CEABFE79239EAF1B00970E2B /* Daven4MeTests.swift */,
+				CEABFE7B239EAF1B00970E2B /* Info.plist */,
+			);
+			path = Daven4MeTests;
+			sourceTree = "<group>";
+		};
+		CEABFE8B239EB7A500970E2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEABFE8F239EB7A500970E2B /* ElasticTextField.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC91E926B51DABDBC08EC933 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9764DE7D46376259C492EE90 /* Pods-Daven4Me.debug.xcconfig */,
+				D234DA337760F09B6790EF3F /* Pods-Daven4Me.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE5C733022B454CB00F6B5E4 /* Build configuration list for PBXNativeTarget "Daven4Me" */;
 			buildPhases = (
+				1D9DC26160F26CA398162C2D /* [CP] Check Pods Manifest.lock */,
 				CE5C731A22B454C600F6B5E4 /* Sources */,
 				CE5C731B22B454C600F6B5E4 /* Frameworks */,
 				CE5C731C22B454C600F6B5E4 /* Resources */,
-				CEBDB11122B90B4C007E743A /* Embed App Extensions */,
 				CEABFE5A239E97CF00970E2B /* Embed Frameworks */,
+				C421232A11F57D927467476C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,19 +309,61 @@
 			productReference = CE5C731E22B454C600F6B5E4 /* Daven4Me.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEABFE62239EA8FC00970E2B /* jwvioard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEABFE6B239EA8FD00970E2B /* Build configuration list for PBXNativeTarget "jwvioard" */;
+			buildPhases = (
+				CEABFE5F239EA8FC00970E2B /* Sources */,
+				CEABFE60239EA8FC00970E2B /* Frameworks */,
+				CEABFE61239EA8FC00970E2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jwvioard;
+			productName = jwvioard;
+			productReference = CEABFE63239EA8FC00970E2B /* jwvioard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CEABFE76239EAF1A00970E2B /* Daven4MeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEABFE7E239EAF1B00970E2B /* Build configuration list for PBXNativeTarget "Daven4MeTests" */;
+			buildPhases = (
+				CEABFE73239EAF1A00970E2B /* Sources */,
+				CEABFE74239EAF1A00970E2B /* Frameworks */,
+				CEABFE75239EAF1A00970E2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEABFE7D239EAF1B00970E2B /* PBXTargetDependency */,
+			);
+			name = Daven4MeTests;
+			productName = Daven4MeTests;
+			productReference = CEABFE77239EAF1B00970E2B /* Daven4MeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CE5C731622B454C600F6B5E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = user;
 				TargetAttributes = {
 					CE5C731D22B454C600F6B5E4 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1110;
+					};
+					CEABFE62239EA8FC00970E2B = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					CEABFE76239EAF1A00970E2B = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = CE5C731D22B454C600F6B5E4;
 					};
 				};
 			};
@@ -274,6 +380,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = CEABFE8B239EB7A500970E2B /* Products */;
+					ProjectRef = CEABFE8A239EB7A500970E2B /* ElasticTextField.xcodeproj */;
+				},
+				{
 					ProductGroup = CEABFE52239E976000970E2B /* Products */;
 					ProjectRef = CEABFE51239E976000970E2B /* ElasticTextField.xcodeproj */;
 				},
@@ -281,6 +391,8 @@
 			projectRoot = "";
 			targets = (
 				CE5C731D22B454C600F6B5E4 /* Daven4Me */,
+				CEABFE62239EA8FC00970E2B /* jwvioard */,
+				CEABFE76239EAF1A00970E2B /* Daven4MeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +403,13 @@
 			fileType = wrapper.framework;
 			path = ElasticTextField.framework;
 			remoteRef = CEABFE55239E976000970E2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEABFE8F239EB7A500970E2B /* ElasticTextField.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ElasticTextField.framework;
+			remoteRef = CEABFE8E239EB7A500970E2B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -310,7 +429,63 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEABFE61239EA8FC00970E2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEABFE75239EAF1A00970E2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D9DC26160F26CA398162C2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daven4Me-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C421232A11F57D927467476C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daven4Me/Pods-Daven4Me-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daven4Me/Pods-Daven4Me-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daven4Me/Pods-Daven4Me-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE5C731A22B454C600F6B5E4 /* Sources */ = {
@@ -342,7 +517,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEABFE5F239EA8FC00970E2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEABFE73239EAF1A00970E2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEABFE7A239EAF1B00970E2B /* Daven4MeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEABFE7D239EAF1B00970E2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE5C731D22B454C600F6B5E4 /* Daven4Me */;
+			targetProxy = CEABFE7C239EAF1B00970E2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE5C732522B454C600F6B5E4 /* Main.storyboard */ = {
@@ -482,8 +680,9 @@
 		};
 		CE5C733122B454CB00F6B5E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9764DE7D46376259C492EE90 /* Pods-Daven4Me.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Daven4Me/Daven4Me.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -504,8 +703,9 @@
 		};
 		CE5C733222B454CB00F6B5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D234DA337760F09B6790EF3F /* Pods-Daven4Me.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Daven4Me/Daven4Me.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -521,6 +721,90 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEABFE6C239EA8FD00970E2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P77A2352BM;
+				INFOPLIST_FILE = jwvioard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4Me.jwvioard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEABFE6D239EA8FD00970E2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P77A2352BM;
+				INFOPLIST_FILE = jwvioard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4Me.jwvioard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEABFE7F239EAF1B00970E2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P77A2352BM;
+				INFOPLIST_FILE = Daven4MeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4MeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daven4Me.app/Daven4Me";
+			};
+			name = Debug;
+		};
+		CEABFE80239EAF1B00970E2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P77A2352BM;
+				INFOPLIST_FILE = Daven4MeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AviPogrow.Daven4MeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daven4Me.app/Daven4Me";
 			};
 			name = Release;
 		};
@@ -541,6 +825,24 @@
 			buildConfigurations = (
 				CE5C733122B454CB00F6B5E4 /* Debug */,
 				CE5C733222B454CB00F6B5E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEABFE6B239EA8FD00970E2B /* Build configuration list for PBXNativeTarget "jwvioard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEABFE6C239EA8FD00970E2B /* Debug */,
+				CEABFE6D239EA8FD00970E2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEABFE7E239EAF1B00970E2B /* Build configuration list for PBXNativeTarget "Daven4MeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEABFE7F239EAF1B00970E2B /* Debug */,
+				CEABFE80239EAF1B00970E2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

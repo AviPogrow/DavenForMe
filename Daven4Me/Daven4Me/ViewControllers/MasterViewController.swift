@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MBProgressHUD
+
+
 
 protocol PersonSelectionDelegate: class {
   func personSelected(_ newPerson: Person)
@@ -95,8 +98,18 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         delegate!.personSelected(firstPerson)
         
         tableView.selectRow(at: firstIndexPath  , animated: false, scrollPosition: .top)
+            showLoadingHUD()
         }
     }
+    
+    private func showLoadingHUD() {
+       let hud = MBProgressHUD.showAdded(to: tableView, animated: true)
+       hud.label.text = "Loading..."
+     }
+
+     private func hideLoadingHUD() {
+       MBProgressHUD.hide(for: tableView, animated: true)
+     }
     
    
     // in portrait mode when a cell is selectedd hide the
