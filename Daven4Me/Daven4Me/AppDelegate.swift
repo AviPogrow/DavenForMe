@@ -76,13 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     }
     
  
-
-    
-    
-    
-    
-    
-
     func applicationWillResignActive(_ application: UIApplication) {
       saveData()
      }

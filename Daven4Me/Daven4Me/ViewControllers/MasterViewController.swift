@@ -136,7 +136,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
    
-        return view.bounds.height / 4
+        return tableView.superview!.bounds.maxY / 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
