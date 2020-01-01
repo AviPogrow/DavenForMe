@@ -98,7 +98,7 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
         delegate!.personSelected(firstPerson)
         
         tableView.selectRow(at: firstIndexPath  , animated: false, scrollPosition: .top)
-            showLoadingHUD()
+            //showLoadingHUD()
         }
     }
     

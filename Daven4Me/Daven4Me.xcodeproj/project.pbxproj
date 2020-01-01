@@ -120,6 +120,7 @@
 		CEE1514C22BF870C00E4C9F4 /* TehillimTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TehillimTableViewController.swift; sourceTree = "<group>"; };
 		CEE1514E22BF8B2100E4C9F4 /* ChapterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableCell.swift; sourceTree = "<group>"; };
 		CEE6297C2372F9FE003DDEE5 /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		CEE76DB723A54B3D0048AEEC /* Daven4Me.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Daven4Me.entitlements; sourceTree = "<group>"; };
 		D234DA337760F09B6790EF3F /* Pods-Daven4Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daven4Me.release.xcconfig"; path = "Target Support Files/Pods-Daven4Me/Pods-Daven4Me.release.xcconfig"; sourceTree = "<group>"; };
 		DD3DB14A17B95CA98A2F9707 /* Pods_Daven4Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daven4Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +177,7 @@
 		CE5C732022B454C600F6B5E4 /* Daven4Me */ = {
 			isa = PBXGroup;
 			children = (
+				CEE76DB723A54B3D0048AEEC /* Daven4Me.entitlements */,
 				CE5C734322B5532600F6B5E4 /* Config.swift */,
 				CE5C732122B454C600F6B5E4 /* AppDelegate.swift */,
 				CE5C734022B5526E00F6B5E4 /* Views */,
