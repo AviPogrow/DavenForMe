@@ -66,8 +66,19 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         textField.font = customFont
         textField.textAlignment = .center
         
-     
-        let customInputView = CustomInputView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
+        
+         var rectHeight = CGFloat(450)
+         var currentDevice: UIDevice
+        // size the keyboard for IPAD vs Iphone
+        if UIDevice.current.iPhone || UIDevice.current.iPhoneX {
+              rectHeight = view.bounds.width + 80
+           
+        } else {
+             rectHeight = CGFloat(450)
+        }
+        
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: rectHeight)
+        let customInputView = CustomInputView(frame: rect)
         // set container view to the be the input view for
         // textField
         customInputView.delegate = self // the view controller will be notified by the keyboard whenever a key is tapped
@@ -84,10 +95,14 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         textField.becomeFirstResponder()
     }
     
-    @IBAction func cancelPressed(_ sender: Any) {
-        textField.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-    }
+   
+    
+    
+    @IBAction func handleCancelPressed(_ sender: Any) {
+           textField.resignFirstResponder()
+           dismiss(animated: true, completion: nil)
+       }
+    
     
     func saveButtonPressed() {
         

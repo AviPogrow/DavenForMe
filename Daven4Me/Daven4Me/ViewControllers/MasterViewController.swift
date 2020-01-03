@@ -158,13 +158,15 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     
    
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "AddEditViewController") as! AddEditViewController
-        controller.delegate = self
-        let person = dataModel.peopleArray[indexPath.row]
-        controller.personToEdit = person
-        present(controller, animated: true, completion: nil)
+       let navController = storyboard!.instantiateViewController(withIdentifier: "AddEditNavController") as! UINavigationController
+        let addEditController = navController.topViewController as! AddEditViewController
+        addEditController.delegate = self
         
-    }
+        let person = dataModel.peopleArray[indexPath.row]
+        addEditController.personToEdit = person
+        
+        present(navController, animated: true, completion: nil)
+        }
     
     
     //keep track if view controller is in edit mode the user can't open the nameEditor scene
@@ -218,10 +220,12 @@ class MasterViewController: UITableViewController, UINavigationControllerDelegat
     }
 
     @IBAction func addNameTapped(_ sender: Any) {
-       let controller = storyboard!.instantiateViewController(withIdentifier: "AddEditViewController") as! AddEditViewController
-        controller.delegate = self
         
-        present(controller, animated: true, completion: nil)
+        let navController = storyboard!.instantiateViewController(withIdentifier: "AddEditNavController") as! UINavigationController
+        let addEditController = navController.topViewController as! AddEditViewController
+        addEditController.delegate = self
+        
+        present(navController, animated: true, completion: nil)
     }
     
     // MARK:- Navigation Controller Delegates
