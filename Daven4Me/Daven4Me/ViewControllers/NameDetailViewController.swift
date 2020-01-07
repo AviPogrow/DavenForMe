@@ -170,11 +170,13 @@ class NameDetailViewController: UIViewController, UICollectionViewDelegateFlowLa
    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
-        coordinator.animate(alongsideTransition: { [unowned self] _ in
+        coordinator.animate(alongsideTransition: { //[unowned self]
+            _ in
             
-        }) { [unowned self] _ in
+        }) { //[unowned self]
+            _ in
     
-            let offset = CGPoint(x: 55, y: 0)
+            _ = CGPoint(x: 55, y: 0)
             self.scrollToPageAt(self.pageControl.currentPage + 1)
         }
     }

@@ -68,7 +68,7 @@ class AddEditViewController: UIViewController, CustomInputViewDelegate {
         
         
          var rectHeight = CGFloat(450)
-         var currentDevice: UIDevice
+        var _: UIDevice
         // size the keyboard for IPAD vs Iphone
         if UIDevice.current.iPhone || UIDevice.current.iPhoneX {
               rectHeight = view.bounds.width + 80
